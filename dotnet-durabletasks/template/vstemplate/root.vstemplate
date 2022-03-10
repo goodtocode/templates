@@ -1,0 +1,33 @@
+<VSTemplate Version="3.0.0" Type="ProjectGroup" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Durable Task Framework Template</Name>
+    <Description>Durable Task template contains pre-setup projects and Durable Task Framework (DTFx).</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>MyCo.DurableTask</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection>
+      <ProjectTemplateLink ProjectName="DurableTask.Activities" CopyParameters="true">
+		  DurableTask.Activities\MyTemplate.vstemplate
+	  </ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="DurableTask.Client" CopyParameters="true">
+		  DurableTask.Client\MyTemplate.vstemplate
+	  </ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="DurableTask.Functions" CopyParameters="true">
+		  DurableTask.Functions\MyTemplate.vstemplate
+	  </ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="DurableTask.Tests" CopyParameters="true">
+		  DurableTask.Tests\MyTemplate.vstemplate
+	  </ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="DurableTask.Worker" CopyParameters="true">
+		  DurableTask.Worker\MyTemplate.vstemplate
+	  </ProjectTemplateLink>
+    </ProjectCollection>
+  </TemplateContent>
+</VSTemplate>

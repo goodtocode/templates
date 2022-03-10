@@ -1,0 +1,49 @@
+variables:
+  - group: gtc-rg-templates-prod
+  - template: common.yml
+  - name: rgEnvironment
+    value: 'Production'
+  - name: rgName
+    value: 'gtc-rg-templates-prod-001'
+  - name: rgLocation
+    value: 'West US 2'
+  - name: apiName
+    value: 'api-templates-prod-001'
+  - name: appcsName
+    value: 'appcs-templates-prod-001'
+  - name: appcsSku
+    value: 'free'
+  - name: appiName
+    value: 'appi-templates-prod-001'
+  - name: funcName
+    value: 'func-templates-prod-001'
+  - name: funcVersion
+    value: '4'
+  - name: kvName
+    value: 'kv-templates-prod-001'
+  - name: nugetFeeds
+    value: 'select'
+  - name: nugetType
+    value: 'internal'
+  - name: planName
+    value: 'plan-webjob-templates-prod-001'
+  - name: sbName
+    value: 'sb-templates-prod-001'
+  - name: sbSku
+    value: 'Standard'
+  - name: sqlDatabase
+    value: 'sqldb-template-prod-225'
+  - name: sqlName
+    value: 'sql-template-prod-225'
+  - name: sqlSku
+    value: 'Basic'
+  - name: sqlLocation
+    value: 'West US 3'
+  - name: stName
+    value: 'sttemplatesprod001'
+  - name: stNameLower
+    value: "$[lower(replace(variables['stName'], '-', ''))]"
+  - name: webName
+    value: 'webjob-templates-prod-001'  
+  - name: workName
+    value: 'work-templates-prod-001'

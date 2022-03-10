@@ -1,0 +1,39 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>DurableTask.Activities</Name>
+    <Description>Activities, Orchestrations and Abstractions for the Durable Task Framework (DTFx) template.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>DurableTask.Activities</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="DurableTask.Activities.csproj" File="DurableTask.Activities.csproj" ReplaceParameters="true">
+      <Folder Name="Entities" TargetFolderName="Entities">
+        <ProjectItem ReplaceParameters="true" TargetFileName="DataSourceEntity.cs">DataSourceEntity.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IDataSourceEntity.cs">IDataSourceEntity.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Extensions" TargetFolderName="Extensions">
+        <ProjectItem ReplaceParameters="true" TargetFileName="IEnumerableExtensions.cs">IEnumerableExtensions.cs</ProjectItem>
+      </Folder>
+      <Folder Name="FanOut" TargetFolderName="FanOut">
+        <ProjectItem ReplaceParameters="true" TargetFileName="FanOutOrchestration.cs">FanOutOrchestration.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="GetDataActivity.cs">GetDataActivity.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ProcessDataActivity.cs">ProcessDataActivity.cs</ProjectItem>
+      </Folder>
+      <Folder Name="ObjectCreator" TargetFolderName="ObjectCreator">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ServiceProviderObjectCreator.cs">ServiceProviderObjectCreator.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="AppConfigurationKeys.cs">AppConfigurationKeys.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="EnvironmentVariableKeys.cs">EnvironmentVariableKeys.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="StorageTableNames.cs">StorageTableNames.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
