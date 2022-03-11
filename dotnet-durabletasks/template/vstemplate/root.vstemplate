@@ -1,6 +1,6 @@
 <VSTemplate Version="3.0.0" Type="ProjectGroup" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
   <TemplateData>
-    <Name>Durable Task Framework Template</Name>
+    <Name>Durable Task Framework Quick-Start</Name>
     <Description>Durable Task template contains pre-setup projects and Durable Task Framework (DTFx).</Description>
     <ProjectType>CSharp</ProjectType>
     <SortOrder>1000</SortOrder>

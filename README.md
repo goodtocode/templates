@@ -4,7 +4,7 @@ This repository includes templates that can be cloned as working source code in 
 
 | Microservice Quick-Start | Durable Task Framework Quick-Start
 --- | --- | ---
-Build: | [![Build Status](https://dev.azure.com/GoodToCode/GoodToCode.com/_apis/build/status/gtg-rg-templates-microservices?branchName=main)](https://dev.azure.com/GoodToCode/GoodToCode.com/_build/latest?definitionId=80&branchName=main) | [![Build Status](https://dev.azure.com/GoodToCode/GoodToCode.com/_apis/build/status/gtc-rg-templates-durabletasks?branchName=main)](https://dev.azure.com/GoodToCode/GoodToCode.com/_build/latest?definitionId=81&branchName=main)
+Build: | [![Build Status](https://dev.azure.com/GoodToCode/GoodToCode.com/_apis/build/status/gtg-rg-templates-microservices?branchName=main)](https://dev.azure.com/GoodToCode/GoodToCode.com/_build/latest?definitionId=85&branchName=main) | [![Build Status](https://dev.azure.com/GoodToCode/GoodToCode.com/_apis/build/status/gtc-rg-templates-durabletasks?branchName=main)](https://dev.azure.com/GoodToCode/GoodToCode.com/_build/latest?definitionId=83&branchName=main)
 | Microservice template that contains a simple microservice solution and pre-setup projects. Built via DDD, CQRS on the SOLID porinciple. | Durable Task Framework (DTFx) template contains a simple Event Sourcing solution and pre-setup projects.
 
 ## Repo Contents
