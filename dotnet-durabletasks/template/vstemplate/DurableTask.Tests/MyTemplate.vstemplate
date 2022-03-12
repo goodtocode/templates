@@ -1,42 +1,42 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
-	<TemplateData>
-		<Name>DurableTask.Tests</Name>
-		<Description>Tests for the Durable Task Framework (DTFx) template.</Description>
-		<ProjectType>CSharp</ProjectType>
-		<ProjectSubType>
-		</ProjectSubType>
-		<SortOrder>1000</SortOrder>
-		<CreateNewFolder>true</CreateNewFolder>
-		<DefaultName>DurableTask.Tests</DefaultName>
-		<ProvideDefaultName>true</ProvideDefaultName>
-		<LocationField>Enabled</LocationField>
-		<EnableLocationBrowseButton>true</EnableLocationBrowseButton>
-		<CreateInPlace>true</CreateInPlace>
-		<Icon>__TemplateIcon.ico</Icon>
-	</TemplateData>
-	<TemplateContent>
-		<Project TargetFileName="DurableTask.Tests.csproj" File="DurableTask.Tests.csproj" ReplaceParameters="true">
-			<Folder Name="Factories" TargetFolderName="Factories">
-				<ProjectItem ReplaceParameters="true" TargetFileName="AppConfigurationFactory.cs">AppConfigurationFactory.cs</ProjectItem>
-				<ProjectItem ReplaceParameters="true" TargetFileName="FileFactoryService.cs">FileFactoryService.cs</ProjectItem>
-				<ProjectItem ReplaceParameters="true" TargetFileName="HttpRequestFactory.cs">HttpRequestFactory.cs</ProjectItem>
-				<ProjectItem ReplaceParameters="true" TargetFileName="LoggerFactory.cs">LoggerFactory.cs</ProjectItem>
-				<ProjectItem ReplaceParameters="true" TargetFileName="PathFactory.cs">PathFactory.cs</ProjectItem>
-			</Folder>
-			<Folder Name="FanOut" TargetFolderName="FanOut">
-				<ProjectItem ReplaceParameters="true" TargetFileName="FanOut_OrchestrationsTests.cs">FanOut_OrchestrationsTests.cs</ProjectItem>
-			</Folder>
-			<Folder Name="Models" TargetFolderName="Models">
-				<ProjectItem ReplaceParameters="true" TargetFileName="EntityA.cs">EntityA.cs</ProjectItem>
-				<ProjectItem ReplaceParameters="true" TargetFileName="GenericLogger.cs">GenericLogger.cs</ProjectItem>
-				<ProjectItem ReplaceParameters="true" TargetFileName="ListLogger.cs">ListLogger.cs</ProjectItem>
-				<ProjectItem ReplaceParameters="true" TargetFileName="LoggerTypes.cs">LoggerTypes.cs</ProjectItem>
-				<ProjectItem ReplaceParameters="true" TargetFileName="NullScope.cs">NullScope.cs</ProjectItem>
-				<ProjectItem ReplaceParameters="true" TargetFileName="ObjectA.cs">ObjectA.cs</ProjectItem>
-			</Folder>
-			<ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Development.json">appsettings.Development.json</ProjectItem>
-			<ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
-			<ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Production.json">appsettings.Production.json</ProjectItem>
-		</Project>
-	</TemplateContent>
+  <TemplateData>
+    <Name>DurableTask.Tests</Name>
+    <Description>Tests for the Durable Task Framework (DTFx) template.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>DurableTask.Tests</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="DurableTask.Tests.csproj" File="DurableTask.Tests.csproj" ReplaceParameters="true">
+      <Folder Name="Factories" TargetFolderName="Factories">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AppConfigurationFactory.cs">AppConfigurationFactory.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="FileFactoryService.cs">FileFactoryService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="HttpRequestFactory.cs">HttpRequestFactory.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="LoggerFactory.cs">LoggerFactory.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PathFactory.cs">PathFactory.cs</ProjectItem>
+      </Folder>
+      <Folder Name="FanOut" TargetFolderName="FanOut">
+        <ProjectItem ReplaceParameters="true" TargetFileName="FanOut_OrchestrationsTests.cs">FanOut_OrchestrationsTests.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Models" TargetFolderName="Models">
+        <ProjectItem ReplaceParameters="true" TargetFileName="EntityA.cs">EntityA.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="GenericLogger.cs">GenericLogger.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ListLogger.cs">ListLogger.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="LoggerTypes.cs">LoggerTypes.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="NullScope.cs">NullScope.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ObjectA.cs">ObjectA.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Development.json">appsettings.Development.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Production.json">appsettings.Production.json</ProjectItem>
+    </Project>
+  </TemplateContent>
 </VSTemplate>

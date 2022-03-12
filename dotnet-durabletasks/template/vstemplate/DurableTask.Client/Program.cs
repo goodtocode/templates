@@ -46,6 +46,8 @@ namespace $safeprojectname$
                         .Select(KeyFilter.Any, LabelFilter.Null)
                         .Select(KeyFilter.Any, environment));
             }
+            var config = configuration.Build();
+            services.AddScoped<IConfiguration>(_ => config);
             services.AddLogging(configure => configure.AddConsole())
                 .AddSingleton(configuration)
                 .AddTransient<Startup>();

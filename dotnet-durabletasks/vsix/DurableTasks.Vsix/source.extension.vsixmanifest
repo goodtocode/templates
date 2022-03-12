@@ -11,6 +11,7 @@
         <Icon>assets\__TemplateIcon.ico</Icon>
         <PreviewImage>assets\__PreviewImage.ico</PreviewImage>
         <Tags>.NET, C#, DurableTask, Azure Functions, Event Sourcing</Tags>
+        <Preview>true</Preview>
     </Metadata>
     <Installation>
         <InstallationTarget Version="[17.0,18.0)" Id="Microsoft.VisualStudio.Community">

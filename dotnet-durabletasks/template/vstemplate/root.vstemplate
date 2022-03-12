@@ -14,20 +14,20 @@
   <TemplateContent>
     <ProjectCollection>
       <ProjectTemplateLink ProjectName="DurableTask.Activities" CopyParameters="true">
-		  DurableTask.Activities\MyTemplate.vstemplate
-	  </ProjectTemplateLink>
+        DurableTask.Activities\MyTemplate.vstemplate
+      </ProjectTemplateLink>
       <ProjectTemplateLink ProjectName="DurableTask.Client" CopyParameters="true">
-		  DurableTask.Client\MyTemplate.vstemplate
-	  </ProjectTemplateLink>
+        DurableTask.Client\MyTemplate.vstemplate
+      </ProjectTemplateLink>
       <ProjectTemplateLink ProjectName="DurableTask.Functions" CopyParameters="true">
-		  DurableTask.Functions\MyTemplate.vstemplate
-	  </ProjectTemplateLink>
+        DurableTask.Functions\MyTemplate.vstemplate
+      </ProjectTemplateLink>
       <ProjectTemplateLink ProjectName="DurableTask.Tests" CopyParameters="true">
-		  DurableTask.Tests\MyTemplate.vstemplate
-	  </ProjectTemplateLink>
+        DurableTask.Tests\MyTemplate.vstemplate
+      </ProjectTemplateLink>
       <ProjectTemplateLink ProjectName="DurableTask.Worker" CopyParameters="true">
-		  DurableTask.Worker\MyTemplate.vstemplate
-	  </ProjectTemplateLink>
+        DurableTask.Worker\MyTemplate.vstemplate
+      </ProjectTemplateLink>
     </ProjectCollection>
   </TemplateContent>
 </VSTemplate>
