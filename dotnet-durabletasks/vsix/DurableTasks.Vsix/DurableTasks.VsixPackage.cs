@@ -30,7 +30,7 @@ namespace DurableTasks.Vsix
          /// <summary>
         /// DurableTasks.VsixPackage GUID string.
         /// </summary>
-        public const string PackageGuidString = "5ae80c11-6a83-4cff-9df9-9bef7fd7366e";
+        public const string PackageGuidString = "822fd32c-22ce-4bde-a6c8-9adc9c6116c3";
 
     #region Package Members
 
