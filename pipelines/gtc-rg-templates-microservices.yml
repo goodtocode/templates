@@ -1,0 +1,122 @@
+trigger:
+  batch: true
+  branches:
+    include:
+    - '*'
+  paths:
+    include:
+    - dotnet-microservices/*
+
+pr:
+  branches:
+    exclude:
+    - '*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - template: variables/development.yml
+  - name: buildPlatform
+    value: 'Any CPU'
+  - name: buildConfiguration
+    value: 'Release'
+
+stages:
+  - stage: development
+    condition: ne(variables['Build.SourceBranch'], 'refs/heads/main')
+    variables:
+      - template: variables/development.yml
+      
+    jobs:    
+      - job: build_src
+        steps:
+          - template: steps/src-build-steps.yml
+            parameters:
+              artifactsPath: '$(artifactsPath)'
+              srcPath: '$(srcPathMicroservice)'
+
+      - job: test_src
+        dependsOn: build_src
+        steps:
+          - template: steps/src-test-steps.yml
+            parameters:
+              unitPath: '$(srcPathMicroservices)'
+              appcsKey: '$(appcsKey)'
+              appcsConnection: '$(appcsConnection)'
+              rgEnvironment: '$(rgEnvironment)'
+
+      - job: pack_src
+        dependsOn: test_src
+        steps:
+          - task: DeleteFiles@1
+            inputs:
+              SourceFolder: '$(srcPathMicroservice)/../template'
+              Contents: '**/*'
+              RemoveDotFiles: true
+
+          - template: steps/src-pack-steps.yml
+            parameters:
+              artifactsPath: '$(artifactsPath)'
+              srcPath: '$(srcPathMicroservice)/$(apiNamespace)'
+              srcProject: '$(apiNamespace).csproj'
+
+      - job: deploy_api
+        dependsOn: pack_src
+        steps:
+          - template: steps/api-deploy-steps.yml
+            parameters:
+              appSettings: '-$(appcsKey) $(appcsConnection) -$(stConnectionKey) $(stConnection) -APPINSIGHTS_INSTRUMENTATIONKEY $(appiKey) -APPLICATIONINSIGHTS_CONNECTION_STRING $(appiConnection) -AZURE_FUNCTIONS_ENVIRONMENT $(rgEnvironment) -ASPNETCORE_ENVIRONMENT $(rgEnvironment)'
+              artifactsPath: '$(artifactsPath)'
+              apiName: '$(apiName)'
+              subscriptionId: '$(subscriptionId)'
+              subscriptionName: '$(subscriptionName)'
+
+  - stage: production
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')
+    variables:
+      - template: variables/production.yml    
+
+    jobs:    
+      - job: build_src
+        steps:
+          - template: steps/src-build-steps.yml
+            parameters:
+              artifactsPath: '$(artifactsPath)'
+              srcPath: '$(srcPathMicroservice)'
+
+      - job: test_src
+        dependsOn: build_src
+        steps:
+          - template: steps/src-test-steps.yml
+            parameters:
+              unitPath: '$(srcPathMicroservices)'
+              appcsKey: '$(appcsKey)'
+              appcsConnection: '$(appcsConnection)'
+              rgEnvironment: '$(rgEnvironment)'
+
+      - job: pack_src
+        dependsOn: test_src
+        steps:
+          - task: DeleteFiles@1
+            inputs:
+              SourceFolder: '$(srcPathMicroservice)/../template'
+              Contents: '**/*'
+              RemoveDotFiles: true
+
+          - template: steps/src-pack-steps.yml
+            parameters:
+              artifactsPath: '$(artifactsPath)'
+              srcPath: '$(srcPathMicroservice)/$(apiNamespace)'
+              srcProject: '$(apiNamespace).csproj'
+
+      - job: deploy_api
+        dependsOn: pack_src
+        steps:
+          - template: steps/api-deploy-steps.yml
+            parameters:
+              appSettings: '-$(appcsKey) $(appcsConnection) -$(stConnectionKey) $(stConnection) -APPINSIGHTS_INSTRUMENTATIONKEY $(appiKey) -APPLICATIONINSIGHTS_CONNECTION_STRING $(appiConnection) -AZURE_FUNCTIONS_ENVIRONMENT $(rgEnvironment) -ASPNETCORE_ENVIRONMENT $(rgEnvironment)'
+              artifactsPath: '$(artifactsPath)'
+              apiName: '$(apiName)'
+              subscriptionId: '$(subscriptionId)'
+              subscriptionName: '$(subscriptionName)'

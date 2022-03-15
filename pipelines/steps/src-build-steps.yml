@@ -1,0 +1,57 @@
+parameters:
+- name: artifactsPath
+  type: string 
+  default: "."
+- name: srcPath 
+  type: string 
+  default: "."
+- name: srcProject
+  type: string 
+  default: "*.csproj"
+- name: scriptsPath 
+  type: string 
+  default: "./pipelines/scripts"
+- name: nugetPathFile
+  type: string 
+  default: ".nuget/NuGet.config"
+- name: buildConfiguration
+  type: string 
+  default: "Release"
+
+steps:
+  - task: UseDotNet@2
+    displayName: 'use .net 6.x'
+    inputs:
+      packageType: 'sdk'
+      version: '6.x'
+      includePreviewVersions: true
+      
+  - task: PowerShell@2
+    displayName: 'Set-Version.ps1'
+    inputs:
+      filePath: '${{ parameters.scriptsPath }}/Set-Version.ps1'
+      arguments: '-Path ${{ parameters.srcPath }} -VersionToReplace 6.22.1 -Major 6'
+      workingDirectory: '${{ parameters.scriptsPath }}'
+
+  - task: DotNetCoreCLI@2
+    displayName: 'dotnet restore'
+    inputs:
+      command: 'restore'
+      projects: |
+        ${{ parameters.srcPath }}/**/${{ parameters.srcProject }}
+      feedsToUse: config
+      nugetConfigPath: ${{ parameters.nugetPathFile }}
+
+  - task: DotNetCoreCLI@2
+    displayName: 'dotnet build'
+    inputs:
+      command: 'build'
+      projects: |
+        ${{ parameters.srcPath }}/**/${{ parameters.srcProject }}
+      arguments: '--configuration ${{ parameters.buildConfiguration }}'
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: drop'
+    inputs:
+      pathToPublish: '${{ parameters.artifactsPath }}'
+      artifactName: drop
