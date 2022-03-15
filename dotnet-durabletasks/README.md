@@ -1,5 +1,5 @@
-# Microservice Quick-Start
-A simple Microservice solution including Domain Models, Aggregates, Persistence Repositories and an API presentation layer. This Microservice API is built using .NET 6 and Entity Framework Core.
+# Durable Task Framework Quick-Start
+Durable Task Framework (DTFx) template contains a simple Event Sourcing solution and pre-setup projects.
 
 ## Prerequisites
 You will need the following tools:
