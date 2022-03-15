@@ -30,7 +30,7 @@ steps:
     displayName: 'Set-Version.ps1'
     inputs:
       filePath: '${{ parameters.scriptsPath }}/Set-Version.ps1'
-      arguments: '-Path ${{ parameters.srcPath }} -VersionToReplace 1.22.1 -Major 6'
+      arguments: '-Path ${{ parameters.srcPath }} -VersionToReplace 6.22.1 -Major 6'
       workingDirectory: '${{ parameters.scriptsPath }}'
 
   - task: DotNetCoreCLI@2
