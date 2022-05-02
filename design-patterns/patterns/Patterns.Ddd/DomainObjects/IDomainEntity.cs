@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GoodToCode.Shared.Patterns.Ddd
+namespace GoodToCode.Templates.Patterns.Ddd
 {
     public interface IDomainEntity<TModel> : IDomainObject, IEntity
     {

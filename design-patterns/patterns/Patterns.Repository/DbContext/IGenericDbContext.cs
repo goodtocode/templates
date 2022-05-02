@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace GoodToCode.Shared.Patterns.Repository
+namespace GoodToCode.Templates.Patterns.Repository
 {
     public interface IGenericDbContext<T> where T : class
     {

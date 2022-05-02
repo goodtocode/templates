@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GoodToCode.Shared.Patterns
+namespace GoodToCode.Templates.Patterns
 {
     public static class EnvironmentVariables
     {

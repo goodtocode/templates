@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <AssemblyName>GoodToCode.Shared.Patterns.Tests</AssemblyName>
-    <RootNamespace>GoodToCode.Shared.Patterns.Tests</RootNamespace>
+    <AssemblyName>GoodToCode.Templates.Patterns.Tests</AssemblyName>
+    <RootNamespace>GoodToCode.Templates.Patterns.Tests</RootNamespace>
     <Version>6.22.1</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <IsPackable>false</IsPackable>

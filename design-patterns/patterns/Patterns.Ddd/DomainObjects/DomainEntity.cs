@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
-namespace GoodToCode.Shared.Patterns.Ddd
+namespace GoodToCode.Templates.Patterns.Ddd
 {
     public abstract class DomainEntity<TModel> : IDomainEntity<TModel>
     {

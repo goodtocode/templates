@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GoodToCode.Shared.Patterns.Cqrs
+namespace GoodToCode.Templates.Patterns.Cqrs
 {
     [Serializable]
     public class QueryResponse<T>

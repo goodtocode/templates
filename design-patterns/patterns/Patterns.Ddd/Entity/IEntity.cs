@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GoodToCode.Shared.Patterns.Ddd
+namespace GoodToCode.Templates.Patterns.Ddd
 {
     public interface IEntity
     {

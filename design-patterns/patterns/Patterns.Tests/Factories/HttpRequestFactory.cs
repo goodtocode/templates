@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace GoodToCode.Shared.Patterns.Tests
+namespace GoodToCode.Templates.Patterns.Tests
 {
     public class HttpRequestFactory
     {

@@ -3,7 +3,7 @@
 //using System.Collections.Generic;
 //using System.Text;
 
-//namespace GoodToCode.Shared.Ddd.Domain
+//namespace GoodToCode.Templates.Ddd.Domain
 //{
 //    public class OrderStartedDomainEvent : INotification
 //    {

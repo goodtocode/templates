@@ -1,5 +1,5 @@
 ﻿
-namespace GoodToCode.Shared.Patterns.Tests
+namespace GoodToCode.Templates.Patterns.Tests
 {
     public class ObjectA
     {

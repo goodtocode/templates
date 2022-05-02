@@ -1,5 +1,5 @@
 ﻿
-namespace GoodToCode.Shared.Patterns.Ddd
+namespace GoodToCode.Templates.Patterns.Ddd
 {
     public interface IDomainEvent<T>
     {

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace GoodToCode.Shared.Patterns.Cqrs
+namespace GoodToCode.Templates.Patterns.Cqrs
 {
     public abstract class AbstractQueryByKeyHandler<TEntity, TValidator> where TEntity : new() where TValidator : AbstractValidator<Guid>, new()
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GoodToCode.Shared.Patterns.Repository
+namespace GoodToCode.Templates.Patterns.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {

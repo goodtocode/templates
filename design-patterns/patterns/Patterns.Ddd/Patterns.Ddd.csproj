@@ -2,16 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <AssemblyName>GoodToCode.Shared.Patterns.Ddd</AssemblyName>
-    <RootNamespace>GoodToCode.Shared.Patterns.Ddd</RootNamespace>
+    <AssemblyName>GoodToCode.Templates.Patterns.Ddd</AssemblyName>
+    <RootNamespace>GoodToCode.Templates.Patterns.Ddd</RootNamespace>
     <Version>6.22.1</Version>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Company>GoodToCode</Company>
-    <Product>GoodToCode.Shared.Patterns.Ddd</Product>
+    <Product>GoodToCode.Templates.Patterns.Ddd</Product>
     <Authors>Robert J. Good</Authors>
     <PackageTags>.NET C# EF Core DDD Web API Azure Functions</PackageTags>
-    <Description>GoodToCode shared aspect-oriented (AOP) library for cross-cutting utility concerns.</Description>
+    <Description>GoodToCode Templates aspect-oriented (AOP) library for cross-cutting utility concerns.</Description>
     <Copyright>Copyright (c) GoodToCode. All rights reserved.</Copyright>
     <PackageProjectUrl>https://github.com/goodtocode/shared</PackageProjectUrl>
     <PackageIcon>storeicon.png</PackageIcon>
@@ -21,7 +21,7 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
     <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>GoodToCode.Shared.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>GoodToCode.Templates.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
