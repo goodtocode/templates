@@ -1,6 +1,6 @@
 ﻿using GoodToCode.Shared.Cqrs;
 using GoodToCode.Shared.Validation;
-using Microservice.Persistence;
+using Microservice.Infrastructure;
 using Microservice.Domain;
 using MediatR;
 using System;

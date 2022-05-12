@@ -11,11 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GoodToCode.Shared.Ddd" Version="5.11.332.205" />
+    <PackageReference Include="FluentValidation" Version="10.3.6" />
+    <PackageReference Include="GoodToCode.Shared.Cqrs" Version="5.11.332.205" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Microservice.Abstractions\Microservice.Abstractions.csproj" />
+    <ProjectReference Include="..\Microservice.Core\Microservice.Core.csproj" />
+    <ProjectReference Include="..\Microservice.Domain\Microservice.Domain.csproj" />
+    <ProjectReference Include="..\Microservice.Infrastructure\Microservice.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

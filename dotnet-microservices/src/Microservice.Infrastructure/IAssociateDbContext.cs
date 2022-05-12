@@ -2,7 +2,7 @@
 using Microservice.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Microservice.Persistence
+namespace Microservice.Infrastructure
 {
     public interface IAssociateDbContext : IDbContext
     {

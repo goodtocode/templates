@@ -51,7 +51,7 @@ stages:
         steps:
           - task: DeleteFiles@1
             inputs:
-              SourceFolder: '$(srcPathMicroservice)/../template'
+              SourceFolder: '$(srcPathMicroservice)/../.template'
               Contents: '**/*'
               RemoveDotFiles: true
 
@@ -100,7 +100,7 @@ stages:
         steps:
           - task: DeleteFiles@1
             inputs:
-              SourceFolder: '$(srcPathMicroservice)/../template'
+              SourceFolder: '$(srcPathMicroservice)/../.template'
               Contents: '**/*'
               RemoveDotFiles: true
 

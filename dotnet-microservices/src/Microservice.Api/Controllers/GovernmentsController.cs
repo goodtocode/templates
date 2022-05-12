@@ -1,5 +1,5 @@
 ﻿using Microservice.Domain;
-using Microservice.Persistence;
+using Microservice.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

@@ -14,7 +14,7 @@
   <TemplateContent>
     <ProjectCollection>
       <ProjectTemplateLink ProjectName="Microservice.Abstractions" CopyParameters="true">
-        Microservices.Abstractions\MyTemplate.vstemplate
+        Microservices.Core\MyTemplate.vstemplate
       </ProjectTemplateLink>
       <ProjectTemplateLink ProjectName="Microservice.Api" CopyParameters="true">
         Microservices.Api\MyTemplate.vstemplate
@@ -26,7 +26,7 @@
         Microservices.Domain\MyTemplate.vstemplate
       </ProjectTemplateLink>
       <ProjectTemplateLink ProjectName="Microservice.Persistence" CopyParameters="true">
-        Microservices.Persistence\MyTemplate.vstemplate
+        Microservices.Infrastructure\MyTemplate.vstemplate
       </ProjectTemplateLink>
       <ProjectTemplateLink ProjectName="Microservice.Tests" CopyParameters="true">
         Microservices.Tests\MyTemplate.vstemplate

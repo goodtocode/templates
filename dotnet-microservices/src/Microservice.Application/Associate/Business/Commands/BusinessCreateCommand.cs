@@ -2,7 +2,7 @@
 using GoodToCode.Shared.Validation;
 using MediatR;
 using Microservice.Domain;
-using Microservice.Persistence;
+using Microservice.Infrastructure;
 
 namespace Microservice.Application
 {

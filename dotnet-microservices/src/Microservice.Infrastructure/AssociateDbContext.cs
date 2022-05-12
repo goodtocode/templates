@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microservice.Domain;
 using System;
 
-namespace Microservice.Persistence
+namespace Microservice.Infrastructure
 {
     public partial class AssociateDbContext : DbContext, IAssociateDbContext
     {

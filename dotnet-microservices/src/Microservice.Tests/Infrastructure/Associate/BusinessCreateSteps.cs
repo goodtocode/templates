@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microservice.Domain;
-using Microservice.Persistence;
+using Microservice.Infrastructure;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microservice.Application;
 using Microservice.Domain;
-using Microservice.Persistence;
+using Microservice.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
