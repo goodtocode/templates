@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Microservice.Persistence
+namespace Microservice.Infrastructure
 {
     public static class DependencyInjection
     {

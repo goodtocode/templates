@@ -1,5 +1,5 @@
 ﻿using GoodToCode.Shared.Cqrs;
-using Microservice.Persistence;
+using Microservice.Infrastructure;
 using Microservice.Domain;
 using MediatR;
 using Microsoft.Extensions.Logging;

@@ -37,11 +37,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Microservice.Abstractions\Microservice.Abstractions.csproj" />
+		<ProjectReference Include="..\Microservice.Core\Microservice.Core.csproj" />
 		<ProjectReference Include="..\Microservice.Api\Microservice.Api.csproj" />
 		<ProjectReference Include="..\Microservice.Application\Microservice.Application.csproj" />
 		<ProjectReference Include="..\Microservice.Domain\Microservice.Domain.csproj" />
-		<ProjectReference Include="..\Microservice.Persistence\Microservice.Persistence.csproj" />
+		<ProjectReference Include="..\Microservice.Infrastructure\Microservice.Infrastructure.csproj" />
 	</ItemGroup>
 
 </Project>

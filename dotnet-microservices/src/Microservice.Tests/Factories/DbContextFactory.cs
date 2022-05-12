@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microservice.Persistence;
+using Microservice.Infrastructure;
 
 namespace Microservice.Tests
 {

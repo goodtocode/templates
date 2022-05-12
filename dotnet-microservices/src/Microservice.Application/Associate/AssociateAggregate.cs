@@ -1,6 +1,6 @@
 ﻿using GoodToCode.Shared.Domain;
 using Microservice.Domain;
-using Microservice.Persistence;
+using Microservice.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
 namespace Microservice.Application

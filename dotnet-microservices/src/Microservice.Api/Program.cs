@@ -1,6 +1,6 @@
 using MediatR;
 using Microservice.Api;
-using Microservice.Persistence;
+using Microservice.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
