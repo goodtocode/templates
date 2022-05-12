@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Microservice.Abstractions\Microservice.Abstractions.csproj" />
+    <ProjectReference Include="..\Microservice.Core\Microservice.Core.csproj" />
     <ProjectReference Include="..\Microservice.Domain\Microservice.Domain.csproj" />
   </ItemGroup>
 

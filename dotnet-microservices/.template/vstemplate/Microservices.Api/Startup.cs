@@ -1,4 +1,4 @@
-using MyCo.Microservices.Persistence;
+using MyCo.Microservices.Infrastructure;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
