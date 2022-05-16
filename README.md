@@ -28,8 +28,28 @@ You will need the following tools:
 * [@goodtocode](https://www.twitter.com/goodtocode)
 * [github.com/goodtocode](https://www.github.com/goodtocode)
 
+## Clean Architecture
+Clean Architecture is promoted by Microsoft on their .NET application architecture guide page. The e-book written by Steve "ardalis" Smith ([@ardalis](https://github.com/ardalis)) is beautifully written and well explains the beauty and benefits of using Clean Architecture. For more details, please see [**Architect Modern Web Applications with ASP.NET Core and Azure**](https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/).
+
+## Architectures and Patterns
+All .NET solutions adhere to the following:
+* DDD + Onion Architecture
+*  CQRS Pattern
+* Repository Pattern
+### dotnet-microservices
+* Microservice Architecture
+
+### dotnet-durabletasks
+* Web-queue-worker Architecture
+* Event Sourcing Pattern
+
 ## Technologies
 * .NET 6
 * EF Core 6
 * Azure Functions 4
 * Durable Task Framework 2
+* CosmosDb SDK v3
+* Open API
+
+# Give a star
+:star: If you enjoy this project, or are using this project to start your exciting new project, or are just forking it to play, please give it a star. Much appreciated! :star: 
