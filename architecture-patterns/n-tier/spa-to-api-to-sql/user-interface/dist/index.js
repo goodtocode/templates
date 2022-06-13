@@ -1,6 +1,6 @@
-function getUsers() {
-    // For now, consider the data is stored on a static `users.json` file
-    return fetch('./users.json')
+function getUsers(url = './data.json') {
+    // For now, consider the data is stored on a static `data.json` file
+    return fetch(url)
         // the JSON body is taken from the response
         .then(res => res.json())
         .then(res => {
