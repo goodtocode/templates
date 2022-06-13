@@ -1,7 +1,7 @@
 {
-  "name": "azure-functions-typescript",
+  "name": "business-logic-api",
   "version": "1.0.0",
-  "description": "Simple Azure Function in TypeScript",
+  "description": "Simple n-Tier Business Logic Layer hosted in an Azure Function",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
