@@ -23,5 +23,5 @@
       "connection": "AzureWebJobsStorage"
     }
   ],
-  "scriptFile": "../dist/HttpExample/index.js"
+  "scriptFile": "../dist/person/index.js"
 }
