@@ -9,4 +9,4 @@ function getUsers() {
         return res;
     });
 }
-//# sourceMappingURL=user.js.map
+//# sourceMappingURL=index.js.map

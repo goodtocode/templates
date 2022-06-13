@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Simple example of entry form">
     <meta name="author" content="@goodtocode">
-    <title>Pricing example · Bootstrap v5.2</title>
+    <title>CRUD SPA Example</title>
     <link rel="canonical" href="https://github.com/goodtocode/templates/">
     <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
@@ -17,46 +17,44 @@
         <header>
             <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
                 <a href="#" class="d-flex align-items-center text-dark text-decoration-none">
-                    <span class="fs-4">User example</span>
+                    <span class="fs-4">Person example</span>
                 </a>
 
                 <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                    <a class="me-3 py-2 text-dark text-decoration-none" href="#">List Users</a>
-                    <a class="me-3 py-2 text-dark text-decoration-none" href="#">Create</a>
-                    <a class="me-3 py-2 text-dark text-decoration-none" href="#">Support</a>
-                    <a class="py-2 text-dark text-decoration-none" href="#">Pricing</a>
+                    <a class="me-3 py-2 text-dark text-decoration-none" href="#list">List People</a>
+                    <a class="me-3 py-2 text-dark text-decoration-none" href="#add">Create</a>
                 </nav>
             </div>
 
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-                <h1 class="display-4 fw-normal">Simple User Entry Form</h1>
-                <p class="fs-5 text-muted">This is a simple example of an entry form for users from a datasource.</p>
+                <h1 class="display-4 fw-normal">Simple Person Entry Form</h1>
+                <p class="fs-5 text-muted">This is a simple example of an entry form for people from a datasource.</p>
             </div>
         </header>
 
         <main>
-            <h2 class="display-6 text-center mb-4">Add user</h2>
+            <h2 id="add" class="display-6 text-center mb-4">Add person</h2>
             <div class="card mb-4 rounded-3 shadow-sm border-primary">
                 <div class="card-header py-3 border-primary">
-                    <h4 class="my-0 fw-normal">Create new user</h4>
+                    <h4 class="my-0 fw-normal">Create new person</h4>
                 </div>
                 <div class="card-body">
                     <form>                        
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="floatingName" placeholder="User Name">
-                            <label for="floatingName">Password</label>
+                            <input type="text" class="form-control" id="floatingName" placeholder="Person Name">
+                            <label for="floatingName">Person Name</label>
                         </div>
                         <div class="form-floating">
                             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">Email address</label>
                         </div>
                         <div class="mb-3"></div>
-                        <button class="w-100 btn btn-lg btn-primary" type="submit">Create User</button>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Create Person</button>
                     </form>
                 </div>
             </div>
 
-            <h2 class="display-6 text-center mb-4">All Users</h2>
+            <h2 id="list" class="display-6 text-center mb-4">All People</h2>
 
             <div class="table-responsive">
                 <table class="table text-center">
@@ -69,52 +67,47 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row" class="text-start">Public</th>
-                            <td></td>
-                            <td></td>
+                            <th scope="row" class="text-start">00000000-0000-0000-0000-000000000000</th>
+                            <td>One Person</td>
+                            <td>one@person.com</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="text-start">Private</th>
-                            <td></td>
-                            <td></td>
+                            <th scope="row" class="text-start">11111111-1111-1111-1111-111111111111</th>
+                            <td>Person Deux</td>
+                            <td>deux@person.com</td>
                         </tr>
-                    </tbody>
-
-                    <tbody>
                         <tr>
-                            <th scope="row" class="text-start">Permissions</th>
-                            <td></td>
-                            <td></td>
+                            <th scope="row" class="text-start">22222222-2222-2222-2222-222222222222</th>
+                            <td>Mẹta Person</td>
+                            <td>meta@person.com</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </main>
-
         <footer class="pt-4 my-md-5 pt-md-5 border-top">
             <div class="row">
                 <div class="col-12 col-md">
-                    <small class="d-block mb-3 text-muted">&copy; 2022</small>
+                    <small class="d-block mb-3 text-muted">&copy; GoodToCode</small>
                 </div>
                 <div class="col-6 col-md">
-                    <h5>Features</h5>
+                    <h5>Actions</h5>
                     <ul class="list-unstyled text-small">
-                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
-                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#list">List People</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#add">Create Person</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md">
                     <h5>Resources</h5>
                     <ul class="list-unstyled text-small">
-                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
-                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://github.com/goodtocode">Code</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md">
                     <h5>About</h5>
                     <ul class="list-unstyled text-small">
-                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
-                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://goodtocode.com">GoodToCode.com</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://twitter.com/goodtocode">@GoodToCode</a></li>
                     </ul>
                 </div>
             </div>
