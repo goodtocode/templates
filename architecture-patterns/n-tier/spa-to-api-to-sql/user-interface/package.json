@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/goodtocode/templates/issues"
   },
-  "homepage": "https://github.com/goodtocode/templates#readme"
+  "homepage": "https://github.com/goodtocode/templates#readme",
+  "dependencies": {
+    "typescript": "^4.7.3"
+  }
 }
