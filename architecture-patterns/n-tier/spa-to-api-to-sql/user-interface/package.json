@@ -1,0 +1,26 @@
+{
+  "name": "user-interface",
+  "version": "1.0.0",
+  "description": "Simple SPA user interface for CRUD operations",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goodtocode/templates.git"
+  },
+  "keywords": [
+    "HTML",
+    "TypeScript",
+    "SPA",
+    "JavaScript",
+    "Bootstrap"
+  ],
+  "author": "GoodToCode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/goodtocode/templates/issues"
+  },
+  "homepage": "https://github.com/goodtocode/templates#readme"
+}
