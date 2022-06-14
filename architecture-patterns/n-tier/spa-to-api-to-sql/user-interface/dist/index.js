@@ -1,22 +1,50 @@
-function getUsers(url = './data.json') {
-    // For now, consider the data is stored on a static `data.json` file
+function createUsersTest() {
+    const newPerson = {
+        name: 'hi',
+        email: 'hi@person.com',
+    };
+    return JSON.stringify(newPerson);
+}
+function getUsers(url = './person-list.json') {
     return fetch(url)
-        // the JSON body is taken from the response
         .then(res => res.json())
         .then(res => {
-        // The response has an `any` type, so we need to cast
-        // it to the `User` type, and return it from the promise
+        return res;
+    });
+}
+function getUsersPromise(url = './person-list.json') {
+    return fetch(url)
+        .then(res => res.json())
+        .then(res => {
         return res;
     });
 }
 function createUser(name, email) {
-    return fetch('http://localhost:7071/api/person?name=' + name + '&email=' + email)
-        // the JSON body is taken from the response
+    fetch('http://localhost:7071/api/person-mock?name=jo&email=test', {
+        method: 'GET',
+        mode: "cors",
+        headers: {
+            accept: 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
         .then(res => res.json())
         .then(res => {
-        // The response has an `any` type, so we need to cast
-        // it to the `User` type, and return it from the promise
         return res;
+    })
+        .catch(err => {
+        console.log(err.message);
     });
+}
+function createUserSubmit(form) {
+    const elements = form.elements;
+    if (elements) {
+        const newPerson = {
+            name: elements['personName'].value,
+            email: elements['personEmail'].value,
+        };
+        createUser(newPerson.name, newPerson.email);
+        return JSON.stringify(newPerson);
+    }
 }
 //# sourceMappingURL=index.js.map

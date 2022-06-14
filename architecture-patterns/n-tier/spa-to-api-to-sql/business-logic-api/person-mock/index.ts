@@ -6,10 +6,13 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     const email = (req.query.email || (req.body && req.body.email));
 
     if (name && email) {
-        // Send a "hello" response.
+        const newPerson: Person = {
+            name: name,
+            email: email,
+        };
         context.res = {
-            status: 200, /* Defaults to 200 */
-            body: "Hello " + name + " - " + email
+            status: 200,
+            body: JSON.stringify(newPerson)
         };
     }
     else {
