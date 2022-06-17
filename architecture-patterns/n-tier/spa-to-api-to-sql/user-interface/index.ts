@@ -1,10 +1,5 @@
- function createUsersTest() {
-        const newPerson: Person = {
-                name: 'hi',
-                email: 'hi@person.com',
-        };
-        return JSON.stringify(newPerson);
-}
+import * as $ from "jquery";
+import "bootstrap";
 
 function getUsers(url: string = './person-list.json'): Promise<Person[]> {
         return fetch(url)

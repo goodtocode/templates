@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("bootstrap");
 function createUsersTest() {
     const newPerson = {
         name: 'hi',
