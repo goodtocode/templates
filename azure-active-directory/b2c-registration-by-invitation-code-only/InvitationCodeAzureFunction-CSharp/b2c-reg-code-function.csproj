@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AzureFunctionsVersion>v3</AzureFunctionsVersion>
     <RootNamespace>b2c_reg_code_function</RootNamespace>
     <UserSecretsId>9a75d38b-e748-4ef2-b85a-0b2547c8ff52</UserSecretsId>

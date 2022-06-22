@@ -59,7 +59,7 @@ $File = Remove-Prefix -String $File -Remove "/"
 # ***
 # *** Execute
 # ***
-Remove-Subfolders -Path $Path -Subfolder "netcoreapp3.1"
+Remove-Subfolders -Path $Path -Subfolder "net6.0"
 Remove-Subfolders -Path $Path -Subfolder "netstandard2.1"
 Remove-Subfolders -Path $Path -Subfolder "Debug"
 Remove-Subfolders -Path $Path -Subfolder "Release"
