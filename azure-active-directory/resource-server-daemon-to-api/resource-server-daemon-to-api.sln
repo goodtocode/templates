@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{241AB638-4786-435A-8565-93AD3C40BBB4}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "daemon-service", "daemon-service\daemon-service.csproj", "{C582513E-BB83-4361-B93D-8D50CBB0EFD1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "resource-server-api", "resource-server-api\resource-server-api.csproj", "{B2F7F31F-68FC-4CCC-8B81-387C14E64A60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C582513E-BB83-4361-B93D-8D50CBB0EFD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C582513E-BB83-4361-B93D-8D50CBB0EFD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C582513E-BB83-4361-B93D-8D50CBB0EFD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C582513E-BB83-4361-B93D-8D50CBB0EFD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2F7F31F-68FC-4CCC-8B81-387C14E64A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2F7F31F-68FC-4CCC-8B81-387C14E64A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2F7F31F-68FC-4CCC-8B81-387C14E64A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2F7F31F-68FC-4CCC-8B81-387C14E64A60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A9A2601-8CEB-4475-9E95-43A5438B71CD}
+	EndGlobalSection
+EndGlobal
