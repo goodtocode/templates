@@ -1,28 +1,48 @@
-interface Person {
-    name: string
-    email: string
+import * as $ from "jquery";
+import "bootstrap";
+
+function getUsers(url: string = './person-list.json'): Promise<Person[]> {
+        return fetch(url)
+                .then(res => res.json())
+                .then(res => {
+                        return res as Person[];
+                });
 }
 
-function getUsers(url :string = './data.json'): Promise<Person[]> {
-    // For now, consider the data is stored on a static `data.json` file
-    return fetch(url)
-            // the JSON body is taken from the response
-            .then(res => res.json())
-            .then(res => {
-                    // The response has an `any` type, so we need to cast
-                    // it to the `User` type, and return it from the promise
-                    return res as Person[]
-            })
+function getUsersPromise(url: string = './person-list.json'): Promise<Person[]> {
+        return fetch(url)
+                .then(res => res.json())
+                .then(res => {
+                        return res as Person[];
+                });
 }
 
-function createUser(name :string, email :string) {
+function createUser(name: string, email: string) {
+        fetch('http://localhost:7071/api/person-mock?name=jo&email=test', {
+                method: 'GET',
+                mode: "cors",
+                headers: {
+                        accept: 'application/json',
+                        'Content-Type': 'application/json'
+                }
+        })
+                .then(res => res.json())
+                .then(res => {
+                        return res as Person[];
+                })
+                .catch(err => {
+                        console.log(err.message);
+                });
+}
 
-    return fetch('http://localhost:7071/api/person?name=' + name + '&email=' + email)
-            // the JSON body is taken from the response
-            .then(res => res.json())
-            .then(res => {
-                    // The response has an `any` type, so we need to cast
-                    // it to the `User` type, and return it from the promise
-                    return res as Person[]
-            })
+function createUserSubmit(form: HTMLFormElement) {
+        const elements: HTMLFormControlsCollection = form.elements;
+        if (elements) {
+                const newPerson: Person = {
+                        name: elements['personName'].value,
+                        email: elements['personEmail'].value,
+                };
+                createUser(newPerson.name, newPerson.email);
+                return JSON.stringify(newPerson);
+        }
 }
