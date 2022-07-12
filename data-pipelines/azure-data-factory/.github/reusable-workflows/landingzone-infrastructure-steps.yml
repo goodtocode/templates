@@ -1,0 +1,64 @@
+name: landingzone-infrastructure-steps.yml
+
+on:
+  workflow_call:
+    inputs:
+      armPath:
+        description: 'Path to ARM *.json files - Example: ./infrastructure'
+        required: true
+        type: string
+      rgName:
+        description: 'Name of Azure Resource Group - Example: COMPANY-rg-PRODUCT-001'
+        required: true
+        type: string
+      rgLocation:
+        description: 'Azure Region of the resource group - Example: westus2'
+        required: true
+        type: string
+      appiName:
+        description: 'Name of the appi- resource to deploy - Example: appi-PRODUCT-ENVIRONMENT-001'
+        required: true
+        type: string     
+      kvName:
+        description: 'Name of the kv- resource to deploy - Example: kv-PRODUCT-ENVIRONMENT-001'
+        required: true
+        type: string
+      stName:
+        description: 'Name of the st- resource to deploy - Example: stPRODUCTENVIRONMENT001'
+        required: true
+        type: string
+      workName:
+        description: 'Name of the work- resource to deploy - Example: work-PRODUCT-ENVIRONMENT-001'
+        required: true
+        type: string
+      azureCredentials:
+        description: 'Azure AD Service Principle (App Registration) to use for deployment - Default: secrets.AZURE_CREDENTIALS'
+        required: false
+        type: string
+        default: ${{ secrets.AZURE_CREDENTIALS  }}
+
+jobs:
+  build:
+    steps:
+    - uses: actions/checkout@v2
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ github.event.inputs.azureCredentials }}
+    - name: Deploy ${{ github.event.inputs.stName  }}
+      uses: Azure/cli@v1.0.0
+      with:
+        inlineScript: az deployment group create --resource-group ${{ github.event.inputs.rgName }} --template-file ${{ github.event.inputs.armPath }}/st-storageaccount.json --parameters  ${{ github.event.inputs.armPath }}/st-storageaccount.parameters.json -name "${{ github.event.inputs.stName  }}"
+    - name: Deploy ${{ github.event.inputs.workName  }}
+      uses: Azure/cli@v1.0.0
+      with:
+        inlineScript: az deployment group create --resource-group ${{ github.event.inputs.rgName }} --template-file ${{ github.event.inputs.armPath }}/work-loganalyticsworkspace.json --parameters  ${{ github.event.inputs.armPath }}/work-loganalyticsworkspace.parameters.json -name "${{ github.event.inputs.workName  }}"
+    - name: Deploy ${{ github.event.inputs.appiName  }}
+      uses: Azure/cli@v1.0.0
+      with:
+        inlineScript: az deployment group create --resource-group ${{ github.event.inputs.rgName }} --template-file ${{ github.event.inputs.armPath }}/appi-applicationinsights.json --parameters  ${{ github.event.inputs.armPath }}/appi-applicationinsights.parameters.json -name "${{ github.event.inputs.appiName  }}" -workName "${{ github.event.inputs.workName  }}"
+    - name: Deploy ${{ github.event.inputs.kvName  }}
+      uses: Azure/cli@v1.0.0
+      with:
+        inlineScript: az deployment group create --resource-group ${{ github.event.inputs.rgName }} --template-file ${{ github.event.inputs.armPath }}/kv-keyvault.json --parameters  ${{ github.event.inputs.armPath }}/kv-keyvault.parameters.json -name "${{ github.event.inputs.kvName  }}"
+                    
