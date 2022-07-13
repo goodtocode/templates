@@ -3,13 +3,13 @@ import { useMsal } from "@azure/msal-react";
 import { loginRequest } from "../authConfig";
 import Button from "react-bootstrap/Button";
 
-function handlePopup(instance) {
+function handleSigninPopup(instance) {
     instance.loginPopup(loginRequest).catch(e => {
         console.error(e);
     });
 }
 
-function handleRedirect(instance) {
+function handleSigninRedirect(instance) {
     instance.loginRedirect(loginRequest).catch(e => {
         console.error(e);
     });
@@ -23,8 +23,9 @@ export const SignInButton = () => {
 
     return (
         <div>
-            <Button variant="secondary" className="ml-auto" onClick={() => handlePopup(instance)}>Sign in using Popup</Button>
-            <Button variant="secondary" className="ml-auto" onClick={() => handleLogin(instance)}>Sign in using Redirect</Button>
+            <Button variant="secondary" className="ml-auto" onClick={() => handleSigninPopup(instance)}>Sign in using Popup</Button>
+            <br />
+            <Button variant="secondary" className="ml-auto" onClick={() => handleSigninRedirect(instance)}>Sign in using Redirect</Button>
         </div>
     );
 }
