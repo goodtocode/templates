@@ -2,14 +2,14 @@
 # Quick-Start with Create-React-App, Azure Active Directory B2C and MSAL
 ## Procedure
 Follow the links here to recreate this app
-* [Create React SPA](https://docs.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-react)
+### [Create React SPA](https://docs.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-react)
 ```node.js npx/npm
 npx create-react-app msal-react-tutorial # Create a new React app
 cd msal-react-tutorial # Change to the app directory
 npm install @azure/msal-browser @azure/msal-react # Install the MSAL packages
 npm install react-bootstrap bootstrap # Install Bootstrap for styling
 ```
-* [Configure SPA](https://docs.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-react)
+### [Configure SPA](https://docs.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-react)
 
 | Setting       | Value       | Description  |
 | ------------- | ------------- | ----- |
@@ -19,8 +19,18 @@ npm install react-bootstrap bootstrap # Install Bootstrap for styling
 | Enter_the_Redirect_Uri_Here | http://localhost:3000 or https://172.0.0.1:5500 | URL of your local running app, with port number |
 | Enter_the_Graph_Endpoint_Here | https://graph.microsoft.com | The instance of the Microsoft Graph API the application should communicate with. For the global Microsoft Graph API endpoint, replace both instances of this string with https://graph.microsoft.com. For endpoints in national cloud deployments, see National cloud deployments in the Microsoft Graph documentation. |
 
-* [AAD App Registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-spa-app-registration)
-
+### [AAD App Registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-spa-app-registration)
+* Sign in to the Azure portal.
+* If you have access to multiple tenants, use the Directories + subscriptions filter  in the top menu to select the tenant in which you want to register an application.
+* Search for and select Azure Active Directory.
+* Under Manage, select App registrations > New registration.
+* Enter a Name for your application. Users of your app might see this name, and you can change it later.
+* Choose the Supported account types for the application. Do NOT enter a Redirect URI. For a description of the different account types, see the Register an application.
+* Select Register to create the app registration.
+* Under Authentication > Add a platform.
+* Under Web applications, select the Single-page application tile.
+* Under Redirect URIs, enter a redirect URI. Do NOT select either checkbox under Implicit grant and hybrid flows.
+* Select Configure to finish adding the redirect URI.
 
 ## Scripts
 ### `npm start`
