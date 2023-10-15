@@ -8,7 +8,7 @@
             "type": "pwa-msedge",
             "request": "launch",
             "name": "Open index.html",
-            "file": "d:\\Users\\rgood\\source\\goodtocode\\templates\\architecture-patterns\\n-tier\\spa-to-api-to-sql\\user-interface\\index.html"
+            "file": "..\\user-interface\\index.html"
         }
     ]
 }
