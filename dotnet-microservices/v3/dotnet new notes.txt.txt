@@ -1,0 +1,17 @@
+Command Line:
+
+1) Navigate to directory where template.config exists
+
+cd C:\Source\WeatherForecasts\
+
+2) Install Template command: 
+
+dotnet new --install .
+
+3) CD to folder where you're creating your new solution
+cd c:\source
+mkdir MyNewCoolApp
+cd mynewcoolapp
+
+3) Create new solution:
+dotnet new aca -o "MyNewCoolApp"
