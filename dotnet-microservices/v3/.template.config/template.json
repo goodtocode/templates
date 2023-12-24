@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Erik Christoffel",
+  "classifications": [ "Console" ],
+  "name": "AACN Clean Architecture",
+  "defaultName": "AACN Clean Architecture Template",
+  "identity": "Aacn.CleanArchitecture.CSharp",
+  "shortName": "aca",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "WeatherForecasts",
+  "preferNameDirectory": true
+}
