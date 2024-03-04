@@ -1,7 +1,11 @@
 import { ChatOpenAI } from 'langchain/chat_models/openai'
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
 
+<<<<<<< HEAD
 const openaiKey = 'API-KEY'
+=======
+    const openaiKey = 'OPENAPI_KEY'
+>>>>>>> main
 
 export const llm = new ChatOpenAI({
   openAIApiKey: openaiKey,
