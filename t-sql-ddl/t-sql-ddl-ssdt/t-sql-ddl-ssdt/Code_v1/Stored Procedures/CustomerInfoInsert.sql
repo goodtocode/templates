@@ -47,7 +47,7 @@ AS
 		End Try
 		Begin Catch
 			Rollback;
-			Exec [Log].[ExceptionLogInsertByException];
+			Exec [Acvitity].[ExceptionLogInsertByException];
 			Throw;
 		End Catch
 	End	
