@@ -56,9 +56,6 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Log" />
-    <Folder Include="Log\Stored Procedures" />
-    <Folder Include="Log\Tables" />
     <Folder Include="Customer" />
     <Folder Include="Customer\Tables" />
     <Folder Include="Code_v1" />
@@ -73,13 +70,14 @@
     <Folder Include="Scripts\Data\Master" />
     <Folder Include="Scripts\Environment" />
     <Folder Include="Security" />
+    <Folder Include="Activity" />
+    <Folder Include="Activity\Stored Procedures" />
+    <Folder Include="Activity\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Log\Stored Procedures\ExceptionLogInsertByException.sql" />
-    <Build Include="Log\Tables\ExceptionLog.sql" />
     <Build Include="Customer\Tables\Customer.sql" />
     <Build Include="Customer\Tables\CustomerType.sql" />
     <Build Include="Code_v1\Stored Procedures\CustomerInfoDelete.sql" />
@@ -95,7 +93,6 @@
     <None Include="Scripts\Data\Master\CustomerType.sql" />
     <None Include="Scripts\Environment\Dev.sql" />
     <None Include="Scripts\Environment\Production.sql" />
-    <Build Include="Security\Log.sql" />
     <Build Include="Security\Customer.sql" />
     <Build Include="Security\Code_v1.sql" />
     <Build Include="Security\Identity.sql" />
@@ -104,6 +101,9 @@
     <Build Include="Security\TestUser-Login.sql" />
     <Build Include="Security\TestUser-User.sql" />
     <Build Include="Identity\Tables\__MigrationHistory.sql" />
+    <Build Include="Activity\Stored Procedures\ExceptionLogInsertByException.sql" />
+    <Build Include="Activity\Tables\ExceptionLog.sql" />
+    <Build Include="Security\Activity.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
