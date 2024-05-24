@@ -1,10 +1,12 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Azure.KeyVault;
 using Microsoft.Azure.Services.AppAuthentication;
 using Microsoft.Extensions.Configuration.AzureKeyVault;
+using Microsoft.Identity.Web;
 using WeatherForecasts.Core.Application;
 using WeatherForecasts.Infrastructure;
-using WeatherForecasts.Infrastructure.Persistence;
 using WeatherForecasts.Presentation.WebApi;
+using WeatherForecasts.Presentation.WebApi.Configuration;
 
 [assembly: ApiConventionType(typeof(DefaultApiConventions))]
 
@@ -40,8 +42,8 @@ app.UseRouting();
 app.UseStaticFiles();
 app.UseHttpsRedirection();
 // ToDo: Setup Authentication with Bearer Token
-// app.UseAuthorization();
-// app.UseAuthentication();
+//app.UseAuthorization();
+//app.UseAuthentication();
 app.MapControllers(); 
 app.UseCors("AllowOrigin");
 app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
