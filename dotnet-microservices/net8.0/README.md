@@ -3,28 +3,37 @@ A simple Microservice solution including Domain Models, Aggregates, Persistence 
 
 ## Prerequisites
 You will need the following tools:
-* [Visual Studio Code or 2022](https://www.visualstudio.com/downloads/)
-* [.NET Core SDK 8.0 or above](https://www.microsoft.com/net/download/dotnet-core/6.0)
-* [Optional: SQL Server 2022 or above](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+### Visual Studio
+[Visual Studio Workload IDs](https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community?view=vs-2022&preserve-view=true)
+```
+winget install --id Microsoft.VisualStudio.2022.Community --override "--quiet --add Microsoft.Visualstudio.Workload.Azure --add Microsoft.VisualStudio.Workload.Data --add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetWeb"
+```
+### Or VS Code (code .)
+```
+winget install Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
+```
+
+### .NET SDK (dotnet)
+```
+winget install Microsoft.DotNet.SDK.8 --silent
+```
+
+3.* [Optional: SQL Server 2022 or above](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
 ## Setup
 Follow these steps to get your development environment set up:
 
   ### 1. Setup your local ASPNETCORE_ENVIRONMENT setting
-     ```
-	- Application layer uses ASPNETCORE_ENVIRONMENT environment variable, and will default to Production if not found.
+  	- Application layer uses ASPNETCORE_ENVIRONMENT environment variable, and will default to Production if not found.
 	- Add the ASPNETCORE_ENVIRONMENT entry in your Enviornment Variables
 
-	 To accopmlish this on Windows
-	 1. Open Control Panel > System > >Advanced Settings > Environment Variables > System Variables
-	 2. Next add new User Variable
-		 UserVariables > New
-				Variable name:  ASPNETCORE_ENVIRONMENT
-				Variable value: Development
-	 3. Then Ok (to save)
-	 
-	 You will need to restart Visual Studio, VS Code and Terminals to see the changes
-	 ```
+	To accopmlish this on Windows:
+	```
+	Set-Item -Path Env:ASPNETCORE_ENVIRONMENT -Value "Development"
+	Get-Childitem env:
+	```
+
+	You will need to restart Visual Studio, VS Code and Terminals to see the changes
 
   ### 2. Setup your SQL Server connection string in appsettings.*.json
      ```

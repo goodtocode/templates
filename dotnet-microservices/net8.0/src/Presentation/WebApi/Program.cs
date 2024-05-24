@@ -10,10 +10,12 @@ using WeatherForecasts.Presentation.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Use for B2C
 //builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 //    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAdB2C"));
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection(AppConfigurationKeys.AzureAdSectionKey));
+// Use for Azure AD Client Credential Flow
+//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection(AppConfigurationKeys.AzureAdSectionKey));
 
 builder.Host.UseSerilog((context, config) =>
 {
@@ -23,26 +25,27 @@ builder.Host.UseSerilog((context, config) =>
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddWebUIServices(builder.Configuration);
-AddKeyVaultConfigurationSettings(builder);
+//AddKeyVaultConfigurationSettings(builder);
 BuildApiVerAndApiExplorer(builder);
 
 var app = builder.Build();
 
-if (app.Environment.EnvironmentName == "Local")
+if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Local")
 {
     app.UseSwagger();
     UseSwaggerUiConfigs();
-    using var scope = app.Services.CreateScope();
-    var initializer = scope.ServiceProvider.GetRequiredService<WeatherForecastsDbContextInitializer>();
-    await initializer.InitialiseAsync();
-    await initializer.SeedAsync();
+    //using var scope = app.Services.CreateScope();
+    //var initializer = scope.ServiceProvider.GetRequiredService<WeatherForecastsDbContextInitializer>();
+    //await initializer.InitialiseAsync();
+    //await initializer.SeedAsync();
 }
 
 app.UseRouting();
 app.UseStaticFiles();
 app.UseHttpsRedirection();
-app.UseAuthorization();
-app.UseAuthentication();
+// Enable when auth is setup (builder.Services.AddAuthentication)
+//app.UseAuthorization();
+//app.UseAuthentication();
 app.MapControllers(); 
 app.UseCors("AllowOrigin");
 app.UseEndpoints(endpoints => { endpoints.MapControllers(); });

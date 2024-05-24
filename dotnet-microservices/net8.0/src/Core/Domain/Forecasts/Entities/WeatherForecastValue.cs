@@ -32,11 +32,11 @@ public class ForecastValue : ValueObject
         return Result.Success(new ForecastValue(key, date, temperatureF, zipCodes));
     }
 
-    protected override IEnumerable<object> GetEqualityComponents()
+    protected override IEnumerable<IComparable> GetEqualityComponents()
     {
         yield return Key;
         yield return Date;
         yield return TemperatureF;
-        yield return ZipCodes;
+        yield return (IComparable)ZipCodes;
     }
 }
