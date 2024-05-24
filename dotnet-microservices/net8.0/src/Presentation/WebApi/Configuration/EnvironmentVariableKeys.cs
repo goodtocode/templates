@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WeatherForecasts.Presentation.WebApi
+namespace WeatherForecasts.Presentation.WebApi.Configuration
 {
     public static class EnvironmentVariables
     {

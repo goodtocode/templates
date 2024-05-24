@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Presentation.WebApi
+﻿namespace WeatherForecasts.Presentation.WebApi.Configuration
 {
     public struct AppConfigurationKeys
     {

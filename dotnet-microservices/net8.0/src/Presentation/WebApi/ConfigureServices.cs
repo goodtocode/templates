@@ -14,7 +14,8 @@ public static class ConfigureServices
                 setupAction.Filters.Add(
                     new ProducesDefaultResponseTypeAttribute());
 
-                setupAction.Filters.Add(new AuthorizeFilter(new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build()));
+                // ToDo: Setup Authentication with Bearer Token
+                // setupAction.Filters.Add(new AuthorizeFilter(new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build()));
                 setupAction.Filters.Add<ApiExceptionFilterAttribute>();
             })
             .AddFluentValidation()
@@ -35,24 +36,25 @@ public static class ConfigureServices
         
         services.AddSwaggerGen(setupAction =>
         {
-            setupAction.AddSecurityDefinition("Bearer",
-                new OpenApiSecurityScheme
-                {
-                    Description = "JWT Authorization header using the Bearer scheme.",
-                    Type = SecuritySchemeType.Http,
-                    Scheme = "bearer"
-                });
+            // ToDo: Setup Authentication with Bearer Token
+            //setupAction.AddSecurityDefinition("Bearer",
+            //    new OpenApiSecurityScheme
+            //    {
+            //        Description = "JWT Authorization header using the Bearer scheme.",
+            //        Type = SecuritySchemeType.Http,
+            //        Scheme = "bearer"
+            //    });
 
-            setupAction.AddSecurityRequirement(new OpenApiSecurityRequirement
-            {
-                {
-                    new OpenApiSecurityScheme
-                    {
-                        Reference = new OpenApiReference {Id = "Bearer", Type = ReferenceType.SecurityScheme}
-                    },
-                    new List<string>()
-                }
-            });
+            //setupAction.AddSecurityRequirement(new OpenApiSecurityRequirement
+            //{
+            //    {
+            //        new OpenApiSecurityScheme
+            //        {
+            //            Reference = new OpenApiReference {Id = "Bearer", Type = ReferenceType.SecurityScheme}
+            //        },
+            //        new List<string>()
+            //    }
+            //});
 
             setupAction.MapType<decimal>(() =>
                 new OpenApiSchema

@@ -10,17 +10,13 @@ using WeatherForecasts.Presentation.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// ToDo: Setup Authentication with Bearer Token
 // Use for B2C
 //builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 //    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAdB2C"));
 // Use for Azure AD Client Credential Flow
 //builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 //    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection(AppConfigurationKeys.AzureAdSectionKey));
-
-builder.Host.UseSerilog((context, config) =>
-{
-    config.WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day);
-});
 
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
@@ -43,9 +39,9 @@ if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Local
 app.UseRouting();
 app.UseStaticFiles();
 app.UseHttpsRedirection();
-// Enable when auth is setup (builder.Services.AddAuthentication)
-//app.UseAuthorization();
-//app.UseAuthentication();
+// ToDo: Setup Authentication with Bearer Token
+// app.UseAuthorization();
+// app.UseAuthentication();
 app.MapControllers(); 
 app.UseCors("AllowOrigin");
 app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
