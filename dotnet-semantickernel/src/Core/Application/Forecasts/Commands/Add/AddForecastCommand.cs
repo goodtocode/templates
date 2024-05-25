@@ -1,9 +1,9 @@
 ﻿using FluentValidation.Results;
-using WeatherForecasts.Core.Application.Common.Interfaces;
-using WeatherForecasts.Core.Domain.Forecasts.Entities;
-using ValidationException = WeatherForecasts.Core.Application.Common.Exceptions.CustomValidationException;
+using SemanticKernel.Core.Application.Common.Interfaces;
+using SemanticKernel.Core.Domain.Forecasts.Entities;
+using ValidationException = SemanticKernel.Core.Application.Common.Exceptions.CustomValidationException;
 
-namespace WeatherForecasts.Core.Application.Forecasts.Commands.Add;
+namespace SemanticKernel.Core.Application.Forecasts.Commands.Add;
 
 public class AddForecastCommand : IRequest
 {
@@ -18,9 +18,9 @@ public class AddForecastCommand : IRequest
 
 public class AddForecastCommandHandler : IRequestHandler<AddForecastCommand>
 {
-    private readonly IWeatherForecastsContext _context;
+    private readonly ISemanticKernelContext _context;
 
-    public AddForecastCommandHandler(IWeatherForecastsContext context)
+    public AddForecastCommandHandler(ISemanticKernelContext context)
     {
         _context = context;
     }

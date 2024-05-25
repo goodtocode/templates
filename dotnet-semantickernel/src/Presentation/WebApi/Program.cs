@@ -3,10 +3,10 @@ using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Identity.Web;
-using WeatherForecasts.Core.Application;
-using WeatherForecasts.Infrastructure;
-using WeatherForecasts.Presentation.WebApi;
-using WeatherForecasts.Presentation.WebApi.Configuration;
+using SemanticKernel.Core.Application;
+using SemanticKernel.Infrastructure;
+using SemanticKernel.Presentation.WebApi;
+using SemanticKernel.Presentation.WebApi.Configuration;
 
 [assembly: ApiConventionType(typeof(DefaultApiConventions))]
 
@@ -33,7 +33,7 @@ if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Local
     app.UseSwagger();
     UseSwaggerUiConfigs();
     //using var scope = app.Services.CreateScope();
-    //var initializer = scope.ServiceProvider.GetRequiredService<WeatherForecastsDbContextInitializer>();
+    //var initializer = scope.ServiceProvider.GetRequiredService<SemanticKernelDbContextInitializer>();
     //await initializer.InitialiseAsync();
     //await initializer.SeedAsync();
 }

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Polly;
-using WeatherForecasts.Infrastructure.HttpClient;
+using SemanticKernel.Infrastructure.HttpClient;
 
-namespace WeatherForecasts.Core.Application;
+namespace SemanticKernel.Core.Application;
 
 public static class ConfigureSecuredHttpClient
 {

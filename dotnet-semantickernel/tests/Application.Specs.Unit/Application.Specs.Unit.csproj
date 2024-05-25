@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
-		<RootNamespace>WeatherForecasts.Specs.Application.Unit</RootNamespace>
-		<AssemblyName>WeatherForecasts.Specs.Application.Unit</AssemblyName>
+		<RootNamespace>SemanticKernel.Specs.Application.Unit</RootNamespace>
+		<AssemblyName>SemanticKernel.Specs.Application.Unit</AssemblyName>
 		<IsPackable>false</IsPackable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
@@ -23,7 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <SpecFlowObsoleteCodeBehindFiles Remove="ForecastLists\Queries\GetPaginated\GetAllWeatherForecastsQuery.feature.cs" />
+	  <SpecFlowObsoleteCodeBehindFiles Remove="ForecastLists\Queries\GetPaginated\GetAllSemanticKernelQuery.feature.cs" />
 	</ItemGroup>
 
 
@@ -50,7 +50,7 @@
 			<Visible>$(UsingMicrosoftNETSdk)</Visible>
 			<CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
 		</SpecFlowFeatureFiles>
-		<SpecFlowFeatureFiles Update="ForecastLists\Queries\GetPaginated\GetPaginatedWeatherForecastsQuery.feature">
+		<SpecFlowFeatureFiles Update="ForecastLists\Queries\GetPaginated\GetPaginatedSemanticKernelQuery.feature">
 		  <Visible>$(UsingMicrosoftNETSdk)</Visible>
 		  <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
 		</SpecFlowFeatureFiles>
@@ -58,8 +58,8 @@
 
 
 	<ItemGroup>
-	  <Compile Update="ForecastLists\Queries\GetPaginated\GetPaginatedWeatherForecastsQuery.feature.cs">
-	    <DependentUpon>GetPaginatedWeatherForecastsQuery.feature</DependentUpon>
+	  <Compile Update="ForecastLists\Queries\GetPaginated\GetPaginatedSemanticKernelQuery.feature.cs">
+	    <DependentUpon>GetPaginatedSemanticKernelQuery.feature</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 

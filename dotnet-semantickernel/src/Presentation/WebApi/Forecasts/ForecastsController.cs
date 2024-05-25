@@ -1,11 +1,11 @@
-﻿using WeatherForecasts.Core.Application.Forecasts.Commands.Add;
-using WeatherForecasts.Core.Application.Forecasts.Commands.Patch;
-using WeatherForecasts.Core.Application.Forecasts.Commands.Remove;
-using WeatherForecasts.Core.Application.Forecasts.Commands.Update;
-using WeatherForecasts.Core.Application.Forecasts.Queries.Get;
-using WeatherForecasts.Presentation.WebApi.Common;
+﻿using SemanticKernel.Core.Application.Forecasts.Commands.Add;
+using SemanticKernel.Core.Application.Forecasts.Commands.Patch;
+using SemanticKernel.Core.Application.Forecasts.Commands.Remove;
+using SemanticKernel.Core.Application.Forecasts.Commands.Update;
+using SemanticKernel.Core.Application.Forecasts.Queries.Get;
+using SemanticKernel.Presentation.WebApi.Common;
 
-namespace WeatherForecasts.Presentation.WebApi.Forecasts;
+namespace SemanticKernel.Presentation.WebApi.Forecasts;
 
 [ApiController]
 [ApiConventionType(typeof(DefaultApiConventions))]

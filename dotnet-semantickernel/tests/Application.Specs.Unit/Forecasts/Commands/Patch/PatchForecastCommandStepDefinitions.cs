@@ -1,7 +1,7 @@
-using WeatherForecasts.Core.Application.Forecasts.Commands.Patch;
-using WeatherForecasts.Core.Domain.Forecasts.Entities;
+using SemanticKernel.Core.Application.Forecasts.Commands.Patch;
+using SemanticKernel.Core.Domain.Forecasts.Entities;
 
-namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Commands.Patch;
+namespace SemanticKernel.Specs.Application.Unit.Forecasts.Commands.Patch;
 
 [Binding]
 [Scope(Tag= "patchForecastCommand")]
@@ -72,8 +72,8 @@ public class PatchForecastCommandStepDefinitions : TestBase
             var weatherForecastValue =
                 ForecastValue.Create(_forecastKey, DateTime.Now.AddDays(-1), 75, new List<int>(){ 90000, 90002});
 
-            WeatherForecastsContext.Forecasts.Add(new Forecast(weatherForecastValue.Value));
-            await WeatherForecastsContext.SaveChangesAsync(CancellationToken.None);
+            SemanticKernelContext.Forecasts.Add(new Forecast(weatherForecastValue.Value));
+            await SemanticKernelContext.SaveChangesAsync(CancellationToken.None);
         }
 
         var validator = new PatchForecastCommandValidator();
@@ -82,7 +82,7 @@ public class PatchForecastCommandStepDefinitions : TestBase
         if (_validationResponse.IsValid)
             try
             {
-                var handler = new PatchWeatherForecastCommandHandler(WeatherForecastsContext);
+                var handler = new PatchWeatherForecastCommandHandler(SemanticKernelContext);
                 await handler.Handle(request, CancellationToken.None);
                 _responseType = CommandResponseType.Successful;
             }

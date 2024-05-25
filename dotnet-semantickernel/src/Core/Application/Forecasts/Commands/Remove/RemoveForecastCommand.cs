@@ -1,7 +1,7 @@
-﻿using WeatherForecasts.Core.Application.Common.Exceptions;
-using WeatherForecasts.Core.Application.Common.Interfaces;
+﻿using SemanticKernel.Core.Application.Common.Exceptions;
+using SemanticKernel.Core.Application.Common.Interfaces;
 
-namespace WeatherForecasts.Core.Application.Forecasts.Commands.Remove;
+namespace SemanticKernel.Core.Application.Forecasts.Commands.Remove;
 
 public class RemoveForecastCommand : IRequest
 {
@@ -10,9 +10,9 @@ public class RemoveForecastCommand : IRequest
 
 public class RemoveForecastCommandHandler : IRequestHandler<RemoveForecastCommand>
 {
-    private readonly IWeatherForecastsContext _context;
+    private readonly ISemanticKernelContext _context;
 
-    public RemoveForecastCommandHandler(IWeatherForecastsContext context)
+    public RemoveForecastCommandHandler(ISemanticKernelContext context)
     {
         _context = context;
     }

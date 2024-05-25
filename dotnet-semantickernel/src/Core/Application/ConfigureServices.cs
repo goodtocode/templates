@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using WeatherForecasts.Core.Application.Common.Behaviours;
+using SemanticKernel.Core.Application.Common.Behaviours;
 
-namespace WeatherForecasts.Core.Application;
+namespace SemanticKernel.Core.Application;
 
 public static class ConfigureServices
 {

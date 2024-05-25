@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Core.Application.Forecasts.Commands.Patch;
+﻿namespace SemanticKernel.Core.Application.Forecasts.Commands.Patch;
 
 public class PatchForecastCommandValidator : AbstractValidator<PatchForecastCommand>
 {

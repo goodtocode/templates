@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
-		<RootNamespace>WeatherForecasts.Core.Application</RootNamespace>
-		<AssemblyName>WeatherForecasts.Core.Application</AssemblyName>
+		<RootNamespace>SemanticKernel.Core.Application</RootNamespace>
+		<AssemblyName>SemanticKernel.Core.Application</AssemblyName>
 		<IsPackable>false</IsPackable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>

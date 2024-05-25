@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Core.Application.ForecastCalculations.Queries.GetCelsiusToFahrenheit;
+﻿namespace SemanticKernel.Core.Application.ForecastCalculations.Queries.GetCelsiusToFahrenheit;
 
 public class
     GetCelsiusToFahrenheitCalculationConversionQueryValidator : AbstractValidator<

@@ -1,6 +1,6 @@
-﻿using WeatherForecasts.Core.Application.Common.Exceptions;
+﻿using SemanticKernel.Core.Application.Common.Exceptions;
 
-namespace WeatherForecasts.Presentation.WebApi.Common;
+namespace SemanticKernel.Presentation.WebApi.Common;
 
 /// <summary>
 ///     Filter to handle ApiExceptionFilterAttribute

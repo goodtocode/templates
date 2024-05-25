@@ -1,6 +1,6 @@
-﻿using WeatherForecasts.Core.Domain.Forecasts.Entities;
+﻿using SemanticKernel.Core.Domain.Forecasts.Entities;
 
-namespace WeatherForecasts.Infrastructure.Persistence.Configurations;
+namespace SemanticKernel.Infrastructure.Persistence.Configurations;
 
 public class ForecastZipcodeConfig : IEntityTypeConfiguration<WeatherForecastZipcode>
 {

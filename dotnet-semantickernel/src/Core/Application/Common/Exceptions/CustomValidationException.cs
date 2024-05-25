@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
 
-namespace WeatherForecasts.Core.Application.Common.Exceptions;
+namespace SemanticKernel.Core.Application.Common.Exceptions;
 
 public class CustomValidationException : Exception
 {

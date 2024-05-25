@@ -1,8 +1,8 @@
-﻿using WeatherForecasts.Core.Application.Common.Exceptions;
-using WeatherForecasts.Core.Application.Common.Interfaces;
-using WeatherForecasts.Core.Domain.Forecasts.Models;
+﻿using SemanticKernel.Core.Application.Common.Exceptions;
+using SemanticKernel.Core.Application.Common.Interfaces;
+using SemanticKernel.Core.Domain.Forecasts.Models;
 
-namespace WeatherForecasts.Core.Application.Forecasts.Queries.Get;
+namespace SemanticKernel.Core.Application.Forecasts.Queries.Get;
 
 public class GetWeatherForecastQuery : IRequest<ForecastVm>
 {
@@ -11,10 +11,10 @@ public class GetWeatherForecastQuery : IRequest<ForecastVm>
 
 public class GetForecastQueryHandler : IRequestHandler<GetWeatherForecastQuery, ForecastVm>
 {
-    private readonly IWeatherForecastsContext _context;
+    private readonly ISemanticKernelContext _context;
     private readonly IMapper _mapper;
 
-    public GetForecastQueryHandler(IWeatherForecastsContext context, IMapper mapper)
+    public GetForecastQueryHandler(ISemanticKernelContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;

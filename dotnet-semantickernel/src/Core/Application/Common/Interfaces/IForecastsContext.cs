@@ -1,9 +1,9 @@
-﻿using WeatherForecasts.Core.Domain.Forecasts.Entities;
-using WeatherForecasts.Core.Domain.Forecasts.Models;
+﻿using SemanticKernel.Core.Domain.Forecasts.Entities;
+using SemanticKernel.Core.Domain.Forecasts.Models;
 
-namespace WeatherForecasts.Core.Application.Common.Interfaces;
+namespace SemanticKernel.Core.Application.Common.Interfaces;
 
-public interface IWeatherForecastsContext
+public interface ISemanticKernelContext
 {
     DbSet<ForecastsView> ForecastViews { get; }
     DbSet<Forecast> Forecasts { get; }

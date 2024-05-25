@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Core.Domain.Common;
+﻿namespace SemanticKernel.Core.Domain.Common;
 
 public interface IDomainEvent
 {

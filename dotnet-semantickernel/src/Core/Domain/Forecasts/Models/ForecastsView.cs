@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Core.Domain.Forecasts.Models;
+﻿namespace SemanticKernel.Core.Domain.Forecasts.Models;
 
 public class ForecastsView
 {

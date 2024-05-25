@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Infrastructure.HttpClient;
+﻿namespace SemanticKernel.Infrastructure.HttpClient;
 
 public class ClientSetting
 {

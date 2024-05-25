@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Core.Application.Common.Interfaces;
+﻿namespace SemanticKernel.Core.Application.Common.Interfaces;
 
 public interface IDateTime
 {

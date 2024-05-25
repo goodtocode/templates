@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace WeatherForecasts.Core.Application.Common.Behaviours;
+namespace SemanticKernel.Core.Application.Common.Behaviours;
 
 public class CustomUnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
 {

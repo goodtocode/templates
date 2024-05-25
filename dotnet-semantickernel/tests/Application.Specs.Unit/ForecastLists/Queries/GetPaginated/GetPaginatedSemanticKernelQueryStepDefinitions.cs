@@ -1,14 +1,14 @@
-using WeatherForecasts.Core.Application.Common.Exceptions;
-using WeatherForecasts.Core.Application.Common.Models;
-using WeatherForecasts.Core.Application.ForecastLists.Queries.GetPaginated;
-using WeatherForecasts.Core.Domain.Forecasts.Models;
-using WeatherForecasts.Infrastructure.Persistence;
+using SemanticKernel.Core.Application.Common.Exceptions;
+using SemanticKernel.Core.Application.Common.Models;
+using SemanticKernel.Core.Application.ForecastLists.Queries.GetPaginated;
+using SemanticKernel.Core.Domain.Forecasts.Models;
+using SemanticKernel.Infrastructure.Persistence;
 
-namespace WeatherForecasts.Specs.Application.Unit.ForecastLists.Queries.GetPaginated;
+namespace SemanticKernel.Specs.Application.Unit.ForecastLists.Queries.GetPaginated;
 
 [Binding]
-[Scope(Tag = "getPaginatedWeatherForecastsQuery")]
-public class GetPaginatedWeatherForecastsQueryStepDefinitions : TestBase
+[Scope(Tag = "getPaginatedSemanticKernelQuery")]
+public class GetPaginatedSemanticKernelQueryStepDefinitions : TestBase
 {
     private string _def;
     private bool _foreacastExists;
@@ -42,15 +42,15 @@ public class GetPaginatedWeatherForecastsQueryStepDefinitions : TestBase
     }
 
     [Given(@"A collection of Weather Forecasts Exist ""([^""]*)""")]
-    public void GivenACollectionOfWeatherForecastsExist(bool forecastExists)
+    public void GivenACollectionOfSemanticKernelExist(bool forecastExists)
     {
         _foreacastExists = forecastExists;
     }
 
     [When(@"I get paginated weather forecasts")]
-    public async Task WhenIGetPaginatedWeatherForecasts()
+    public async Task WhenIGetPaginatedSemanticKernel()
     {
-        var context = new WeatherForecastsContext(new DbContextOptionsBuilder<WeatherForecastsContext>()
+        var context = new SemanticKernelContext(new DbContextOptionsBuilder<SemanticKernelContext>()
             .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options);
 
         if (_foreacastExists)
@@ -77,7 +77,7 @@ public class GetPaginatedWeatherForecastsQueryStepDefinitions : TestBase
         if (_validationResponse.IsValid)
             try
             {
-                var handler = new GetWeatherForecastsPaginatedQueryHandler(context, Mapper);
+                var handler = new GetSemanticKernelPaginatedQueryHandler(context, Mapper);
                 _response = await handler.Handle(request, CancellationToken.None);
                 _responseType = CommandResponseType.Successful;
                 _response = await handler.Handle(request, CancellationToken.None);
@@ -174,7 +174,7 @@ public class GetPaginatedWeatherForecastsQueryStepDefinitions : TestBase
     }
 
     [Then(@"The response has a collection of weather forecasts")]
-    public void ThenTheResponseHasACollectionOfWeatherForecasts()
+    public void ThenTheResponseHasACollectionOfSemanticKernel()
     {
         if (_responseType != CommandResponseType.Successful) return;
 

@@ -1,4 +1,4 @@
-﻿@getPaginatedWeatherForecastsQuery
+﻿@getPaginatedSemanticKernelQuery
 Feature: Get Weather Forecasts Paginated Query
 As a weather forecasts user
 I can get a paginated collection of forecasts

@@ -1,7 +1,7 @@
 ﻿using AutoMapper.QueryableExtensions;
-using WeatherForecasts.Core.Application.Common.Interfaces;
+using SemanticKernel.Core.Application.Common.Interfaces;
 
-namespace WeatherForecasts.Core.Application.ForecastLists.Queries.GetAll;
+namespace SemanticKernel.Core.Application.ForecastLists.Queries.GetAll;
 
 public class GetAllForecastsQuery : IRequest<ForecastsVm>
 {
@@ -10,10 +10,10 @@ public class GetAllForecastsQuery : IRequest<ForecastsVm>
 
 public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecastsQuery, ForecastsVm>
 {
-    private readonly IWeatherForecastsContext _context;
+    private readonly ISemanticKernelContext _context;
     private readonly IMapper _mapper;
 
-    public GetAllWeatherForecastQueryHandler(IWeatherForecastsContext context, IMapper mapper)
+    public GetAllWeatherForecastQueryHandler(ISemanticKernelContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;
@@ -23,9 +23,9 @@ public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecasts
         CancellationToken cancellationToken)
     {
         if (!string.IsNullOrWhiteSpace(request.ZipcodeFilter))
-            return await GetFilteredWeatherForecasts(request, cancellationToken);
+            return await GetFilteredSemanticKernel(request, cancellationToken);
 
-        var vm = await GetAllWeatherForecasts(cancellationToken);
+        var vm = await GetAllSemanticKernel(cancellationToken);
         PopulateCalculationsF(vm);
         return vm;
     }
@@ -36,7 +36,7 @@ public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecasts
             weatherForecast.TemperatureF = 32 + (int) (weatherForecast.TemperatureC / 0.5556);
     }
 
-    private async Task<ForecastsVm> GetAllWeatherForecasts(CancellationToken cancellationToken)
+    private async Task<ForecastsVm> GetAllSemanticKernel(CancellationToken cancellationToken)
     {
         ForecastsVm vm;
 
@@ -50,7 +50,7 @@ public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecasts
         return vm;
     }
 
-    private async Task<ForecastsVm> GetFilteredWeatherForecasts(GetAllForecastsQuery request,
+    private async Task<ForecastsVm> GetFilteredSemanticKernel(GetAllForecastsQuery request,
         CancellationToken cancellationToken)
     {
         ForecastsVm vm;

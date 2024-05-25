@@ -1,15 +1,15 @@
 ﻿using System.Reflection;
-using WeatherForecasts.Core.Application.Common.Interfaces;
-using WeatherForecasts.Core.Domain.Forecasts.Entities;
-using WeatherForecasts.Core.Domain.Forecasts.Models;
+using SemanticKernel.Core.Application.Common.Interfaces;
+using SemanticKernel.Core.Domain.Forecasts.Entities;
+using SemanticKernel.Core.Domain.Forecasts.Models;
 
-namespace WeatherForecasts.Infrastructure.Persistence;
+namespace SemanticKernel.Infrastructure.Persistence;
 
-public partial class WeatherForecastsContext : DbContext, IWeatherForecastsContext
+public partial class SemanticKernelContext : DbContext, ISemanticKernelContext
 {
-    protected WeatherForecastsContext() { }
+    protected SemanticKernelContext() { }
 
-    public WeatherForecastsContext(DbContextOptions<WeatherForecastsContext> options) : base(options) { }
+    public SemanticKernelContext(DbContextOptions<SemanticKernelContext> options) : base(options) { }
 
     public DbSet<ForecastsView> ForecastViews => Set<ForecastsView>();
 

@@ -1,9 +1,9 @@
 ﻿using AutoMapper.QueryableExtensions;
-using WeatherForecasts.Core.Application.Common.Interfaces;
-using WeatherForecasts.Core.Application.Common.Mappings;
-using WeatherForecasts.Core.Application.Common.Models;
+using SemanticKernel.Core.Application.Common.Interfaces;
+using SemanticKernel.Core.Application.Common.Mappings;
+using SemanticKernel.Core.Application.Common.Models;
 
-namespace WeatherForecasts.Core.Application.ForecastLists.Queries.GetPaginated;
+namespace SemanticKernel.Core.Application.ForecastLists.Queries.GetPaginated;
 
 public class GetForecastsPaginatedQuery : IRequest<PaginatedList<ForecastPaginatedDto>>
 {
@@ -12,13 +12,13 @@ public class GetForecastsPaginatedQuery : IRequest<PaginatedList<ForecastPaginat
 }
 
 public class
-    GetWeatherForecastsPaginatedQueryHandler : IRequestHandler<GetForecastsPaginatedQuery,
+    GetSemanticKernelPaginatedQueryHandler : IRequestHandler<GetForecastsPaginatedQuery,
         PaginatedList<ForecastPaginatedDto>>
 {
-    private readonly IWeatherForecastsContext _context;
+    private readonly ISemanticKernelContext _context;
     private readonly IMapper _mapper;
 
-    public GetWeatherForecastsPaginatedQueryHandler(IWeatherForecastsContext context, IMapper mapper)
+    public GetSemanticKernelPaginatedQueryHandler(ISemanticKernelContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;
@@ -27,14 +27,14 @@ public class
     public async Task<PaginatedList<ForecastPaginatedDto>> Handle(GetForecastsPaginatedQuery request,
         CancellationToken cancellationToken)
     {
-        var paginatedWeatherForecasts = await _context.ForecastViews
+        var paginatedSemanticKernel = await _context.ForecastViews
             .AsNoTracking()
             .OrderByDescending(x => x.ForecastDate)
             .ProjectTo<ForecastPaginatedDto>(_mapper.ConfigurationProvider)
             .PaginatedListAsync(request.PageNumber, request.PageSize);
 
-        foreach (var item in paginatedWeatherForecasts.Items) item.TemperatureC = (item.TemperatureF - 32) * 5 / 9;
+        foreach (var item in paginatedSemanticKernel.Items) item.TemperatureC = (item.TemperatureF - 32) * 5 / 9;
 
-        return paginatedWeatherForecasts;
+        return paginatedSemanticKernel;
     }
 }

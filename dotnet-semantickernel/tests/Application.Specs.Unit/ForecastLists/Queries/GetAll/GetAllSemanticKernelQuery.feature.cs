@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace WeatherForecasts.Specs.Application.Unit.ForecastLists.Queries.GetAll
+namespace SemanticKernel.Specs.Application.Unit.ForecastLists.Queries.GetAll
 {
     using TechTalk.SpecFlow;
     using System;
@@ -30,7 +30,7 @@ namespace WeatherForecasts.Specs.Application.Unit.ForecastLists.Queries.GetAll
         private static string[] featureTags = new string[] {
                 "getAllForecastsQuery"};
         
-#line 1 "GetAllWeatherForecastsQuery.feature"
+#line 1 "GetAllSemanticKernelQuery.feature"
 #line hidden
         
         public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
@@ -66,7 +66,7 @@ namespace WeatherForecasts.Specs.Application.Unit.ForecastLists.Queries.GetAll
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "Get All Forecasts")))
             {
-                global::WeatherForecasts.Specs.Application.Unit.ForecastLists.Queries.GetAll.GetAllForecastsFeature.FeatureSetup(null);
+                global::SemanticKernel.Specs.Application.Unit.ForecastLists.Queries.GetAll.GetAllForecastsFeature.FeatureSetup(null);
             }
         }
         

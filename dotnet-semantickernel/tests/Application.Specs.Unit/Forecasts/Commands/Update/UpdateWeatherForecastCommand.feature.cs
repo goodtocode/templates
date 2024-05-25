@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Commands.Update
+namespace SemanticKernel.Specs.Application.Unit.Forecasts.Commands.Update
 {
     using TechTalk.SpecFlow;
     using System;
@@ -66,7 +66,7 @@ namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Commands.Update
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "Update Forecast Command")))
             {
-                global::WeatherForecasts.Specs.Application.Unit.Forecasts.Commands.Update.UpdateForecastCommandFeature.FeatureSetup(null);
+                global::SemanticKernel.Specs.Application.Unit.Forecasts.Commands.Update.UpdateForecastCommandFeature.FeatureSetup(null);
             }
         }
         

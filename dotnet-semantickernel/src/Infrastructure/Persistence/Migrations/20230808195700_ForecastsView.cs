@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace WeatherForecasts.Infrastructure.Persistence.Migrations
+namespace SemanticKernel.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class ForecastsView : Migration

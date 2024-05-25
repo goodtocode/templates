@@ -1,15 +1,15 @@
 ﻿using Microsoft.Extensions.Logging;
-using WeatherForecasts.Core.Domain.Forecasts.Entities;
+using SemanticKernel.Core.Domain.Forecasts.Entities;
 
-namespace WeatherForecasts.Infrastructure.Persistence;
+namespace SemanticKernel.Infrastructure.Persistence;
 
-public class WeatherForecastsDbContextInitializer
+public class SemanticKernelDbContextInitializer
 {
-    private readonly WeatherForecastsContext _context;
-    private readonly ILogger<WeatherForecastsDbContextInitializer> _logger;
+    private readonly SemanticKernelContext _context;
+    private readonly ILogger<SemanticKernelDbContextInitializer> _logger;
 
-    public WeatherForecastsDbContextInitializer(ILogger<WeatherForecastsDbContextInitializer> logger,
-        WeatherForecastsContext context)
+    public SemanticKernelDbContextInitializer(ILogger<SemanticKernelDbContextInitializer> logger,
+        SemanticKernelContext context)
     {
         _logger = logger;
         _context = context;

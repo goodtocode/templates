@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Queries.Get
+namespace SemanticKernel.Specs.Application.Unit.Forecasts.Queries.Get
 {
     using TechTalk.SpecFlow;
     using System;
@@ -66,7 +66,7 @@ namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Queries.Get
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "Get Forecast Query")))
             {
-                global::WeatherForecasts.Specs.Application.Unit.Forecasts.Queries.Get.GetForecastQueryFeature.FeatureSetup(null);
+                global::SemanticKernel.Specs.Application.Unit.Forecasts.Queries.Get.GetForecastQueryFeature.FeatureSetup(null);
             }
         }
         

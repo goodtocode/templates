@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Core.Application.Forecasts.Commands.Remove;
+﻿namespace SemanticKernel.Core.Application.Forecasts.Commands.Remove;
 
 public class RemoveForecastCommandValidator : AbstractValidator<RemoveForecastCommand>
 {

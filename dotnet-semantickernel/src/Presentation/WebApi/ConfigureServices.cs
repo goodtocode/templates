@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
-using WeatherForecasts.Presentation.WebApi.Common;
+using SemanticKernel.Presentation.WebApi.Common;
 
-namespace WeatherForecasts.Presentation.WebApi;
+namespace SemanticKernel.Presentation.WebApi;
 
 /// <summary>
 /// Presentation Layer WebApi Configuration
@@ -122,9 +122,9 @@ public static class ConfigureServices
         {
             var info = new OpenApiInfo
             {
-                Title = $"WeatherForecasts Service ({Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")})",
+                Title = $"SemanticKernel Service ({Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")})",
                 Version = description.ApiVersion.ToString(),
-                Description = $"An API to interact with the WeatherForecasts",
+                Description = $"An API to interact with the SemanticKernel",
                 Contact = new OpenApiContact
                 {
                     //Email = "",

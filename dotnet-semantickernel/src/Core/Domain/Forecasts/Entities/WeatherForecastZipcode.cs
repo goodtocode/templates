@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Core.Domain.Forecasts.Entities;
+﻿namespace SemanticKernel.Core.Domain.Forecasts.Entities;
 
 public class WeatherForecastZipcode : Common.Entity
 {

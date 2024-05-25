@@ -2,7 +2,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace WeatherForecasts.Infrastructure.HttpClient;
+namespace SemanticKernel.Infrastructure.HttpClient;
 
 public class BearerToken
 {

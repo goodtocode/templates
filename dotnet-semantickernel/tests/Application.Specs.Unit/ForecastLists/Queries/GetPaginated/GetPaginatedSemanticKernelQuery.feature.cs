@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace WeatherForecasts.Specs.Application.Unit.ForecastLists.Queries.GetPaginated
+namespace SemanticKernel.Specs.Application.Unit.ForecastLists.Queries.GetPaginated
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,7 +20,7 @@ namespace WeatherForecasts.Specs.Application.Unit.ForecastLists.Queries.GetPagin
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class GetWeatherForecastsPaginatedQueryFeature
+    public partial class GetSemanticKernelPaginatedQueryFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,9 +28,9 @@ namespace WeatherForecasts.Specs.Application.Unit.ForecastLists.Queries.GetPagin
         private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
         private static string[] featureTags = new string[] {
-                "getPaginatedWeatherForecastsQuery"};
+                "getPaginatedSemanticKernelQuery"};
         
-#line 1 "GetPaginatedWeatherForecastsQuery.feature"
+#line 1 "GetPaginatedSemanticKernelQuery.feature"
 #line hidden
         
         public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
@@ -66,7 +66,7 @@ namespace WeatherForecasts.Specs.Application.Unit.ForecastLists.Queries.GetPagin
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "Get Weather Forecasts Paginated Query")))
             {
-                global::WeatherForecasts.Specs.Application.Unit.ForecastLists.Queries.GetPaginated.GetWeatherForecastsPaginatedQueryFeature.FeatureSetup(null);
+                global::SemanticKernel.Specs.Application.Unit.ForecastLists.Queries.GetPaginated.GetSemanticKernelPaginatedQueryFeature.FeatureSetup(null);
             }
         }
         
@@ -92,7 +92,7 @@ namespace WeatherForecasts.Specs.Application.Unit.ForecastLists.Queries.GetPagin
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void GetPaginatedWeatherForecasts(string def, string response, string responseErrors, string pageNumber, string pageSize, string forecastsExist, string[] exampleTags)
+        public virtual void GetPaginatedSemanticKernel(string def, string response, string responseErrors, string pageNumber, string pageSize, string forecastsExist, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -174,7 +174,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get paginated weather forecasts: success")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Weather Forecasts Paginated Query")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getPaginatedWeatherForecastsQuery")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getPaginatedSemanticKernelQuery")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
@@ -182,17 +182,17 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pageNumber", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pageSize", "10")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastsExist", "true")]
-        public void GetPaginatedWeatherForecasts_Success()
+        public void GetPaginatedSemanticKernel_Success()
         {
 #line 6
-this.GetPaginatedWeatherForecasts("success", "Success", "", "1", "10", "true", ((string[])(null)));
+this.GetPaginatedSemanticKernel("success", "Success", "", "1", "10", "true", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get paginated weather forecasts: success filtered results")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Weather Forecasts Paginated Query")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getPaginatedWeatherForecastsQuery")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getPaginatedSemanticKernelQuery")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success filtered results")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success filtered results")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
@@ -200,17 +200,17 @@ this.GetPaginatedWeatherForecasts("success", "Success", "", "1", "10", "true", (
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pageNumber", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pageSize", "10")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastsExist", "true")]
-        public void GetPaginatedWeatherForecasts_SuccessFilteredResults()
+        public void GetPaginatedSemanticKernel_SuccessFilteredResults()
         {
 #line 6
-this.GetPaginatedWeatherForecasts("success filtered results", "Success", "", "1", "10", "true", ((string[])(null)));
+this.GetPaginatedSemanticKernel("success filtered results", "Success", "", "1", "10", "true", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get paginated weather forecasts: success empty results")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Weather Forecasts Paginated Query")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getPaginatedWeatherForecastsQuery")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getPaginatedSemanticKernelQuery")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success empty results")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success empty results")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
@@ -218,17 +218,17 @@ this.GetPaginatedWeatherForecasts("success filtered results", "Success", "", "1"
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pageNumber", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pageSize", "10")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastsExist", "false")]
-        public void GetPaginatedWeatherForecasts_SuccessEmptyResults()
+        public void GetPaginatedSemanticKernel_SuccessEmptyResults()
         {
 #line 6
-this.GetPaginatedWeatherForecasts("success empty results", "Success", "", "1", "10", "false", ((string[])(null)));
+this.GetPaginatedSemanticKernel("success empty results", "Success", "", "1", "10", "false", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get paginated weather forecasts: bad request page number zero")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Weather Forecasts Paginated Query")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getPaginatedWeatherForecastsQuery")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getPaginatedSemanticKernelQuery")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "bad request page number zero")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "bad request page number zero")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "BadRequest")]
@@ -236,17 +236,17 @@ this.GetPaginatedWeatherForecasts("success empty results", "Success", "", "1", "
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pageNumber", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pageSize", "10")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastsExist", "true")]
-        public void GetPaginatedWeatherForecasts_BadRequestPageNumberZero()
+        public void GetPaginatedSemanticKernel_BadRequestPageNumberZero()
         {
 #line 6
-this.GetPaginatedWeatherForecasts("bad request page number zero", "BadRequest", "PageNumber", "0", "10", "true", ((string[])(null)));
+this.GetPaginatedSemanticKernel("bad request page number zero", "BadRequest", "PageNumber", "0", "10", "true", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get paginated weather forecasts: bad request page size zero")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Weather Forecasts Paginated Query")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getPaginatedWeatherForecastsQuery")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getPaginatedSemanticKernelQuery")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "bad request page size zero")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "bad request page size zero")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "BadRequest")]
@@ -254,10 +254,10 @@ this.GetPaginatedWeatherForecasts("bad request page number zero", "BadRequest", 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pageNumber", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pageSize", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastsExist", "true")]
-        public void GetPaginatedWeatherForecasts_BadRequestPageSizeZero()
+        public void GetPaginatedSemanticKernel_BadRequestPageSizeZero()
         {
 #line 6
-this.GetPaginatedWeatherForecasts("bad request page size zero", "BadRequest", "PageSize", "1", "0", "true", ((string[])(null)));
+this.GetPaginatedSemanticKernel("bad request page size zero", "BadRequest", "PageSize", "1", "0", "true", ((string[])(null)));
 #line hidden
         }
     }

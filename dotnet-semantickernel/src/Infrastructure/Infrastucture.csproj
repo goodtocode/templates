@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
-		<RootNamespace>WeatherForecasts.Infrastructure</RootNamespace>
-		<AssemblyName>WeatherForecasts.Infrastructure</AssemblyName>
+		<RootNamespace>SemanticKernel.Infrastructure</RootNamespace>
+		<AssemblyName>SemanticKernel.Infrastructure</AssemblyName>
 		<IsPackable>false</IsPackable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>

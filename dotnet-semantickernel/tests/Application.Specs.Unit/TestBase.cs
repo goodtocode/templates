@@ -1,9 +1,9 @@
-﻿using WeatherForecasts.Core.Application.Common.Exceptions;
-using WeatherForecasts.Core.Application.Common.Interfaces;
-using WeatherForecasts.Core.Application.Common.Mappings;
-using WeatherForecasts.Infrastructure.Persistence;
+﻿using SemanticKernel.Core.Application.Common.Exceptions;
+using SemanticKernel.Core.Application.Common.Interfaces;
+using SemanticKernel.Core.Application.Common.Mappings;
+using SemanticKernel.Infrastructure.Persistence;
 
-namespace WeatherForecasts.Specs.Application.Unit;
+namespace SemanticKernel.Specs.Application.Unit;
 
 public class TestBase
 {
@@ -25,11 +25,11 @@ public class TestBase
         Mapper = new MapperConfiguration(cfg => { cfg.AddProfile<MappingProfile>(); })
             .CreateMapper();
 
-        WeatherForecastsContext = new WeatherForecastsContext(new DbContextOptionsBuilder<WeatherForecastsContext>()
+        SemanticKernelContext = new SemanticKernelContext(new DbContextOptionsBuilder<SemanticKernelContext>()
             .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options);
     }
 
-    public IWeatherForecastsContext WeatherForecastsContext { get; set; }
+    public ISemanticKernelContext SemanticKernelContext { get; set; }
 
     public IMapper Mapper { get; }
 
