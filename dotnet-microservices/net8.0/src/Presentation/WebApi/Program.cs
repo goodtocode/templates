@@ -1,7 +1,7 @@
+using Azure.Extensions.AspNetCore.Configuration.Secrets;
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Azure.KeyVault;
-using Microsoft.Azure.Services.AppAuthentication;
-using Microsoft.Extensions.Configuration.AzureKeyVault;
 using Microsoft.Identity.Web;
 using WeatherForecasts.Core.Application;
 using WeatherForecasts.Infrastructure;
@@ -82,9 +82,7 @@ void AddKeyVaultConfigurationSettings(WebApplicationBuilder appBuilder)
     if (!appBuilder.Configuration.GetValue<bool>("KeyVault:UseKeyVault")) return;
 
     var azureKeyVaultEndpoint = appBuilder.Configuration["KeyVault:Endpoint"];
-    var azureServiceTokenProvider = new AzureServiceTokenProvider();
-    var keyVaultClient = new KeyVaultClient(
-        new KeyVaultClient.AuthenticationCallback(
-            azureServiceTokenProvider.KeyVaultTokenCallback));
-    appBuilder.Configuration.AddAzureKeyVault(azureKeyVaultEndpoint, keyVaultClient, new DefaultKeyVaultSecretManager());
+    var credential = new DefaultAzureCredential();
+    var secretClient = new SecretClient(new Uri(azureKeyVaultEndpoint), credential);
+    appBuilder.Configuration.AddAzureKeyVault(secretClient, new KeyVaultSecretManager());
 }
