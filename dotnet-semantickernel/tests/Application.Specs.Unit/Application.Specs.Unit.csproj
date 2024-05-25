@@ -44,7 +44,6 @@
 	  <ProjectReference Include="..\..\src\Infrastructure\Infrastucture.csproj" />
 	</ItemGroup>
 
-
 	<ItemGroup>
 		<SpecFlowFeatureFiles Update="Forecasts\Commands\Patch\PatchForecastCommand.feature">
 			<Visible>$(UsingMicrosoftNETSdk)</Visible>

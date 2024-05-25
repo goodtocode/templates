@@ -8,14 +8,7 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<DocumentationFile>WeatherForecasts.Presentation.WebApi.xml</DocumentationFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<UserSecretsId>4b5d16a8-f42f-48f5-acdf-8b135a1f21f1</UserSecretsId>
 	</PropertyGroup>
-	<ItemGroup>
-	  <Compile Remove="Logs\**" />
-	  <Content Remove="Logs\**" />
-	  <EmbeddedResource Remove="Logs\**" />
-	  <None Remove="Logs\**" />
-	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
 		<PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
