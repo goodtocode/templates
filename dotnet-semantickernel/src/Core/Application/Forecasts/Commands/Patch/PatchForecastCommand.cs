@@ -25,7 +25,7 @@ public class PatchWeatherForecastCommandHandler : IRequestHandler<PatchForecastC
         var weatherForecast = _context.Forecasts.Find(request.Key);
 
         if (weatherForecast == null)
-            throw new NotFoundException();
+            throw new CustomNotFoundException();
         
         if (request.Date != null)
             weatherForecast.UpdateDate((DateTime) request.Date);

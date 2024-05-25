@@ -1,13 +1,13 @@
-﻿using ValidationException = WeatherForecasts.Core.Application.Common.Exceptions.ValidationException;
+﻿using ValidationException = WeatherForecasts.Core.Application.Common.Exceptions.CustomValidationException;
 
 namespace WeatherForecasts.Core.Application.Common.Behaviours;
 
-public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+public class CustomValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
      where TRequest : notnull
 {
     private readonly IEnumerable<IValidator<TRequest>> _validators;
 
-    public ValidationBehaviour(IEnumerable<IValidator<TRequest>> validators)
+    public CustomValidationBehaviour(IEnumerable<IValidator<TRequest>> validators)
     {
         _validators = validators;
     }

@@ -21,7 +21,7 @@ public class RemoveForecastCommandHandler : IRequestHandler<RemoveForecastComman
     {
         var weatherForecast = _context.Forecasts.Find(request.Key);
 
-        if (weatherForecast == null) throw new NotFoundException();
+        if (weatherForecast == null) throw new CustomNotFoundException();
         _context.Forecasts.Remove(weatherForecast);
         await _context.SaveChangesAsync(cancellationToken);
     }
