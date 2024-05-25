@@ -1,7 +1,7 @@
-﻿using dotnet_semantickernel.Core.Application.Common.Exceptions;
-using dotnet_semantickernel.Core.Application.Common.Interfaces;
+﻿using WeatherForecasts.Core.Application.Common.Exceptions;
+using WeatherForecasts.Core.Application.Common.Interfaces;
 
-namespace dotnet_semantickernel.Core.Application.Forecasts.Commands.Patch;
+namespace WeatherForecasts.Core.Application.Forecasts.Commands.Patch;
 
 public class PatchForecastCommand : IRequest
 {
@@ -13,9 +13,9 @@ public class PatchForecastCommand : IRequest
 
 public class PatchWeatherForecastCommandHandler : IRequestHandler<PatchForecastCommand>
 {
-    private readonly Idotnet_semantickernelContext _context;
+    private readonly IWeatherForecastsContext _context;
 
-    public PatchWeatherForecastCommandHandler(Idotnet_semantickernelContext context)
+    public PatchWeatherForecastCommandHandler(IWeatherForecastsContext context)
     {
         _context = context;
     }

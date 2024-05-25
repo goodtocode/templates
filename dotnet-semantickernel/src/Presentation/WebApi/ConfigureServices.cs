@@ -1,11 +1,20 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
-using dotnet_semantickernel.Presentation.WebApi.Common;
+using WeatherForecasts.Presentation.WebApi.Common;
 
-namespace dotnet_semantickernel.Presentation.WebApi;
+namespace WeatherForecasts.Presentation.WebApi;
 
+/// <summary>
+/// Presentation Layer WebApi Configuration
+/// </summary>
 public static class ConfigureServices
 {
+    /// <summary>
+    /// Add WebUI Services
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configuration"></param>
+    /// <returns></returns>
     public static IServiceCollection AddWebUIServices(this IServiceCollection services,
         IConfiguration configuration)
     {
@@ -14,7 +23,8 @@ public static class ConfigureServices
                 setupAction.Filters.Add(
                     new ProducesDefaultResponseTypeAttribute());
 
-                setupAction.Filters.Add(new AuthorizeFilter(new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build()));
+                // ToDo: Setup Authentication with Bearer Token
+                // setupAction.Filters.Add(new AuthorizeFilter(new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build()));
                 setupAction.Filters.Add<ApiExceptionFilterAttribute>();
             })
             .AddFluentValidation()
@@ -35,24 +45,25 @@ public static class ConfigureServices
         
         services.AddSwaggerGen(setupAction =>
         {
-            setupAction.AddSecurityDefinition("Bearer",
-                new OpenApiSecurityScheme
-                {
-                    Description = "JWT Authorization header using the Bearer scheme.",
-                    Type = SecuritySchemeType.Http,
-                    Scheme = "bearer"
-                });
+            // ToDo: Setup Authentication with Bearer Token
+            //setupAction.AddSecurityDefinition("Bearer",
+            //    new OpenApiSecurityScheme
+            //    {
+            //        Description = "JWT Authorization header using the Bearer scheme.",
+            //        Type = SecuritySchemeType.Http,
+            //        Scheme = "bearer"
+            //    });
 
-            setupAction.AddSecurityRequirement(new OpenApiSecurityRequirement
-            {
-                {
-                    new OpenApiSecurityScheme
-                    {
-                        Reference = new OpenApiReference {Id = "Bearer", Type = ReferenceType.SecurityScheme}
-                    },
-                    new List<string>()
-                }
-            });
+            //setupAction.AddSecurityRequirement(new OpenApiSecurityRequirement
+            //{
+            //    {
+            //        new OpenApiSecurityScheme
+            //        {
+            //            Reference = new OpenApiReference {Id = "Bearer", Type = ReferenceType.SecurityScheme}
+            //        },
+            //        new List<string>()
+            //    }
+            //});
 
             setupAction.MapType<decimal>(() =>
                 new OpenApiSchema
@@ -67,15 +78,26 @@ public static class ConfigureServices
         return services;
     }
 
+    /// <summary>
+    /// Swagger UI Configuration
+    /// </summary>
     public class ConfigureSwaggerOptions : IConfigureNamedOptions<SwaggerGenOptions>
     {
         private readonly IApiVersionDescriptionProvider provider;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="provider"></param>
         public ConfigureSwaggerOptions(IApiVersionDescriptionProvider provider)
         {
             this.provider = provider;
         }
 
+        /// <summary>
+        /// OpenApi Configuration
+        /// </summary>
+        /// <param name="options"></param>
         public void Configure(SwaggerGenOptions options)
         {
             foreach (var description in provider.ApiVersionDescriptions)
@@ -86,6 +108,11 @@ public static class ConfigureServices
             options.IncludeXmlComments(xmlPath);
         }
 
+        /// <summary>
+        /// OpenApi Configuration
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="options"></param>
         public void Configure(string name, SwaggerGenOptions options)
         {
             Configure(options);
@@ -95,9 +122,9 @@ public static class ConfigureServices
         {
             var info = new OpenApiInfo
             {
-                Title = $"dotnet_semantickernel Service ({Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")})",
+                Title = $"WeatherForecasts Service ({Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")})",
                 Version = description.ApiVersion.ToString(),
-                Description = $"An API to interact with the dotnet_semantickernel",
+                Description = $"An API to interact with the WeatherForecasts",
                 Contact = new OpenApiContact
                 {
                     //Email = "",

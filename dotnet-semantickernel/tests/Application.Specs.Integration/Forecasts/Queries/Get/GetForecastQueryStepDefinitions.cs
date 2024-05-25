@@ -1,7 +1,7 @@
-using dotnet_semantickernel.Core.Application.Forecasts.Queries.Get;
-using dotnet_semantickernel.Core.Domain.Forecasts.Entities;
+using WeatherForecasts.Core.Application.Forecasts.Queries.Get;
+using WeatherForecasts.Core.Domain.Forecasts.Entities;
 
-namespace dotnet_semantickernel.Specs.Application.Integration.Forecasts.Queries.Get;
+namespace WeatherForecasts.Specs.Application.Integration.Forecasts.Queries.Get;
 
 using static TestBase;
 

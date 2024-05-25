@@ -1,10 +1,13 @@
-﻿using dotnet_semantickernel.Core.Application.Common.Models;
-using dotnet_semantickernel.Core.Application.ForecastLists.Queries.GetAll;
-using dotnet_semantickernel.Core.Application.ForecastLists.Queries.GetPaginated;
-using dotnet_semantickernel.Presentation.WebApi.Common;
+﻿using WeatherForecasts.Core.Application.Common.Models;
+using WeatherForecasts.Core.Application.ForecastLists.Queries.GetAll;
+using WeatherForecasts.Core.Application.ForecastLists.Queries.GetPaginated;
+using WeatherForecasts.Presentation.WebApi.Common;
 
-namespace dotnet_semantickernel.Presentation.WebApi.ForecastsLists;
+namespace WeatherForecasts.Presentation.WebApi.ForecastsLists;
 
+/// <summary>
+/// Controller for Forecasts
+/// </summary>
 [ApiController]
 [ApiConventionType(typeof(DefaultApiConventions))]
 [Route("[controller]")]
@@ -24,7 +27,7 @@ public class ForecastsListsController : ApiControllerBase
     [HttpGet("Paginated", Name = "GetForecastsPaginatedQuery")]
     [ProducesResponseType(typeof(PaginatedList<ForecastPaginatedDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<PaginatedList<ForecastPaginatedDto>>> Getdotnet_semantickernelPaginatedQuery([FromQuery] GetForecastsPaginatedQuery query)
+    public async Task<ActionResult<PaginatedList<ForecastPaginatedDto>>> GetWeatherForecastsPaginatedQuery([FromQuery] GetForecastsPaginatedQuery query)
     {
         return await Mediator.Send(query);
     }

@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
 
-namespace dotnet_semantickernel.Core.Application.Common.Exceptions;
+namespace WeatherForecasts.Core.Application.Common.Exceptions;
 
 public class ValidationException : Exception
 {

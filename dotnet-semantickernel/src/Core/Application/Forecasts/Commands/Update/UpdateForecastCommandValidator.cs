@@ -1,4 +1,4 @@
-﻿namespace dotnet_semantickernel.Core.Application.Forecasts.Commands.Update;
+﻿namespace WeatherForecasts.Core.Application.Forecasts.Commands.Update;
 
 public class UpdateForecastCommandValidator : AbstractValidator<UpdateForecastCommand>
 {

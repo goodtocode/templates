@@ -1,7 +1,7 @@
-using dotnet_semantickernel.Core.Application.Forecasts.Commands.Patch;
-using dotnet_semantickernel.Core.Domain.Forecasts.Entities;
+using WeatherForecasts.Core.Application.Forecasts.Commands.Patch;
+using WeatherForecasts.Core.Domain.Forecasts.Entities;
 
-namespace dotnet_semantickernel.Specs.Application.Integration.Forecasts.Commands.Patch;
+namespace WeatherForecasts.Specs.Application.Integration.Forecasts.Commands.Patch;
 
 using static TestBase;
 

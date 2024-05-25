@@ -1,7 +1,7 @@
-﻿using dotnet_semantickernel.Core.Application.Common.Exceptions;
-using dotnet_semantickernel.Core.Application.Common.Interfaces;
+﻿using WeatherForecasts.Core.Application.Common.Exceptions;
+using WeatherForecasts.Core.Application.Common.Interfaces;
 
-namespace dotnet_semantickernel.Core.Application.Forecasts.Commands.Remove;
+namespace WeatherForecasts.Core.Application.Forecasts.Commands.Remove;
 
 public class RemoveForecastCommand : IRequest
 {
@@ -10,9 +10,9 @@ public class RemoveForecastCommand : IRequest
 
 public class RemoveForecastCommandHandler : IRequestHandler<RemoveForecastCommand>
 {
-    private readonly Idotnet_semantickernelContext _context;
+    private readonly IWeatherForecastsContext _context;
 
-    public RemoveForecastCommandHandler(Idotnet_semantickernelContext context)
+    public RemoveForecastCommandHandler(IWeatherForecastsContext context)
     {
         _context = context;
     }

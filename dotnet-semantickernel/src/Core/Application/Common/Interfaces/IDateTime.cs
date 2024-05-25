@@ -1,4 +1,4 @@
-﻿namespace dotnet_semantickernel.Core.Application.Common.Interfaces;
+﻿namespace WeatherForecasts.Core.Application.Common.Interfaces;
 
 public interface IDateTime
 {

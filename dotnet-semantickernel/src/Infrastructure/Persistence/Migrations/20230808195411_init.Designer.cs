@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using dotnet_semantickernel.Infrastructure.Persistence;
+using WeatherForecasts.Infrastructure.Persistence;
 
 #nullable disable
 
-namespace dotnet_semantickernel.Infrastructure.Persistence.Migrations
+namespace WeatherForecasts.Infrastructure.Persistence.Migrations
 {
-    [DbContext(typeof(dotnet_semantickernelContext))]
+    [DbContext(typeof(WeatherForecastsContext))]
     [Migration("20230808195411_init")]
     partial class init
     {
@@ -28,7 +28,7 @@ namespace dotnet_semantickernel.Infrastructure.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("dotnet_semantickernel.Core.Domain.Forecasts.Entities.Forecast", b =>
+            modelBuilder.Entity("WeatherForecasts.Core.Domain.Forecasts.Entities.Forecast", b =>
                 {
                     b.Property<Guid>("Key")
                         .ValueGeneratedOnAdd()
@@ -61,7 +61,7 @@ namespace dotnet_semantickernel.Infrastructure.Persistence.Migrations
                     b.ToTable("Forecasts", (string)null);
                 });
 
-            modelBuilder.Entity("dotnet_semantickernel.Core.Domain.Forecasts.Entities.WeatherForecastZipcode", b =>
+            modelBuilder.Entity("WeatherForecasts.Core.Domain.Forecasts.Entities.WeatherForecastZipcode", b =>
                 {
                     b.Property<Guid>("Key")
                         .ValueGeneratedOnAdd()
@@ -80,7 +80,7 @@ namespace dotnet_semantickernel.Infrastructure.Persistence.Migrations
                     b.ToTable("ForecastZipCodes", (string)null);
                 });
 
-            modelBuilder.Entity("dotnet_semantickernel.Core.Domain.Forecasts.Models.ForecastsView", b =>
+            modelBuilder.Entity("WeatherForecasts.Core.Domain.Forecasts.Models.ForecastsView", b =>
                 {
                     b.Property<Guid>("Key")
                         .HasColumnType("uniqueidentifier");
@@ -114,9 +114,9 @@ namespace dotnet_semantickernel.Infrastructure.Persistence.Migrations
                     b.ToView("ForecastsView", (string)null);
                 });
 
-            modelBuilder.Entity("dotnet_semantickernel.Core.Domain.Forecasts.Entities.WeatherForecastZipcode", b =>
+            modelBuilder.Entity("WeatherForecasts.Core.Domain.Forecasts.Entities.WeatherForecastZipcode", b =>
                 {
-                    b.HasOne("dotnet_semantickernel.Core.Domain.Forecasts.Entities.Forecast", "WeatherForecast")
+                    b.HasOne("WeatherForecasts.Core.Domain.Forecasts.Entities.Forecast", "WeatherForecast")
                         .WithMany("ZipCodes")
                         .HasForeignKey("WeatherForecastKey")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -125,7 +125,7 @@ namespace dotnet_semantickernel.Infrastructure.Persistence.Migrations
                     b.Navigation("WeatherForecast");
                 });
 
-            modelBuilder.Entity("dotnet_semantickernel.Core.Domain.Forecasts.Entities.Forecast", b =>
+            modelBuilder.Entity("WeatherForecasts.Core.Domain.Forecasts.Entities.Forecast", b =>
                 {
                     b.Navigation("ZipCodes");
                 });

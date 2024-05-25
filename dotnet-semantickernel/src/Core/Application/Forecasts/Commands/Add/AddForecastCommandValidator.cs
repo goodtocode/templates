@@ -1,4 +1,4 @@
-﻿namespace dotnet_semantickernel.Core.Application.Forecasts.Commands.Add;
+﻿namespace WeatherForecasts.Core.Application.Forecasts.Commands.Add;
 
 public class AddForecastCommandValidator : AbstractValidator<AddForecastCommand>
 {

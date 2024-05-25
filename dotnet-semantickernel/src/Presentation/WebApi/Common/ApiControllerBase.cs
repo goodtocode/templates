@@ -1,4 +1,4 @@
-﻿namespace dotnet_semantickernel.Presentation.WebApi.Common;
+﻿namespace WeatherForecasts.Presentation.WebApi.Common;
 
 [ApiController]
 [ApiExceptionFilter]

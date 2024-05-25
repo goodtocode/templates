@@ -1,7 +1,7 @@
-﻿using dotnet_semantickernel.Core.Application.Common.Mappings;
-using dotnet_semantickernel.Core.Domain.Forecasts.Models;
+﻿using WeatherForecasts.Core.Application.Common.Mappings;
+using WeatherForecasts.Core.Domain.Forecasts.Models;
 
-namespace dotnet_semantickernel.Core.Application.ForecastLists.Queries.GetAll;
+namespace WeatherForecasts.Core.Application.ForecastLists.Queries.GetAll;
 
 public class ForecastDto : IMapFrom<ForecastsView>
 {

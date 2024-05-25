@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace dotnet_semantickernel.Specs.Application.Integration.ForecastLists.Queries.GetAll
+namespace WeatherForecasts.Specs.Application.Integration.ForecastLists.Queries.GetAll
 {
     using TechTalk.SpecFlow;
     using System;
@@ -21,14 +21,14 @@ namespace dotnet_semantickernel.Specs.Application.Integration.ForecastLists.Quer
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Get All Weather Forecasts")]
-    [NUnit.Framework.CategoryAttribute("getAlldotnet_semantickernelQuery")]
+    [NUnit.Framework.CategoryAttribute("getAllWeatherForecastsQuery")]
     public partial class GetAllWeatherForecastsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = new string[] {
-                "getAlldotnet_semantickernelQuery"};
+                "getAllWeatherForecastsQuery"};
         
 #line 1 "GetAllForecastsQuery.feature"
 #line hidden

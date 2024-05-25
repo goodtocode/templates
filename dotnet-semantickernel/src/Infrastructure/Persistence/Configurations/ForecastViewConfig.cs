@@ -1,6 +1,6 @@
-﻿using dotnet_semantickernel.Core.Domain.Forecasts.Models;
+﻿using WeatherForecasts.Core.Domain.Forecasts.Models;
 
-namespace dotnet_semantickernel.Infrastructure.Persistence.Configurations;
+namespace WeatherForecasts.Infrastructure.Persistence.Configurations;
 
 public class ForecastViewConfig : IEntityTypeConfiguration<ForecastsView>
 {

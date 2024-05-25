@@ -1,6 +1,6 @@
-using dotnet_semantickernel.Core.Application.ForecastCalculations.Queries.GetCelsiusToFahrenheit;
+using WeatherForecasts.Core.Application.ForecastCalculations.Queries.GetCelsiusToFahrenheit;
 
-namespace dotnet_semantickernel.Specs.Application.Unit.TempCalculations.Queries.GetCelsiusToFahrenheit;
+namespace WeatherForecasts.Specs.Application.Unit.TempCalculations.Queries.GetCelsiusToFahrenheit;
 
 [Binding]
 [Scope(Tag= "getCelsiusToFahrenheitCalculationConversionQuery")]

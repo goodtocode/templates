@@ -1,4 +1,4 @@
-﻿namespace dotnet_semantickernel.Core.Domain.Common;
+﻿namespace WeatherForecasts.Core.Domain.Common;
 
 public abstract class Entity
 {
@@ -70,7 +70,7 @@ public abstract class Entity
     {
         var type = GetType();
 
-        if (type.ToString().Contains("dotnet-sematickernel"))
+        if (type.ToString().Contains("Aacn.Events"))
             return type.BaseType;
 
         return type;

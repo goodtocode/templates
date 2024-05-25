@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace dotnet_semantickernel.Infrastructure.Persistence.Migrations
+namespace WeatherForecasts.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class ForecastsView : Migration

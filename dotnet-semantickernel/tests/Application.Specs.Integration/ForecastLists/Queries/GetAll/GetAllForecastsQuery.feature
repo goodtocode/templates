@@ -1,4 +1,4 @@
-﻿@getAlldotnet_semantickernelQuery
+﻿@getAllWeatherForecastsQuery
 Feature: Get All Weather Forecasts
 As a weather channel user
 I can get all forecasts

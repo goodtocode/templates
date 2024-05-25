@@ -1,10 +1,10 @@
-using dotnet_semantickernel.Core.Application.Common.Exceptions;
-using dotnet_semantickernel.Core.Application.Common.Models;
-using dotnet_semantickernel.Core.Application.ForecastLists.Queries.GetPaginated;
-using dotnet_semantickernel.Core.Domain.Forecasts.Entities;
-using dotnet_semantickernel.Core.Domain.Forecasts.Models;
+using WeatherForecasts.Core.Application.Common.Exceptions;
+using WeatherForecasts.Core.Application.Common.Models;
+using WeatherForecasts.Core.Application.ForecastLists.Queries.GetPaginated;
+using WeatherForecasts.Core.Domain.Forecasts.Entities;
+using WeatherForecasts.Core.Domain.Forecasts.Models;
 
-namespace dotnet_semantickernel.Specs.Application.Integration.ForecastLists.Queries.GetPaginated;
+namespace WeatherForecasts.Specs.Application.Integration.ForecastLists.Queries.GetPaginated;
 
 using static TestBase;
 

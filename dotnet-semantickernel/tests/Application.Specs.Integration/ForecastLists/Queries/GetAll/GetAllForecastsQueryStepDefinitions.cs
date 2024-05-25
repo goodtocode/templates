@@ -1,13 +1,13 @@
-using dotnet_semantickernel.Core.Application.Common.Exceptions;
-using dotnet_semantickernel.Core.Application.ForecastLists.Queries.GetAll;
-using dotnet_semantickernel.Core.Domain.Forecasts.Entities;
+using WeatherForecasts.Core.Application.Common.Exceptions;
+using WeatherForecasts.Core.Application.ForecastLists.Queries.GetAll;
+using WeatherForecasts.Core.Domain.Forecasts.Entities;
 
-namespace dotnet_semantickernel.Specs.Application.Integration.ForecastLists.Queries.GetAll;
+namespace WeatherForecasts.Specs.Application.Integration.ForecastLists.Queries.GetAll;
 
 using static TestBase;
 
 [Binding]
-[Scope(Tag = "getAlldotnet_semantickernelQuery")]
+[Scope(Tag = "getAllWeatherForecastsQuery")]
 public class GetAllForecastsQueryStepDefinitions : BaseTestFixture
 {
     private string _def;
@@ -115,7 +115,7 @@ public class GetAllForecastsQueryStepDefinitions : BaseTestFixture
     }
 
     [Then(@"The response has a collection of forecasts")]
-    public void ThenTheResponseHasACollectionOfdotnet_semantickernel()
+    public void ThenTheResponseHasACollectionOfWeatherForecasts()
     {
         if (_foreacastExists)
             _response.Forecasts.Any().Should().BeTrue();

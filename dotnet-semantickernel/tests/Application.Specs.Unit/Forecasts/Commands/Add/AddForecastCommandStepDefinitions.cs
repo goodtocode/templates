@@ -1,7 +1,7 @@
-using dotnet_semantickernel.Core.Application.Forecasts.Commands.Add;
-using dotnet_semantickernel.Core.Domain.Forecasts.Entities;
+using WeatherForecasts.Core.Application.Forecasts.Commands.Add;
+using WeatherForecasts.Core.Domain.Forecasts.Entities;
 
-namespace dotnet_semantickernel.Specs.Application.Unit.Forecasts.Commands.Add;
+namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Commands.Add;
 
 [Binding]
 [Scope(Tag = "addForecastCommand")]
@@ -65,8 +65,8 @@ public class AddForecastCommandStepDefinitions : TestBase
 
             var weatherForecast = new Forecast(weatherForecastAddValue.Value);
 
-            dotnet_semantickernelContext.Forecasts.Add(weatherForecast);
-            await dotnet_semantickernelContext.SaveChangesAsync(CancellationToken.None);
+            WeatherForecastsContext.Forecasts.Add(weatherForecast);
+            await WeatherForecastsContext.SaveChangesAsync(CancellationToken.None);
         }
 
         var request = new AddForecastCommand()
@@ -84,7 +84,7 @@ public class AddForecastCommandStepDefinitions : TestBase
         {
             try
             {
-                var handler = new AddForecastCommandHandler(dotnet_semantickernelContext);
+                var handler = new AddForecastCommandHandler(WeatherForecastsContext);
                 await handler.Handle(request, CancellationToken.None);
                 _responseType = CommandResponseType.Successful;
             }

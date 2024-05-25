@@ -1,4 +1,4 @@
-﻿namespace dotnet_semantickernel.Core.Application.ForecastLists.Queries.GetAll;
+﻿namespace WeatherForecasts.Core.Application.ForecastLists.Queries.GetAll;
 
 public class ForecastsVm
 {

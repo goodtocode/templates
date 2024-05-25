@@ -1,6 +1,6 @@
-﻿using dotnet_semantickernel.Core.Application.Common.Exceptions;
+﻿using WeatherForecasts.Core.Application.Common.Exceptions;
 
-namespace dotnet_semantickernel.Presentation.WebApi.Common;
+namespace WeatherForecasts.Presentation.WebApi.Common;
 
 /// <summary>
 ///     Filter to handle ApiExceptionFilterAttribute

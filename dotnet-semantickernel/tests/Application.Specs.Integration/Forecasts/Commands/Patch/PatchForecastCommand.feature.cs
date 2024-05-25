@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace dotnet_semantickernel.Specs.Application.Integration.Forecasts.Commands.Patch
+namespace WeatherForecasts.Specs.Application.Integration.Forecasts.Commands.Patch
 {
     using TechTalk.SpecFlow;
     using System;

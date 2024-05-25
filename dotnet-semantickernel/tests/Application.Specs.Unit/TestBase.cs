@@ -1,9 +1,9 @@
-﻿using dotnet_semantickernel.Core.Application.Common.Exceptions;
-using dotnet_semantickernel.Core.Application.Common.Interfaces;
-using dotnet_semantickernel.Core.Application.Common.Mappings;
-using dotnet_semantickernel.Infrastructure.Persistence;
+﻿using WeatherForecasts.Core.Application.Common.Exceptions;
+using WeatherForecasts.Core.Application.Common.Interfaces;
+using WeatherForecasts.Core.Application.Common.Mappings;
+using WeatherForecasts.Infrastructure.Persistence;
 
-namespace dotnet_semantickernel.Specs.Application.Unit;
+namespace WeatherForecasts.Specs.Application.Unit;
 
 public class TestBase
 {
@@ -25,11 +25,11 @@ public class TestBase
         Mapper = new MapperConfiguration(cfg => { cfg.AddProfile<MappingProfile>(); })
             .CreateMapper();
 
-        dotnet_semantickernelContext = new dotnet_semantickernelContext(new DbContextOptionsBuilder<dotnet_semantickernelContext>()
+        WeatherForecastsContext = new WeatherForecastsContext(new DbContextOptionsBuilder<WeatherForecastsContext>()
             .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options);
     }
 
-    public Idotnet_semantickernelContext dotnet_semantickernelContext { get; set; }
+    public IWeatherForecastsContext WeatherForecastsContext { get; set; }
 
     public IMapper Mapper { get; }
 
