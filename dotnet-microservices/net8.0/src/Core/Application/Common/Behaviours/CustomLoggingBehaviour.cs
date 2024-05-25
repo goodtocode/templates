@@ -3,12 +3,12 @@ using Microsoft.Extensions.Logging;
 
 namespace WeatherForecasts.Core.Application.Common.Behaviours;
 
-public class LoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest> where TRequest : notnull
+public class CustomLoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest> where TRequest : notnull
 {
     private readonly ILogger _logger;
 
 
-    public LoggingBehaviour(ILogger<TRequest> logger)
+    public CustomLoggingBehaviour(ILogger<TRequest> logger)
     {
         _logger = logger;
     }

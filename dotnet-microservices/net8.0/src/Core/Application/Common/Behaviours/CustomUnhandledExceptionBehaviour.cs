@@ -2,11 +2,11 @@
 
 namespace WeatherForecasts.Core.Application.Common.Behaviours;
 
-public class UnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
+public class CustomUnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
 {
     private readonly ILogger<TRequest> _logger;
 
-    public UnhandledExceptionBehaviour(ILogger<TRequest> logger)
+    public CustomUnhandledExceptionBehaviour(ILogger<TRequest> logger)
     {
         _logger = logger;
     }

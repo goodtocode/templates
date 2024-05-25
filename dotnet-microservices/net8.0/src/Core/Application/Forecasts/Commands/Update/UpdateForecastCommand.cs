@@ -23,7 +23,7 @@ public class UpdateWeatherForecastCommandHandler : IRequestHandler<UpdateForecas
     public async Task Handle(UpdateForecastCommand request, CancellationToken cancellationToken)
     {
         var weatherForecast = _context.Forecasts.Find(request.Key);
-        if (weatherForecast == null) throw new NotFoundException();
+        if (weatherForecast == null) throw new CustomNotFoundException();
 
         weatherForecast.UpdateDate(request.Date);
         weatherForecast.UpdateTemperatureF((int) request.TemperatureF);

@@ -2,15 +2,15 @@
 
 namespace WeatherForecasts.Core.Application.Common.Exceptions;
 
-public class ValidationException : Exception
+public class CustomValidationException : Exception
 {
-    public ValidationException()
+    public CustomValidationException()
         : base("One or more validation failures have occurred.")
     {
         Errors = new Dictionary<string, string[]>();
     }
 
-    public ValidationException(IEnumerable<ValidationFailure> failures)
+    public CustomValidationException(IEnumerable<ValidationFailure> failures)
         : this()
     {
         Errors = failures

@@ -3,12 +3,12 @@ using Microsoft.Extensions.Logging;
 
 namespace WeatherForecasts.Core.Application.Common.Behaviours;
 
-public class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
+public class CustomPerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
 {
     private readonly Stopwatch _timer;
     private readonly ILogger<TRequest> _logger;
 
-    public PerformanceBehaviour(
+    public CustomPerformanceBehaviour(
         ILogger<TRequest> logger){
         _timer = new Stopwatch();
 

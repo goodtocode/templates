@@ -34,6 +34,6 @@ public class GetForecastQueryHandler : IRequestHandler<GetWeatherForecastQuery, 
     private static void GuardAgainstForecastNotFound(ForecastsView? forecast)
     {
         if (forecast == null)
-            throw new NotFoundException("Forecast Not Found");
+            throw new CustomNotFoundException("Forecast Not Found");
     }
 }
