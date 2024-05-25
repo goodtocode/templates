@@ -69,9 +69,8 @@ void BuildApiVerAndApiExplorer(WebApplicationBuilder webApplicationBuilder)
         setup.DefaultApiVersion = new ApiVersion(1, 0);
         setup.AssumeDefaultVersionWhenUnspecified = true;
         setup.ReportApiVersions = true;
-    });
-
-    webApplicationBuilder.Services.AddVersionedApiExplorer(setup =>
+    })
+    .AddApiExplorer(setup =>
     {
         setup.GroupNameFormat = "'v'VVV";
         setup.SubstituteApiVersionInUrl = true;
