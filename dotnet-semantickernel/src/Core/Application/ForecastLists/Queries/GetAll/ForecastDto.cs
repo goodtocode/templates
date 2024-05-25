@@ -1,7 +1,7 @@
-﻿using SemanticKernel.Core.Application.Common.Mappings;
-using SemanticKernel.Core.Domain.Forecasts.Models;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Mappings;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
 
-namespace SemanticKernel.Core.Application.ForecastLists.Queries.GetAll;
+namespace SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetAll;
 
 public class ForecastDto : IMapFrom<ForecastsView>
 {

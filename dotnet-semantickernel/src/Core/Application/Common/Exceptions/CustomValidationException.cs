@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
 
-namespace SemanticKernel.Core.Application.Common.Exceptions;
+namespace SemanticKernelMicroservice.Core.Application.Common.Exceptions;
 
 public class CustomValidationException : Exception
 {

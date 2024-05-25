@@ -1,4 +1,4 @@
-﻿namespace SemanticKernel.Core.Domain.Common;
+﻿namespace SemanticKernelMicroservice.Core.Domain.Common;
 
 public interface IDomainEvent
 {

@@ -1,9 +1,9 @@
-﻿using SemanticKernel.Core.Application.Common.Models;
-using SemanticKernel.Core.Application.ForecastLists.Queries.GetAll;
-using SemanticKernel.Core.Application.ForecastLists.Queries.GetPaginated;
-using SemanticKernel.Presentation.WebApi.Common;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Models;
+using SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetAll;
+using SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetPaginated;
+using SemanticKernelMicroservice.Presentation.WebApi.Common;
 
-namespace SemanticKernel.Presentation.WebApi.ForecastsLists;
+namespace SemanticKernelMicroservice.Presentation.WebApi.ForecastsLists;
 
 /// <summary>
 /// Controller for Forecasts
@@ -27,7 +27,7 @@ public class ForecastsListsController : ApiControllerBase
     [HttpGet("Paginated", Name = "GetForecastsPaginatedQuery")]
     [ProducesResponseType(typeof(PaginatedList<ForecastPaginatedDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<PaginatedList<ForecastPaginatedDto>>> GetSemanticKernelPaginatedQuery([FromQuery] GetForecastsPaginatedQuery query)
+    public async Task<ActionResult<PaginatedList<ForecastPaginatedDto>>> GetSemanticKernelMicroservicePaginatedQuery([FromQuery] GetForecastsPaginatedQuery query)
     {
         return await Mediator.Send(query);
     }

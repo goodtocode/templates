@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
-		<RootNamespace>SemanticKernel.Presentation.WebApi</RootNamespace>
-		<AssemblyName>SemanticKernel.Presentation.WebApi</AssemblyName>
+		<RootNamespace>SemanticKernelMicroservice.Presentation.WebApi</RootNamespace>
+		<AssemblyName>SemanticKernelMicroservice.Presentation.WebApi</AssemblyName>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<DocumentationFile>SemanticKernel.Presentation.WebApi.xml</DocumentationFile>
+		<DocumentationFile>SemanticKernelMicroservice.Presentation.WebApi.xml</DocumentationFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<UserSecretsId>4b5d16a8-f42f-48f5-acdf-8b135a1f21f1</UserSecretsId>
 	</PropertyGroup>

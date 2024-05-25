@@ -1,8 +1,8 @@
-﻿using SemanticKernel.Core.Application.Common.Exceptions;
-using SemanticKernel.Core.Application.Common.Interfaces;
-using SemanticKernel.Core.Domain.Forecasts.Models;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
 
-namespace SemanticKernel.Core.Application.Forecasts.Queries.Get;
+namespace SemanticKernelMicroservice.Core.Application.Forecasts.Queries.Get;
 
 public class GetWeatherForecastQuery : IRequest<ForecastVm>
 {
@@ -11,10 +11,10 @@ public class GetWeatherForecastQuery : IRequest<ForecastVm>
 
 public class GetForecastQueryHandler : IRequestHandler<GetWeatherForecastQuery, ForecastVm>
 {
-    private readonly ISemanticKernelContext _context;
+    private readonly ISemanticKernelMicroserviceContext _context;
     private readonly IMapper _mapper;
 
-    public GetForecastQueryHandler(ISemanticKernelContext context, IMapper mapper)
+    public GetForecastQueryHandler(ISemanticKernelMicroserviceContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;

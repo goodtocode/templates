@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
-		<RootNamespace>SemanticKernel.Specs.Application.Unit</RootNamespace>
-		<AssemblyName>SemanticKernel.Specs.Application.Unit</AssemblyName>
+		<RootNamespace>SemanticKernelMicroservice.Specs.Application.Unit</RootNamespace>
+		<AssemblyName>SemanticKernelMicroservice.Specs.Application.Unit</AssemblyName>
 		<IsPackable>false</IsPackable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
@@ -23,7 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <SpecFlowObsoleteCodeBehindFiles Remove="ForecastLists\Queries\GetPaginated\GetAllSemanticKernelQuery.feature.cs" />
+	  <SpecFlowObsoleteCodeBehindFiles Remove="ForecastLists\Queries\GetPaginated\GetAllSemanticKernelMicroserviceQuery.feature.cs" />
 	</ItemGroup>
 
 
@@ -50,7 +50,7 @@
 			<Visible>$(UsingMicrosoftNETSdk)</Visible>
 			<CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
 		</SpecFlowFeatureFiles>
-		<SpecFlowFeatureFiles Update="ForecastLists\Queries\GetPaginated\GetPaginatedSemanticKernelQuery.feature">
+		<SpecFlowFeatureFiles Update="ForecastLists\Queries\GetPaginated\GetPaginatedSemanticKernelMicroserviceQuery.feature">
 		  <Visible>$(UsingMicrosoftNETSdk)</Visible>
 		  <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
 		</SpecFlowFeatureFiles>
@@ -58,8 +58,8 @@
 
 
 	<ItemGroup>
-	  <Compile Update="ForecastLists\Queries\GetPaginated\GetPaginatedSemanticKernelQuery.feature.cs">
-	    <DependentUpon>GetPaginatedSemanticKernelQuery.feature</DependentUpon>
+	  <Compile Update="ForecastLists\Queries\GetPaginated\GetPaginatedSemanticKernelMicroserviceQuery.feature.cs">
+	    <DependentUpon>GetPaginatedSemanticKernelMicroserviceQuery.feature</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 

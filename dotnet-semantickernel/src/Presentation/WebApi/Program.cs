@@ -3,10 +3,10 @@ using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Identity.Web;
-using SemanticKernel.Core.Application;
-using SemanticKernel.Infrastructure;
-using SemanticKernel.Presentation.WebApi;
-using SemanticKernel.Presentation.WebApi.Configuration;
+using SemanticKernelMicroservice.Core.Application;
+using SemanticKernelMicroservice.Infrastructure;
+using SemanticKernelMicroservice.Presentation.WebApi;
+using SemanticKernelMicroservice.Presentation.WebApi.Configuration;
 
 [assembly: ApiConventionType(typeof(DefaultApiConventions))]
 
@@ -21,7 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 //    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection(AppConfigurationKeys.AzureAdSectionKey));
 
 builder.Services.AddApplicationServices();
-builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.AddDbContextServices(builder.Configuration);
 builder.Services.AddWebUIServices(builder.Configuration);
 //AddKeyVaultConfigurationSettings(builder);
 BuildApiVerAndApiExplorer(builder);
@@ -33,7 +33,7 @@ if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Local
     app.UseSwagger();
     UseSwaggerUiConfigs();
     //using var scope = app.Services.CreateScope();
-    //var initializer = scope.ServiceProvider.GetRequiredService<SemanticKernelDbContextInitializer>();
+    //var initializer = scope.ServiceProvider.GetRequiredService<SemanticKernelMicroserviceDbContextInitializer>();
     //await initializer.InitialiseAsync();
     //await initializer.SeedAsync();
 }

@@ -1,9 +1,9 @@
-﻿using SemanticKernel.Core.Application.Common.Exceptions;
-using SemanticKernel.Core.Application.Common.Interfaces;
-using SemanticKernel.Core.Application.Common.Mappings;
-using SemanticKernel.Infrastructure.Persistence;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
+using SemanticKernelMicroservice.Core.Application.Common.Mappings;
+using SemanticKernelMicroservice.Infrastructure.Persistence;
 
-namespace SemanticKernel.Specs.Application.Unit;
+namespace SemanticKernelMicroservice.Specs.Application.Unit;
 
 public class TestBase
 {
@@ -25,11 +25,11 @@ public class TestBase
         Mapper = new MapperConfiguration(cfg => { cfg.AddProfile<MappingProfile>(); })
             .CreateMapper();
 
-        SemanticKernelContext = new SemanticKernelContext(new DbContextOptionsBuilder<SemanticKernelContext>()
+        SemanticKernelMicroserviceContext = new SemanticKernelMicroserviceContext(new DbContextOptionsBuilder<SemanticKernelMicroserviceContext>()
             .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options);
     }
 
-    public ISemanticKernelContext SemanticKernelContext { get; set; }
+    public ISemanticKernelMicroserviceContext SemanticKernelMicroserviceContext { get; set; }
 
     public IMapper Mapper { get; }
 

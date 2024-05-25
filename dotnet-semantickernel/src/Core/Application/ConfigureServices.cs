@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SemanticKernel.Core.Application.Common.Behaviours;
+using SemanticKernelMicroservice.Core.Application.Common.Behaviours;
 
-namespace SemanticKernel.Core.Application;
+namespace SemanticKernelMicroservice.Core.Application;
 
 public static class ConfigureServices
 {

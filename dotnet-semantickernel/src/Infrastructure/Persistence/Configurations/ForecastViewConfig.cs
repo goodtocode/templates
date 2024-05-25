@@ -1,6 +1,6 @@
-﻿using SemanticKernel.Core.Domain.Forecasts.Models;
+﻿using SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
 
-namespace SemanticKernel.Infrastructure.Persistence.Configurations;
+namespace SemanticKernelMicroservice.Infrastructure.Persistence.Configurations;
 
 public class ForecastViewConfig : IEntityTypeConfiguration<ForecastsView>
 {

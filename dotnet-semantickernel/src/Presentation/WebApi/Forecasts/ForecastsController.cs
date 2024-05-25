@@ -1,11 +1,11 @@
-﻿using SemanticKernel.Core.Application.Forecasts.Commands.Add;
-using SemanticKernel.Core.Application.Forecasts.Commands.Patch;
-using SemanticKernel.Core.Application.Forecasts.Commands.Remove;
-using SemanticKernel.Core.Application.Forecasts.Commands.Update;
-using SemanticKernel.Core.Application.Forecasts.Queries.Get;
-using SemanticKernel.Presentation.WebApi.Common;
+﻿using SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Add;
+using SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Patch;
+using SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Remove;
+using SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Update;
+using SemanticKernelMicroservice.Core.Application.Forecasts.Queries.Get;
+using SemanticKernelMicroservice.Presentation.WebApi.Common;
 
-namespace SemanticKernel.Presentation.WebApi.Forecasts;
+namespace SemanticKernelMicroservice.Presentation.WebApi.Forecasts;
 
 [ApiController]
 [ApiConventionType(typeof(DefaultApiConventions))]

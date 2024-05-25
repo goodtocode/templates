@@ -1,4 +1,4 @@
-﻿namespace SemanticKernel.Core.Application.ForecastLists.Queries.GetPaginated;
+﻿namespace SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetPaginated;
 
 public class ForecastsPaginatedVm
 {

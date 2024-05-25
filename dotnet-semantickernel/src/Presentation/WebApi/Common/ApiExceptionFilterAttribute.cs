@@ -1,6 +1,6 @@
-﻿using SemanticKernel.Core.Application.Common.Exceptions;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
 
-namespace SemanticKernel.Presentation.WebApi.Common;
+namespace SemanticKernelMicroservice.Presentation.WebApi.Common;
 
 /// <summary>
 ///     Filter to handle ApiExceptionFilterAttribute

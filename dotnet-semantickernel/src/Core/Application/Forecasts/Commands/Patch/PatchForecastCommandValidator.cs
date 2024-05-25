@@ -1,4 +1,4 @@
-﻿namespace SemanticKernel.Core.Application.Forecasts.Commands.Patch;
+﻿namespace SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Patch;
 
 public class PatchForecastCommandValidator : AbstractValidator<PatchForecastCommand>
 {

@@ -1,15 +1,15 @@
 ﻿using Microsoft.Extensions.Logging;
-using SemanticKernel.Core.Domain.Forecasts.Entities;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
-namespace SemanticKernel.Infrastructure.Persistence;
+namespace SemanticKernelMicroservice.Infrastructure.Persistence;
 
-public class SemanticKernelDbContextInitializer
+public class SemanticKernelMicroserviceDbContextInitializer
 {
-    private readonly SemanticKernelContext _context;
-    private readonly ILogger<SemanticKernelDbContextInitializer> _logger;
+    private readonly SemanticKernelMicroserviceContext _context;
+    private readonly ILogger<SemanticKernelMicroserviceDbContextInitializer> _logger;
 
-    public SemanticKernelDbContextInitializer(ILogger<SemanticKernelDbContextInitializer> logger,
-        SemanticKernelContext context)
+    public SemanticKernelMicroserviceDbContextInitializer(ILogger<SemanticKernelMicroserviceDbContextInitializer> logger,
+        SemanticKernelMicroserviceContext context)
     {
         _logger = logger;
         _context = context;

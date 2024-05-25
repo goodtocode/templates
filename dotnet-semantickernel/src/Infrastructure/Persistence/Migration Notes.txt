@@ -1,16 +1,16 @@
 ﻿1.  Use PM>
-2.  Set Default Project to Aacn.SemanticKernel.Infrastructure
+2.  Set Default Project to Aacn.SemanticKernelMicroservice.Infrastructure
 3.  Invoke Migration Commands
 
 Add Migration
-add-migration init -context SemanticKernel.Infrastructure.Persistence.ForecastsContext -verbose -s Presentation.WebApi -OutputDir Persistence/Migrations
-add-migration ForecastsView -context SemanticKernel.Infrastructure.Persistence.ForecastsContext -verbose -s Presentation.WebApi -OutputDir Persistence/Migrations
+add-migration init -context SemanticKernelMicroservice.Infrastructure.Persistence.ForecastsContext -verbose -s Presentation.WebApi -OutputDir Persistence/Migrations
+add-migration ForecastsView -context SemanticKernelMicroservice.Infrastructure.Persistence.ForecastsContext -verbose -s Presentation.WebApi -OutputDir Persistence/Migrations
 
 Rollback Migration
-remove-migration -context SemanticKernel.Infrastructure.Persistence.SemanticKernelContext  -s Presentation.WebApi –force
+remove-migration -context SemanticKernelMicroservice.Infrastructure.Persistence.SemanticKernelMicroserviceContext  -s Presentation.WebApi –force
 
 Update Database
-update-database -context SemanticKernel.Infrastructure.Persistence.ForecastsContext  -s Presentation.WebApi
+update-database -context SemanticKernelMicroservice.Infrastructure.Persistence.ForecastsContext  -s Presentation.WebApi
 
 Reverse engineer view example
 scaffold-dbcontext "Data Source=localhost;Initial Catalog=weather.test;Min Pool Size=3;MultipleActiveResultSets=True;Trusted_Connection=Yes;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -tables WeatherForecastView -context "WeatherChannelContext"  -force -StartupProject WebApi

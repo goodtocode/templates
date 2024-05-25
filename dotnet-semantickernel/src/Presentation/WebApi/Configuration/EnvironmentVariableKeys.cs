@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SemanticKernel.Presentation.WebApi.Configuration
+namespace SemanticKernelMicroservice.Presentation.WebApi.Configuration
 {
     public static class EnvironmentVariables
     {

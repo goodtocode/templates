@@ -1,4 +1,4 @@
-﻿namespace SemanticKernel.Core.Application.ForecastCalculations.Queries.GetFahrenheitToCelsius;
+﻿namespace SemanticKernelMicroservice.Core.Application.ForecastCalculations.Queries.GetFahrenheitToCelsius;
 
 public class GetFahrenheitToCelsiusCalculationConversionQuery : IRequest<int>
 {

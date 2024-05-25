@@ -1,4 +1,4 @@
-﻿namespace SemanticKernel.Presentation.WebApi.Configuration
+﻿namespace SemanticKernelMicroservice.Presentation.WebApi.Configuration
 {
     public struct AppConfigurationKeys
     {

@@ -1,7 +1,7 @@
-﻿using SemanticKernel.Core.Application.Common.Exceptions;
-using SemanticKernel.Core.Application.Common.Interfaces;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
 
-namespace SemanticKernel.Core.Application.Forecasts.Commands.Update;
+namespace SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Update;
 
 public class UpdateForecastCommand : IRequest
 {
@@ -13,9 +13,9 @@ public class UpdateForecastCommand : IRequest
 
 public class UpdateWeatherForecastCommandHandler : IRequestHandler<UpdateForecastCommand>
 {
-    private readonly ISemanticKernelContext _context;
+    private readonly ISemanticKernelMicroserviceContext _context;
 
-    public UpdateWeatherForecastCommandHandler(ISemanticKernelContext context)
+    public UpdateWeatherForecastCommandHandler(ISemanticKernelMicroserviceContext context)
     {
         _context = context;
     }

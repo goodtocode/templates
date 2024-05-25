@@ -1,9 +1,9 @@
 ﻿using AutoMapper.QueryableExtensions;
-using SemanticKernel.Core.Application.Common.Interfaces;
-using SemanticKernel.Core.Application.Common.Mappings;
-using SemanticKernel.Core.Application.Common.Models;
+using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
+using SemanticKernelMicroservice.Core.Application.Common.Mappings;
+using SemanticKernelMicroservice.Core.Application.Common.Models;
 
-namespace SemanticKernel.Core.Application.ForecastLists.Queries.GetPaginated;
+namespace SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetPaginated;
 
 public class GetForecastsPaginatedQuery : IRequest<PaginatedList<ForecastPaginatedDto>>
 {
@@ -12,13 +12,13 @@ public class GetForecastsPaginatedQuery : IRequest<PaginatedList<ForecastPaginat
 }
 
 public class
-    GetSemanticKernelPaginatedQueryHandler : IRequestHandler<GetForecastsPaginatedQuery,
+    GetSemanticKernelMicroservicePaginatedQueryHandler : IRequestHandler<GetForecastsPaginatedQuery,
         PaginatedList<ForecastPaginatedDto>>
 {
-    private readonly ISemanticKernelContext _context;
+    private readonly ISemanticKernelMicroserviceContext _context;
     private readonly IMapper _mapper;
 
-    public GetSemanticKernelPaginatedQueryHandler(ISemanticKernelContext context, IMapper mapper)
+    public GetSemanticKernelMicroservicePaginatedQueryHandler(ISemanticKernelMicroserviceContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;
@@ -27,14 +27,14 @@ public class
     public async Task<PaginatedList<ForecastPaginatedDto>> Handle(GetForecastsPaginatedQuery request,
         CancellationToken cancellationToken)
     {
-        var paginatedSemanticKernel = await _context.ForecastViews
+        var paginatedSemanticKernelMicroservice = await _context.ForecastViews
             .AsNoTracking()
             .OrderByDescending(x => x.ForecastDate)
             .ProjectTo<ForecastPaginatedDto>(_mapper.ConfigurationProvider)
             .PaginatedListAsync(request.PageNumber, request.PageSize);
 
-        foreach (var item in paginatedSemanticKernel.Items) item.TemperatureC = (item.TemperatureF - 32) * 5 / 9;
+        foreach (var item in paginatedSemanticKernelMicroservice.Items) item.TemperatureC = (item.TemperatureF - 32) * 5 / 9;
 
-        return paginatedSemanticKernel;
+        return paginatedSemanticKernelMicroservice;
     }
 }

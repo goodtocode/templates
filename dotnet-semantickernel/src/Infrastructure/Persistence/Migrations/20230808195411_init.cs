@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace SemanticKernel.Infrastructure.Persistence.Migrations
+namespace SemanticKernelMicroservice.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class init : Migration

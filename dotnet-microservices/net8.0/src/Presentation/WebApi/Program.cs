@@ -21,7 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 //    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection(AppConfigurationKeys.AzureAdSectionKey));
 
 builder.Services.AddApplicationServices();
-builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.AddDbContextServices(builder.Configuration);
 builder.Services.AddWebUIServices(builder.Configuration);
 //AddKeyVaultConfigurationSettings(builder);
 BuildApiVerAndApiExplorer(builder);

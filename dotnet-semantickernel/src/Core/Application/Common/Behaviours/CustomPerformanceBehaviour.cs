@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.Extensions.Logging;
 
-namespace SemanticKernel.Core.Application.Common.Behaviours;
+namespace SemanticKernelMicroservice.Core.Application.Common.Behaviours;
 
 public class CustomPerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
 {

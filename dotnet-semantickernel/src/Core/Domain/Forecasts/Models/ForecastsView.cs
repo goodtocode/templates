@@ -1,4 +1,4 @@
-﻿namespace SemanticKernel.Core.Domain.Forecasts.Models;
+﻿namespace SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
 
 public class ForecastsView
 {

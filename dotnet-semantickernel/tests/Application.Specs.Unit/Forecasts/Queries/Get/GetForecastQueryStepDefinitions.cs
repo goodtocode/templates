@@ -1,8 +1,8 @@
-using SemanticKernel.Core.Application.Forecasts.Queries.Get;
-using SemanticKernel.Core.Domain.Forecasts.Entities;
-using SemanticKernel.Core.Domain.Forecasts.Models;
+using SemanticKernelMicroservice.Core.Application.Forecasts.Queries.Get;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
 
-namespace SemanticKernel.Specs.Application.Unit.Forecasts.Queries.Get
+namespace SemanticKernelMicroservice.Specs.Application.Unit.Forecasts.Queries.Get
 {
     [Binding]
     [Scope(Tag = "getForecastQuery1")]
@@ -66,8 +66,8 @@ namespace SemanticKernel.Specs.Application.Unit.Forecasts.Queries.Get
                     ZipCodesSearch = "92673, 92674"
                 };
 
-                SemanticKernelContext.ForecastViews.Add(weatherForecastView);
-                await SemanticKernelContext.SaveChangesAsync(CancellationToken.None);
+                SemanticKernelMicroserviceContext.ForecastViews.Add(weatherForecastView);
+                await SemanticKernelMicroserviceContext.SaveChangesAsync(CancellationToken.None);
             }
 
             var request = new GetWeatherForecastQuery()
@@ -80,7 +80,7 @@ namespace SemanticKernel.Specs.Application.Unit.Forecasts.Queries.Get
             if (_validationResponse.IsValid)
                 try
                 {
-                    var handler = new GetForecastQueryHandler(SemanticKernelContext, Mapper);
+                    var handler = new GetForecastQueryHandler(SemanticKernelMicroserviceContext, Mapper);
                     _response = await handler.Handle(request, CancellationToken.None);
                     _responseType = CommandResponseType.Successful;
                 }

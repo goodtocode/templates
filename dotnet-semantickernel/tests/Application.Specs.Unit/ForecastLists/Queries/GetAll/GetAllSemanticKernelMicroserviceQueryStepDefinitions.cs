@@ -1,9 +1,9 @@
-using SemanticKernel.Core.Application.Common.Exceptions;
-using SemanticKernel.Core.Application.ForecastLists.Queries.GetAll;
-using SemanticKernel.Core.Domain.Forecasts.Models;
-using SemanticKernel.Infrastructure.Persistence;
+using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+using SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetAll;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
+using SemanticKernelMicroservice.Infrastructure.Persistence;
 
-namespace SemanticKernel.Specs.Application.Unit.ForecastLists.Queries.GetAll;
+namespace SemanticKernelMicroservice.Specs.Application.Unit.ForecastLists.Queries.GetAll;
 
 [Binding]
 [Scope(Tag = "getAllForecastsQuery")]
@@ -50,7 +50,7 @@ public class GetAllForecastsQueryStepDefinitions : TestBase
     [When(@"I get all forecasts")]
     public async Task WhenIGetAWeatherForecast()
     {
-        var context = new SemanticKernelContext(new DbContextOptionsBuilder<SemanticKernelContext>()
+        var context = new SemanticKernelMicroserviceContext(new DbContextOptionsBuilder<SemanticKernelMicroserviceContext>()
             .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options);
 
         if (_foreacastExists)
@@ -150,7 +150,7 @@ public class GetAllForecastsQueryStepDefinitions : TestBase
     }
 
     [Then(@"The response has a collection of forecasts")]
-    public void ThenTheResponseHasACollectionOfSemanticKernel()
+    public void ThenTheResponseHasACollectionOfSemanticKernelMicroservice()
     {
         if (_foreacastExists)
             _response.Forecasts.Any().Should().BeTrue();

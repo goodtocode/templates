@@ -1,6 +1,6 @@
-using SemanticKernel.Core.Application.ForecastCalculations.Queries.GetFahrenheitToCelsius;
+using SemanticKernelMicroservice.Core.Application.ForecastCalculations.Queries.GetFahrenheitToCelsius;
 
-namespace SemanticKernel.Specs.Application.Unit.TempCalculations.Queries.GetFahrenheitToCelsius;
+namespace SemanticKernelMicroservice.Specs.Application.Unit.TempCalculations.Queries.GetFahrenheitToCelsius;
 
 [Binding]
 [Scope(Tag= "getFahrenheitToCelsiusCalculationConversionQuery")]

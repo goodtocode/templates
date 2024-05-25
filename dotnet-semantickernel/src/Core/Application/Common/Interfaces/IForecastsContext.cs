@@ -1,9 +1,9 @@
-﻿using SemanticKernel.Core.Domain.Forecasts.Entities;
-using SemanticKernel.Core.Domain.Forecasts.Models;
+﻿using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
 
-namespace SemanticKernel.Core.Application.Common.Interfaces;
+namespace SemanticKernelMicroservice.Core.Application.Common.Interfaces;
 
-public interface ISemanticKernelContext
+public interface ISemanticKernelMicroserviceContext
 {
     DbSet<ForecastsView> ForecastViews { get; }
     DbSet<Forecast> Forecasts { get; }

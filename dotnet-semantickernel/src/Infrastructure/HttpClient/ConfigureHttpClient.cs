@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Polly;
-using SemanticKernel.Infrastructure.HttpClient;
+using SemanticKernelMicroservice.Infrastructure.HttpClient;
 
-namespace SemanticKernel.Core.Application;
+namespace SemanticKernelMicroservice.Core.Application;
 
 public static class ConfigureSecuredHttpClient
 {

@@ -1,7 +1,7 @@
-using SemanticKernel.Core.Application.Forecasts.Commands.Add;
-using SemanticKernel.Core.Domain.Forecasts.Entities;
+using SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Add;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
-namespace SemanticKernel.Specs.Application.Unit.Forecasts.Commands.Add;
+namespace SemanticKernelMicroservice.Specs.Application.Unit.Forecasts.Commands.Add;
 
 [Binding]
 [Scope(Tag = "addForecastCommand")]
@@ -65,8 +65,8 @@ public class AddForecastCommandStepDefinitions : TestBase
 
             var weatherForecast = new Forecast(weatherForecastAddValue.Value);
 
-            SemanticKernelContext.Forecasts.Add(weatherForecast);
-            await SemanticKernelContext.SaveChangesAsync(CancellationToken.None);
+            SemanticKernelMicroserviceContext.Forecasts.Add(weatherForecast);
+            await SemanticKernelMicroserviceContext.SaveChangesAsync(CancellationToken.None);
         }
 
         var request = new AddForecastCommand()
@@ -84,7 +84,7 @@ public class AddForecastCommandStepDefinitions : TestBase
         {
             try
             {
-                var handler = new AddForecastCommandHandler(SemanticKernelContext);
+                var handler = new AddForecastCommandHandler(SemanticKernelMicroserviceContext);
                 await handler.Handle(request, CancellationToken.None);
                 _responseType = CommandResponseType.Successful;
             }

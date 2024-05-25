@@ -1,7 +1,7 @@
-﻿using SemanticKernel.Core.Application.Common.Exceptions;
-using SemanticKernel.Core.Application.Common.Interfaces;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
 
-namespace SemanticKernel.Core.Application.Forecasts.Commands.Patch;
+namespace SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Patch;
 
 public class PatchForecastCommand : IRequest
 {
@@ -13,9 +13,9 @@ public class PatchForecastCommand : IRequest
 
 public class PatchWeatherForecastCommandHandler : IRequestHandler<PatchForecastCommand>
 {
-    private readonly ISemanticKernelContext _context;
+    private readonly ISemanticKernelMicroserviceContext _context;
 
-    public PatchWeatherForecastCommandHandler(ISemanticKernelContext context)
+    public PatchWeatherForecastCommandHandler(ISemanticKernelMicroserviceContext context)
     {
         _context = context;
     }

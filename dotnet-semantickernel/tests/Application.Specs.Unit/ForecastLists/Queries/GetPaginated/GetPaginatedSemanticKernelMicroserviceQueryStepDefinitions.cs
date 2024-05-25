@@ -1,14 +1,14 @@
-using SemanticKernel.Core.Application.Common.Exceptions;
-using SemanticKernel.Core.Application.Common.Models;
-using SemanticKernel.Core.Application.ForecastLists.Queries.GetPaginated;
-using SemanticKernel.Core.Domain.Forecasts.Models;
-using SemanticKernel.Infrastructure.Persistence;
+using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+using SemanticKernelMicroservice.Core.Application.Common.Models;
+using SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetPaginated;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
+using SemanticKernelMicroservice.Infrastructure.Persistence;
 
-namespace SemanticKernel.Specs.Application.Unit.ForecastLists.Queries.GetPaginated;
+namespace SemanticKernelMicroservice.Specs.Application.Unit.ForecastLists.Queries.GetPaginated;
 
 [Binding]
-[Scope(Tag = "getPaginatedSemanticKernelQuery")]
-public class GetPaginatedSemanticKernelQueryStepDefinitions : TestBase
+[Scope(Tag = "getPaginatedSemanticKernelMicroserviceQuery")]
+public class GetPaginatedSemanticKernelMicroserviceQueryStepDefinitions : TestBase
 {
     private string _def;
     private bool _foreacastExists;
@@ -42,15 +42,15 @@ public class GetPaginatedSemanticKernelQueryStepDefinitions : TestBase
     }
 
     [Given(@"A collection of Weather Forecasts Exist ""([^""]*)""")]
-    public void GivenACollectionOfSemanticKernelExist(bool forecastExists)
+    public void GivenACollectionOfSemanticKernelMicroserviceExist(bool forecastExists)
     {
         _foreacastExists = forecastExists;
     }
 
     [When(@"I get paginated weather forecasts")]
-    public async Task WhenIGetPaginatedSemanticKernel()
+    public async Task WhenIGetPaginatedSemanticKernelMicroservice()
     {
-        var context = new SemanticKernelContext(new DbContextOptionsBuilder<SemanticKernelContext>()
+        var context = new SemanticKernelMicroserviceContext(new DbContextOptionsBuilder<SemanticKernelMicroserviceContext>()
             .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options);
 
         if (_foreacastExists)
@@ -77,7 +77,7 @@ public class GetPaginatedSemanticKernelQueryStepDefinitions : TestBase
         if (_validationResponse.IsValid)
             try
             {
-                var handler = new GetSemanticKernelPaginatedQueryHandler(context, Mapper);
+                var handler = new GetSemanticKernelMicroservicePaginatedQueryHandler(context, Mapper);
                 _response = await handler.Handle(request, CancellationToken.None);
                 _responseType = CommandResponseType.Successful;
                 _response = await handler.Handle(request, CancellationToken.None);
@@ -174,7 +174,7 @@ public class GetPaginatedSemanticKernelQueryStepDefinitions : TestBase
     }
 
     [Then(@"The response has a collection of weather forecasts")]
-    public void ThenTheResponseHasACollectionOfSemanticKernel()
+    public void ThenTheResponseHasACollectionOfSemanticKernelMicroservice()
     {
         if (_responseType != CommandResponseType.Successful) return;
 

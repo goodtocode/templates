@@ -2,7 +2,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace SemanticKernel.Infrastructure.HttpClient;
+namespace SemanticKernelMicroservice.Infrastructure.HttpClient;
 
 public class BearerToken
 {

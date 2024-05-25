@@ -1,31 +1,41 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SemanticKernel.Core.Application.Common.Interfaces;
-using SemanticKernel.Infrastructure.Persistence;
+using Microsoft.SemanticKernel;
+using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
+using SemanticKernelMicroservice.Infrastructure.Persistence;
 
-namespace SemanticKernel.Infrastructure;
+namespace SemanticKernelMicroservice.Infrastructure;
 
 public static class ConfigureServices
 {
-    public static IServiceCollection AddInfrastructureServices(this IServiceCollection services,
+    public static IServiceCollection AddDbContextServices(this IServiceCollection services,
         IConfiguration configuration)
     {
         if (configuration.GetValue<bool>("UseInMemoryDatabase"))
         {
-            services.AddDbContext<SemanticKernelContext>(options =>
+            services.AddDbContext<SemanticKernelMicroserviceContext>(options =>
                 options.UseInMemoryDatabase("DefaultConnection").UseLazyLoadingProxies());
         }
         else
         {
-            services.AddDbContext<SemanticKernelContext>(options =>
+            services.AddDbContext<SemanticKernelMicroserviceContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-                        builder => builder.MigrationsAssembly(typeof(SemanticKernelContext).Assembly.FullName))
+                        builder => builder.MigrationsAssembly(typeof(SemanticKernelMicroserviceContext).Assembly.FullName))
                     .UseLazyLoadingProxies());
         }
 
-        services.AddScoped<ISemanticKernelContext, SemanticKernelContext>();
+        services.AddScoped<ISemanticKernelMicroserviceContext, SemanticKernelMicroserviceContext>();
+        services.AddScoped<SemanticKernelMicroserviceDbContextInitializer>();
 
-        services.AddScoped<SemanticKernelDbContextInitializer>();
+        return services;
+    }
+
+    public static IServiceCollection AddSemanticKernelServices(this IServiceCollection services,
+    IConfiguration configuration)
+    {
+        services.AddKernel();
+        services.AddOpenAIChatCompletion(configuration.GetValue<string>("AI:OpenAI:Model") ?? "gtp-3.5-turbo",
+            configuration.GetValue<string>("AI:OpenAI:ApiKey") ?? string.Empty);
 
         return services;
     }

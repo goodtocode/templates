@@ -1,4 +1,4 @@
-﻿namespace SemanticKernel.Core.Application.Common.Interfaces;
+﻿namespace SemanticKernelMicroservice.Core.Application.Common.Interfaces;
 
 public interface IDateTime
 {

@@ -1,7 +1,7 @@
 ﻿using AutoMapper.QueryableExtensions;
-using SemanticKernel.Core.Application.Common.Models;
+using SemanticKernelMicroservice.Core.Application.Common.Models;
 
-namespace SemanticKernel.Core.Application.Common.Mappings;
+namespace SemanticKernelMicroservice.Core.Application.Common.Mappings;
 
 public static class MappingExtensions
 {

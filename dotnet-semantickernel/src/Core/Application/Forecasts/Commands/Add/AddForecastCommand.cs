@@ -1,9 +1,9 @@
 ﻿using FluentValidation.Results;
-using SemanticKernel.Core.Application.Common.Interfaces;
-using SemanticKernel.Core.Domain.Forecasts.Entities;
-using ValidationException = SemanticKernel.Core.Application.Common.Exceptions.CustomValidationException;
+using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
+using ValidationException = SemanticKernelMicroservice.Core.Application.Common.Exceptions.CustomValidationException;
 
-namespace SemanticKernel.Core.Application.Forecasts.Commands.Add;
+namespace SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Add;
 
 public class AddForecastCommand : IRequest
 {
@@ -18,9 +18,9 @@ public class AddForecastCommand : IRequest
 
 public class AddForecastCommandHandler : IRequestHandler<AddForecastCommand>
 {
-    private readonly ISemanticKernelContext _context;
+    private readonly ISemanticKernelMicroserviceContext _context;
 
-    public AddForecastCommandHandler(ISemanticKernelContext context)
+    public AddForecastCommandHandler(ISemanticKernelMicroserviceContext context)
     {
         _context = context;
     }

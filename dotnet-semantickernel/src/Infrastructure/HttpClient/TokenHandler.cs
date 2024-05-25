@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Headers;
 
-namespace SemanticKernel.Infrastructure.HttpClient;
+namespace SemanticKernelMicroservice.Infrastructure.HttpClient;
 
 public class TokenHandler : DelegatingHandler
 {

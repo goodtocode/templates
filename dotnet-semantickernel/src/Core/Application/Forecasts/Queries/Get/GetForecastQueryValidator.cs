@@ -1,4 +1,4 @@
-﻿namespace SemanticKernel.Core.Application.Forecasts.Queries.Get;
+﻿namespace SemanticKernelMicroservice.Core.Application.Forecasts.Queries.Get;
 
 public class GetForecastQueryValidator : AbstractValidator<GetWeatherForecastQuery>
 {

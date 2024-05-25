@@ -1,7 +1,7 @@
-using SemanticKernel.Core.Application.Forecasts.Commands.Update;
-using SemanticKernel.Core.Domain.Forecasts.Entities;
+using SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Update;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
-namespace SemanticKernel.Specs.Application.Unit.Forecasts.Commands.Update;
+namespace SemanticKernelMicroservice.Specs.Application.Unit.Forecasts.Commands.Update;
 
 [Binding]
 [Scope(Tag= "updateForecastCommand")]
@@ -74,8 +74,8 @@ public class PatchWeatherForecastCommandStepDefinitions : TestBase
             var weatherForecastValue =
                 ForecastValue.Create(_forecastKey, DateTime.Now.AddDays(-1), 75, new List<int>(){ 90000, 90002});
 
-            SemanticKernelContext.Forecasts.Add(new Forecast(weatherForecastValue.Value));
-            await SemanticKernelContext.SaveChangesAsync(CancellationToken.None);
+            SemanticKernelMicroserviceContext.Forecasts.Add(new Forecast(weatherForecastValue.Value));
+            await SemanticKernelMicroserviceContext.SaveChangesAsync(CancellationToken.None);
         }
 
         var validator = new UpdateForecastCommandValidator();
@@ -84,7 +84,7 @@ public class PatchWeatherForecastCommandStepDefinitions : TestBase
         if (_validationResponse.IsValid)
             try
             {
-                var handler = new UpdateWeatherForecastCommandHandler(SemanticKernelContext);
+                var handler = new UpdateWeatherForecastCommandHandler(SemanticKernelMicroserviceContext);
                 await handler.Handle(request, CancellationToken.None);
                 _responseType = CommandResponseType.Successful;
             }

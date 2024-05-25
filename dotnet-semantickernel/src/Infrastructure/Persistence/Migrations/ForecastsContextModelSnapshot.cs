@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SemanticKernel.Infrastructure.Persistence;
+using SemanticKernelMicroservice.Infrastructure.Persistence;
 
 #nullable disable
 
-namespace SemanticKernel.Infrastructure.Persistence.Migrations
+namespace SemanticKernelMicroservice.Infrastructure.Persistence.Migrations
 {
-    [DbContext(typeof(SemanticKernelContext))]
+    [DbContext(typeof(SemanticKernelMicroserviceContext))]
     partial class ForecastsContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace SemanticKernel.Infrastructure.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SemanticKernel.Core.Domain.Forecasts.Entities.Forecast", b =>
+            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.Forecasts.Entities.Forecast", b =>
                 {
                     b.Property<Guid>("Key")
                         .ValueGeneratedOnAdd()
@@ -58,7 +58,7 @@ namespace SemanticKernel.Infrastructure.Persistence.Migrations
                     b.ToTable("Forecasts", (string)null);
                 });
 
-            modelBuilder.Entity("SemanticKernel.Core.Domain.Forecasts.Entities.WeatherForecastZipcode", b =>
+            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.Forecasts.Entities.WeatherForecastZipcode", b =>
                 {
                     b.Property<Guid>("Key")
                         .ValueGeneratedOnAdd()
@@ -77,7 +77,7 @@ namespace SemanticKernel.Infrastructure.Persistence.Migrations
                     b.ToTable("ForecastZipCodes", (string)null);
                 });
 
-            modelBuilder.Entity("SemanticKernel.Core.Domain.Forecasts.Models.ForecastsView", b =>
+            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.Forecasts.Models.ForecastsView", b =>
                 {
                     b.Property<Guid>("Key")
                         .HasColumnType("uniqueidentifier");
@@ -111,9 +111,9 @@ namespace SemanticKernel.Infrastructure.Persistence.Migrations
                     b.ToView("ForecastsView", (string)null);
                 });
 
-            modelBuilder.Entity("SemanticKernel.Core.Domain.Forecasts.Entities.WeatherForecastZipcode", b =>
+            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.Forecasts.Entities.WeatherForecastZipcode", b =>
                 {
-                    b.HasOne("SemanticKernel.Core.Domain.Forecasts.Entities.Forecast", "WeatherForecast")
+                    b.HasOne("SemanticKernelMicroservice.Core.Domain.Forecasts.Entities.Forecast", "WeatherForecast")
                         .WithMany("ZipCodes")
                         .HasForeignKey("WeatherForecastKey")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -122,7 +122,7 @@ namespace SemanticKernel.Infrastructure.Persistence.Migrations
                     b.Navigation("WeatherForecast");
                 });
 
-            modelBuilder.Entity("SemanticKernel.Core.Domain.Forecasts.Entities.Forecast", b =>
+            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.Forecasts.Entities.Forecast", b =>
                 {
                     b.Navigation("ZipCodes");
                 });

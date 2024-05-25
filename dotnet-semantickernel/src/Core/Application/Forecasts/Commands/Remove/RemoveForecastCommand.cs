@@ -1,7 +1,7 @@
-﻿using SemanticKernel.Core.Application.Common.Exceptions;
-using SemanticKernel.Core.Application.Common.Interfaces;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
 
-namespace SemanticKernel.Core.Application.Forecasts.Commands.Remove;
+namespace SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Remove;
 
 public class RemoveForecastCommand : IRequest
 {
@@ -10,9 +10,9 @@ public class RemoveForecastCommand : IRequest
 
 public class RemoveForecastCommandHandler : IRequestHandler<RemoveForecastCommand>
 {
-    private readonly ISemanticKernelContext _context;
+    private readonly ISemanticKernelMicroserviceContext _context;
 
-    public RemoveForecastCommandHandler(ISemanticKernelContext context)
+    public RemoveForecastCommandHandler(ISemanticKernelMicroserviceContext context)
     {
         _context = context;
     }
