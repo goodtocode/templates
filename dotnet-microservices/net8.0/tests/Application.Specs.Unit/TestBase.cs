@@ -38,11 +38,11 @@ public class TestBase
     {
         switch (e)
         {
-            case ValidationException validationException:
+            case CustomValidationException validationException:
                 _commandErrors = validationException.Errors;
                 _responseType = CommandResponseType.BadRequest;
                 break;
-            case NotFoundException notFoundException:
+            case CustomNotFoundException notFoundException:
                 _responseType = CommandResponseType.NotFound;
                 break;
             default:

@@ -1,7 +1,7 @@
 ﻿using FluentValidation.Results;
 using WeatherForecasts.Core.Application.Common.Interfaces;
 using WeatherForecasts.Core.Domain.Forecasts.Entities;
-using ValidationException = WeatherForecasts.Core.Application.Common.Exceptions.ValidationException;
+using ValidationException = WeatherForecasts.Core.Application.Common.Exceptions.CustomValidationException;
 
 namespace WeatherForecasts.Core.Application.Forecasts.Commands.Add;
 
