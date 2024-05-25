@@ -22,6 +22,48 @@
             </summary>
             <param name="context"></param>
         </member>
+        <member name="T:WeatherForecasts.Presentation.WebApi.ConfigureServices">
+            <summary>
+            Presentation Layer WebApi Configuration
+            </summary>
+        </member>
+        <member name="M:WeatherForecasts.Presentation.WebApi.ConfigureServices.AddWebUIServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Add WebUI Services
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeatherForecasts.Presentation.WebApi.ConfigureServices.ConfigureSwaggerOptions">
+            <summary>
+            Swagger UI Configuration
+            </summary>
+        </member>
+        <member name="M:WeatherForecasts.Presentation.WebApi.ConfigureServices.ConfigureSwaggerOptions.#ctor(Asp.Versioning.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="provider"></param>
+        </member>
+        <member name="M:WeatherForecasts.Presentation.WebApi.ConfigureServices.ConfigureSwaggerOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <summary>
+            OpenApi Configuration
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:WeatherForecasts.Presentation.WebApi.ConfigureServices.ConfigureSwaggerOptions.Configure(System.String,Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <summary>
+            OpenApi Configuration
+            </summary>
+            <param name="name"></param>
+            <param name="options"></param>
+        </member>
+        <member name="T:WeatherForecasts.Presentation.WebApi.ForecastCalculations.CalculationsController">
+            <summary>
+            Controller for Calculations
+            </summary>
+        </member>
         <member name="M:WeatherForecasts.Presentation.WebApi.ForecastCalculations.CalculationsController.GetCelsiusToFahrenheitCalculationConversionQuery(System.Int32)">
              <summary>Get Celsius To Fahrenheit Calculation Conversion Query</summary>
              <remarks>
@@ -43,6 +85,11 @@
              
              </remarks>
              <returns>int</returns>
+        </member>
+        <member name="T:WeatherForecasts.Presentation.WebApi.ForecastsLists.ForecastsListsController">
+            <summary>
+            Controller for Forecasts
+            </summary>
         </member>
         <member name="M:WeatherForecasts.Presentation.WebApi.ForecastsLists.ForecastsListsController.GetWeatherForecastsPaginatedQuery(WeatherForecasts.Core.Application.ForecastLists.Queries.GetPaginated.GetForecastsPaginatedQuery)">
              <summary>Get Paginated Query</summary>
