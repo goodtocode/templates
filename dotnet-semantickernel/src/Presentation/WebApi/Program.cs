@@ -6,7 +6,6 @@ using Microsoft.Identity.Web;
 using SemanticKernelMicroservice.Core.Application;
 using SemanticKernelMicroservice.Infrastructure;
 using SemanticKernelMicroservice.Presentation.WebApi;
-using SemanticKernelMicroservice.Presentation.WebApi.Configuration;
 
 [assembly: ApiConventionType(typeof(DefaultApiConventions))]
 

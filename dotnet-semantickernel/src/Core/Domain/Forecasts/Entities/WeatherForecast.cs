@@ -24,7 +24,7 @@ public class Forecast : Common.Entity
 
     public string ZipCodesSearch { get; private set; }
 
-    public virtual List<WeatherForecastZipcode> ZipCodes { get; } = new();
+    public virtual List<WeatherForecastZipcode> ZipCodes { get; } = [];
 
     public DateTime ForecastDate { get; private set; }
 

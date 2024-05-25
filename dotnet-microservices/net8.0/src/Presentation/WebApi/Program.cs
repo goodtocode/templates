@@ -6,7 +6,6 @@ using Microsoft.Identity.Web;
 using WeatherForecasts.Core.Application;
 using WeatherForecasts.Infrastructure;
 using WeatherForecasts.Presentation.WebApi;
-using WeatherForecasts.Presentation.WebApi.Configuration;
 
 [assembly: ApiConventionType(typeof(DefaultApiConventions))]
 
