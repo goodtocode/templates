@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+	  <RootNamespace>WeatherForecasts.Core.Domain</RootNamespace>
+	  <AssemblyName>WeatherForecasts.Core.Domain</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="12.2.0" />
+		<PackageReference Include="CSharpFunctionalExtensions" Version="2.42.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Common\" />
+	</ItemGroup>
+</Project>
