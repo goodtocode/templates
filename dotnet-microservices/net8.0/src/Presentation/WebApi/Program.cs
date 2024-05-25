@@ -82,6 +82,7 @@ void AddKeyVaultConfigurationSettings(WebApplicationBuilder appBuilder)
     if (!appBuilder.Configuration.GetValue<bool>("KeyVault:UseKeyVault")) return;
 
     var azureKeyVaultEndpoint = appBuilder.Configuration["KeyVault:Endpoint"];
+    if (azureKeyVaultEndpoint == null) return;
     var credential = new DefaultAzureCredential();
     var secretClient = new SecretClient(new Uri(azureKeyVaultEndpoint), credential);
     appBuilder.Configuration.AddAzureKeyVault(secretClient, new KeyVaultSecretManager());

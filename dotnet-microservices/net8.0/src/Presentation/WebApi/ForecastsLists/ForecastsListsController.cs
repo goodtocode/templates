@@ -5,6 +5,9 @@ using WeatherForecasts.Presentation.WebApi.Common;
 
 namespace WeatherForecasts.Presentation.WebApi.ForecastsLists;
 
+/// <summary>
+/// Controller for Forecasts
+/// </summary>
 [ApiController]
 [ApiConventionType(typeof(DefaultApiConventions))]
 [Route("[controller]")]

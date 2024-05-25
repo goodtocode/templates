@@ -4,8 +4,17 @@ using WeatherForecasts.Presentation.WebApi.Common;
 
 namespace WeatherForecasts.Presentation.WebApi;
 
+/// <summary>
+/// Presentation Layer WebApi Configuration
+/// </summary>
 public static class ConfigureServices
 {
+    /// <summary>
+    /// Add WebUI Services
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configuration"></param>
+    /// <returns></returns>
     public static IServiceCollection AddWebUIServices(this IServiceCollection services,
         IConfiguration configuration)
     {
@@ -69,15 +78,26 @@ public static class ConfigureServices
         return services;
     }
 
+    /// <summary>
+    /// Swagger UI Configuration
+    /// </summary>
     public class ConfigureSwaggerOptions : IConfigureNamedOptions<SwaggerGenOptions>
     {
         private readonly IApiVersionDescriptionProvider provider;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="provider"></param>
         public ConfigureSwaggerOptions(IApiVersionDescriptionProvider provider)
         {
             this.provider = provider;
         }
 
+        /// <summary>
+        /// OpenApi Configuration
+        /// </summary>
+        /// <param name="options"></param>
         public void Configure(SwaggerGenOptions options)
         {
             foreach (var description in provider.ApiVersionDescriptions)
@@ -88,6 +108,11 @@ public static class ConfigureServices
             options.IncludeXmlComments(xmlPath);
         }
 
+        /// <summary>
+        /// OpenApi Configuration
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="options"></param>
         public void Configure(string name, SwaggerGenOptions options)
         {
             Configure(options);
