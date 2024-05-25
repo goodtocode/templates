@@ -1,8 +1,8 @@
-﻿using dotnet_semantickernel.Core.Application.Common.Exceptions;
-using dotnet_semantickernel.Core.Application.Common.Interfaces;
-using dotnet_semantickernel.Core.Domain.Forecasts.Models;
+﻿using WeatherForecasts.Core.Application.Common.Exceptions;
+using WeatherForecasts.Core.Application.Common.Interfaces;
+using WeatherForecasts.Core.Domain.Forecasts.Models;
 
-namespace dotnet_semantickernel.Core.Application.Forecasts.Queries.Get;
+namespace WeatherForecasts.Core.Application.Forecasts.Queries.Get;
 
 public class GetWeatherForecastQuery : IRequest<ForecastVm>
 {
@@ -11,10 +11,10 @@ public class GetWeatherForecastQuery : IRequest<ForecastVm>
 
 public class GetForecastQueryHandler : IRequestHandler<GetWeatherForecastQuery, ForecastVm>
 {
-    private readonly Idotnet_semantickernelContext _context;
+    private readonly IWeatherForecastsContext _context;
     private readonly IMapper _mapper;
 
-    public GetForecastQueryHandler(Idotnet_semantickernelContext context, IMapper mapper)
+    public GetForecastQueryHandler(IWeatherForecastsContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;

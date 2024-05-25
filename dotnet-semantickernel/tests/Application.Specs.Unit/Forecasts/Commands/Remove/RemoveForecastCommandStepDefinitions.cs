@@ -1,7 +1,7 @@
-using dotnet_semantickernel.Core.Application.Forecasts.Commands.Remove;
-using dotnet_semantickernel.Core.Domain.Forecasts.Entities;
+using WeatherForecasts.Core.Application.Forecasts.Commands.Remove;
+using WeatherForecasts.Core.Domain.Forecasts.Entities;
 
-namespace dotnet_semantickernel.Specs.Application.Unit.Forecasts.Commands.Remove;
+namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Commands.Remove;
 
 [Binding]
 [Scope(Tag= "removeForecastCommand")]
@@ -39,8 +39,8 @@ public class RemoveForecastCommandStepDefinitions : TestBase
             var weatherForecastAddValue =
                 ForecastValue.Create(_forecastKey, DateTime.Now, 75, new List<int> { zipcode });
             var weatherForecast = new Forecast(weatherForecastAddValue.Value);
-            dotnet_semantickernelContext.Forecasts.Add(weatherForecast);
-            await dotnet_semantickernelContext.SaveChangesAsync(CancellationToken.None);
+            WeatherForecastsContext.Forecasts.Add(weatherForecast);
+            await WeatherForecastsContext.SaveChangesAsync(CancellationToken.None);
         }
 
         var request = new RemoveForecastCommand
@@ -55,7 +55,7 @@ public class RemoveForecastCommandStepDefinitions : TestBase
         if (_validationResponse.IsValid)
             try
             {
-                var handler = new RemoveForecastCommandHandler(dotnet_semantickernelContext);
+                var handler = new RemoveForecastCommandHandler(WeatherForecastsContext);
                 await handler.Handle(request, CancellationToken.None);
                 _responseType = CommandResponseType.Successful;
             }

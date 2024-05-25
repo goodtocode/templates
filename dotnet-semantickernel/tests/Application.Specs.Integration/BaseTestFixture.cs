@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace dotnet_semantickernel.Specs.Application.Integration;
+namespace WeatherForecasts.Specs.Application.Integration;
 
 using static TestBase;
 

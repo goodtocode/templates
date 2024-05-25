@@ -1,4 +1,4 @@
-﻿namespace dotnet_semantickernel.Core.Domain.Forecasts.Entities;
+﻿namespace WeatherForecasts.Core.Domain.Forecasts.Entities;
 
 public class ForecastValue : ValueObject
 {
@@ -32,11 +32,11 @@ public class ForecastValue : ValueObject
         return Result.Success(new ForecastValue(key, date, temperatureF, zipCodes));
     }
 
-    protected override IEnumerable<object> GetEqualityComponents()
+    protected override IEnumerable<IComparable> GetEqualityComponents()
     {
         yield return Key;
         yield return Date;
         yield return TemperatureF;
-        yield return ZipCodes;
+        yield return (IComparable)ZipCodes;
     }
 }

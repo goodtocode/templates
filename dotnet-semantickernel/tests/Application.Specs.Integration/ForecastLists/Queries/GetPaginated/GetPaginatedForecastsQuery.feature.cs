@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace dotnet_semantickernel.Specs.Application.Integration.ForecastLists.Queries.GetPaginated
+namespace WeatherForecasts.Specs.Application.Integration.ForecastLists.Queries.GetPaginated
 {
     using TechTalk.SpecFlow;
     using System;

@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
-		<RootNamespace>dotnet_semantickernel.Specs.Application.Integration</RootNamespace>
-		<AssemblyName>dotnet_semantickernel.Specs.Application.Integration</AssemblyName>
+		<TargetFramework>net8.0</TargetFramework>
+		<RootNamespace>WeatherForecasts.Specs.Application.Integration</RootNamespace>
+		<AssemblyName>WeatherForecasts.Specs.Application.Integration</AssemblyName>
 		<IsPackable>false</IsPackable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
@@ -24,23 +24,23 @@
 	  <SpecFlowObsoleteCodeBehindFiles Remove="Forecasts\Commands\Patch\PatchWeatherForecastCommand.feature.cs" />
 	  <SpecFlowObsoleteCodeBehindFiles Remove="Forecasts\Commands\Remove\RemoveForecast.feature.cs" />
 	  <SpecFlowObsoleteCodeBehindFiles Remove="Forecasts\Commands\Update\UpdateWeatherForecastCommand.feature.cs" />
-	  <SpecFlowObsoleteCodeBehindFiles Remove="ForecastLists\Queries\GetAll\GetAlldotnet_semantickernelQuery.feature.cs" />
-	  <SpecFlowObsoleteCodeBehindFiles Remove="ForecastLists\Queries\GetPaginated\GetPaginateddotnet_semantickernelQuery.feature.cs" />
+	  <SpecFlowObsoleteCodeBehindFiles Remove="ForecastLists\Queries\GetAll\GetAllWeatherForecastsQuery.feature.cs" />
+	  <SpecFlowObsoleteCodeBehindFiles Remove="ForecastLists\Queries\GetPaginated\GetPaginatedWeatherForecastsQuery.feature.cs" />
 	  <SpecFlowObsoleteCodeBehindFiles Remove="Forecasts\Queries\Get\GetForecastQuery.feature.cs" />
 	  <SpecFlowObsoleteCodeBehindFiles Remove="TempCalculations\Queries\GetCelsiusToFahrenheit\GetCelsiusToFahrenheitCalculationConversionQuery.feature.cs" />
 	  <SpecFlowObsoleteCodeBehindFiles Remove="TempCalculations\Queries\GetFahrenheitToCelsius\GetFahrenheitToCelsiusCalculationConversionQuery.feature.cs" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.5" />
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
-		<PackageReference Include="nunit" Version="3.13.3" />
-		<PackageReference Include="NUnit3TestAdapter" Version="4.4.2">
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.5" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+		<PackageReference Include="nunit" Version="4.1.0" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.5.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="FluentAssertions" Version="6.11.0" />
-		<PackageReference Include="Moq" Version="4.18.4" />
-		<PackageReference Include="Respawn" Version="6.0.0" />
+		<PackageReference Include="FluentAssertions" Version="6.12.0" />
+		<PackageReference Include="Moq" Version="4.20.70" />
+		<PackageReference Include="Respawn" Version="6.2.1" />
 		<PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
 		<PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
 	</ItemGroup>

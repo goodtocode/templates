@@ -1,4 +1,4 @@
-﻿namespace dotnet_semantickernel.Core.Application.Forecasts.Queries.Get;
+﻿namespace WeatherForecasts.Core.Application.Forecasts.Queries.Get;
 
 public class GetForecastQueryValidator : AbstractValidator<GetWeatherForecastQuery>
 {

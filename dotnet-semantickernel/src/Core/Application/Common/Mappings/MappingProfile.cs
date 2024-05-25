@@ -1,4 +1,4 @@
-namespace dotnet_semantickernel.Core.Application.Common.Mappings;
+namespace WeatherForecasts.Core.Application.Common.Mappings;
 
 public class MappingProfile : Profile
 {

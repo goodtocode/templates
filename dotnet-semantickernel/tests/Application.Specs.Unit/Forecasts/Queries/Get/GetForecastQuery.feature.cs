@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace dotnet_semantickernel.Specs.Application.Unit.Forecasts.Queries.Get
+namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Queries.Get
 {
     using TechTalk.SpecFlow;
     using System;

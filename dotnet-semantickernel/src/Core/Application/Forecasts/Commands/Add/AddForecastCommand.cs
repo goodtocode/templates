@@ -1,9 +1,9 @@
 ﻿using FluentValidation.Results;
-using dotnet_semantickernel.Core.Application.Common.Interfaces;
-using dotnet_semantickernel.Core.Domain.Forecasts.Entities;
-using ValidationException = dotnet_semantickernel.Core.Application.Common.Exceptions.ValidationException;
+using WeatherForecasts.Core.Application.Common.Interfaces;
+using WeatherForecasts.Core.Domain.Forecasts.Entities;
+using ValidationException = WeatherForecasts.Core.Application.Common.Exceptions.ValidationException;
 
-namespace dotnet_semantickernel.Core.Application.Forecasts.Commands.Add;
+namespace WeatherForecasts.Core.Application.Forecasts.Commands.Add;
 
 public class AddForecastCommand : IRequest
 {
@@ -18,9 +18,9 @@ public class AddForecastCommand : IRequest
 
 public class AddForecastCommandHandler : IRequestHandler<AddForecastCommand>
 {
-    private readonly Idotnet_semantickernelContext _context;
+    private readonly IWeatherForecastsContext _context;
 
-    public AddForecastCommandHandler(Idotnet_semantickernelContext context)
+    public AddForecastCommandHandler(IWeatherForecastsContext context)
     {
         _context = context;
     }

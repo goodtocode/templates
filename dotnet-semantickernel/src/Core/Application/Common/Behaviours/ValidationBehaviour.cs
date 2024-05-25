@@ -1,6 +1,6 @@
-﻿using ValidationException = dotnet_semantickernel.Core.Application.Common.Exceptions.ValidationException;
+﻿using ValidationException = WeatherForecasts.Core.Application.Common.Exceptions.ValidationException;
 
-namespace dotnet_semantickernel.Core.Application.Common.Behaviours;
+namespace WeatherForecasts.Core.Application.Common.Behaviours;
 
 public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
      where TRequest : notnull

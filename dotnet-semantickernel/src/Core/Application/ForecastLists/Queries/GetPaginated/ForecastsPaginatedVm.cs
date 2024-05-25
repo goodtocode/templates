@@ -1,4 +1,4 @@
-﻿namespace dotnet_semantickernel.Core.Application.ForecastLists.Queries.GetPaginated;
+﻿namespace WeatherForecasts.Core.Application.ForecastLists.Queries.GetPaginated;
 
 public class ForecastsPaginatedVm
 {

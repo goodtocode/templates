@@ -5,13 +5,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 using Respawn;
-using dotnet_semantickernel.Core.Application;
-using dotnet_semantickernel.Core.Application.Common.Exceptions;
-using dotnet_semantickernel.Infrastructure;
-using dotnet_semantickernel.Infrastructure.Persistence;
+using WeatherForecasts.Core.Application;
+using WeatherForecasts.Core.Application.Common.Exceptions;
+using WeatherForecasts.Infrastructure;
+using WeatherForecasts.Infrastructure.Persistence;
 using Table = Respawn.Graph.Table;
 
-namespace dotnet_semantickernel.Specs.Application.Integration;
+namespace WeatherForecasts.Specs.Application.Integration;
 
 [SetUpFixture]
 public class TestBase
@@ -29,7 +29,7 @@ public class TestBase
     public static CommandResponseType _responseType;
     public static ValidationResult ValidationResponse = new();
     public static IDictionary<string, string[]> CommandErrors = new ConcurrentDictionary<string, string[]>();
-    private dotnet_semantickernelDbContextInitializer _contextInitializer;
+    private WeatherForecastsDbContextInitializer _contextInitializer;
     public static IConfiguration Configuration { get; private set; }
 
     [OneTimeSetUp]
@@ -53,7 +53,7 @@ public class TestBase
 
         _contextInitializer = services
             .BuildServiceProvider()
-            .GetRequiredService<dotnet_semantickernelDbContextInitializer>();
+            .GetRequiredService<WeatherForecastsDbContextInitializer>();
 
         await _contextInitializer.InitialiseAsync();
         await _contextInitializer.SeedAsync();
@@ -93,7 +93,7 @@ public class TestBase
     {
         using var scope = _scopeFactory.CreateScope();
 
-        var context = scope.ServiceProvider.GetRequiredService<dotnet_semantickernelContext>();
+        var context = scope.ServiceProvider.GetRequiredService<WeatherForecastsContext>();
 
         return await context.FindAsync<TEntity>(keyValues);
     }
@@ -103,7 +103,7 @@ public class TestBase
     {
         using var scope = _scopeFactory.CreateScope();
 
-        var context = scope.ServiceProvider.GetRequiredService<dotnet_semantickernelContext>();
+        var context = scope.ServiceProvider.GetRequiredService<WeatherForecastsContext>();
 
         context.Add(entity);
 

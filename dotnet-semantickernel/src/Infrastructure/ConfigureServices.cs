@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using dotnet_semantickernel.Core.Application.Common.Interfaces;
-using dotnet_semantickernel.Infrastructure.Persistence;
+using WeatherForecasts.Core.Application.Common.Interfaces;
+using WeatherForecasts.Infrastructure.Persistence;
 
-namespace dotnet_semantickernel.Infrastructure;
+namespace WeatherForecasts.Infrastructure;
 
 public static class ConfigureServices
 {
@@ -12,20 +12,20 @@ public static class ConfigureServices
     {
         if (configuration.GetValue<bool>("UseInMemoryDatabase"))
         {
-            services.AddDbContext<dotnet_semantickernelContext>(options =>
+            services.AddDbContext<WeatherForecastsContext>(options =>
                 options.UseInMemoryDatabase("DefaultConnection").UseLazyLoadingProxies());
         }
         else
         {
-            services.AddDbContext<dotnet_semantickernelContext>(options =>
+            services.AddDbContext<WeatherForecastsContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-                        builder => builder.MigrationsAssembly(typeof(dotnet_semantickernelContext).Assembly.FullName))
+                        builder => builder.MigrationsAssembly(typeof(WeatherForecastsContext).Assembly.FullName))
                     .UseLazyLoadingProxies());
         }
 
-        services.AddScoped<Idotnet_semantickernelContext, dotnet_semantickernelContext>();
+        services.AddScoped<IWeatherForecastsContext, WeatherForecastsContext>();
 
-        services.AddScoped<dotnet_semantickernelDbContextInitializer>();
+        services.AddScoped<WeatherForecastsDbContextInitializer>();
 
         return services;
     }

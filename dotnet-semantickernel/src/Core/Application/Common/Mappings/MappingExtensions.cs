@@ -1,7 +1,7 @@
 ﻿using AutoMapper.QueryableExtensions;
-using dotnet_semantickernel.Core.Application.Common.Models;
+using WeatherForecasts.Core.Application.Common.Models;
 
-namespace dotnet_semantickernel.Core.Application.Common.Mappings;
+namespace WeatherForecasts.Core.Application.Common.Mappings;
 
 public static class MappingExtensions
 {

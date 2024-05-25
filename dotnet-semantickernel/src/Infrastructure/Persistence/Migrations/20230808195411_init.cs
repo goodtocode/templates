@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace dotnet_semantickernel.Infrastructure.Persistence.Migrations
+namespace WeatherForecasts.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class init : Migration

@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace dotnet_semantickernel.Specs.Application.Unit.TempCalculations.Queries.GetCelsiusToFahrenheit
+namespace WeatherForecasts.Specs.Application.Unit.TempCalculations.Queries.GetCelsiusToFahrenheit
 {
     using TechTalk.SpecFlow;
     using System;

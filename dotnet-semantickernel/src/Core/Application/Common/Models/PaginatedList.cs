@@ -1,4 +1,4 @@
-﻿namespace dotnet_semantickernel.Core.Application.Common.Models;
+﻿namespace WeatherForecasts.Core.Application.Common.Models;
 
 public class PaginatedList<T>
 {

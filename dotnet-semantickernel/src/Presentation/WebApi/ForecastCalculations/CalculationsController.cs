@@ -1,9 +1,12 @@
-﻿using dotnet_semantickernel.Core.Application.ForecastCalculations.Queries.GetCelsiusToFahrenheit;
-using dotnet_semantickernel.Core.Application.ForecastCalculations.Queries.GetFahrenheitToCelsius;
-using dotnet_semantickernel.Presentation.WebApi.Common;
+﻿using WeatherForecasts.Core.Application.ForecastCalculations.Queries.GetCelsiusToFahrenheit;
+using WeatherForecasts.Core.Application.ForecastCalculations.Queries.GetFahrenheitToCelsius;
+using WeatherForecasts.Presentation.WebApi.Common;
 
-namespace dotnet_semantickernel.Presentation.WebApi.ForecastCalculations;
+namespace WeatherForecasts.Presentation.WebApi.ForecastCalculations;
 
+/// <summary>
+/// Controller for Calculations
+/// </summary>
 [ApiController]
 [ApiConventionType(typeof(DefaultApiConventions))]
 [Route("[controller]")]

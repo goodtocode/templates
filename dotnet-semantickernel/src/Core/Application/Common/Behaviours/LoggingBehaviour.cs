@@ -1,7 +1,7 @@
 ﻿using MediatR.Pipeline;
 using Microsoft.Extensions.Logging;
 
-namespace dotnet_semantickernel.Core.Application.Common.Behaviours;
+namespace WeatherForecasts.Core.Application.Common.Behaviours;
 
 public class LoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest> where TRequest : notnull
 {

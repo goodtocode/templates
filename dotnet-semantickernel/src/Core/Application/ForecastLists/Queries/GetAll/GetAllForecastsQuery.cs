@@ -1,7 +1,7 @@
 ﻿using AutoMapper.QueryableExtensions;
-using dotnet_semantickernel.Core.Application.Common.Interfaces;
+using WeatherForecasts.Core.Application.Common.Interfaces;
 
-namespace dotnet_semantickernel.Core.Application.ForecastLists.Queries.GetAll;
+namespace WeatherForecasts.Core.Application.ForecastLists.Queries.GetAll;
 
 public class GetAllForecastsQuery : IRequest<ForecastsVm>
 {
@@ -10,10 +10,10 @@ public class GetAllForecastsQuery : IRequest<ForecastsVm>
 
 public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecastsQuery, ForecastsVm>
 {
-    private readonly Idotnet_semantickernelContext _context;
+    private readonly IWeatherForecastsContext _context;
     private readonly IMapper _mapper;
 
-    public GetAllWeatherForecastQueryHandler(Idotnet_semantickernelContext context, IMapper mapper)
+    public GetAllWeatherForecastQueryHandler(IWeatherForecastsContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;
@@ -23,9 +23,9 @@ public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecasts
         CancellationToken cancellationToken)
     {
         if (!string.IsNullOrWhiteSpace(request.ZipcodeFilter))
-            return await GetFiltereddotnet_semantickernel(request, cancellationToken);
+            return await GetFilteredWeatherForecasts(request, cancellationToken);
 
-        var vm = await GetAlldotnet_semantickernel(cancellationToken);
+        var vm = await GetAllWeatherForecasts(cancellationToken);
         PopulateCalculationsF(vm);
         return vm;
     }
@@ -36,7 +36,7 @@ public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecasts
             weatherForecast.TemperatureF = 32 + (int) (weatherForecast.TemperatureC / 0.5556);
     }
 
-    private async Task<ForecastsVm> GetAlldotnet_semantickernel(CancellationToken cancellationToken)
+    private async Task<ForecastsVm> GetAllWeatherForecasts(CancellationToken cancellationToken)
     {
         ForecastsVm vm;
 
@@ -50,7 +50,7 @@ public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecasts
         return vm;
     }
 
-    private async Task<ForecastsVm> GetFiltereddotnet_semantickernel(GetAllForecastsQuery request,
+    private async Task<ForecastsVm> GetFilteredWeatherForecasts(GetAllForecastsQuery request,
         CancellationToken cancellationToken)
     {
         ForecastsVm vm;
