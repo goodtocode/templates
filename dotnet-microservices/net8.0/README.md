@@ -18,7 +18,7 @@ winget install Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runc
 winget install Microsoft.DotNet.SDK.8 --silent
 ```
 
-3.* [Optional: SQL Server 2022 or above](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+3. [Optional: SQL Server 2022 or above](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
 ## Setup
 Follow these steps to get your development environment set up:
@@ -27,7 +27,7 @@ Follow these steps to get your development environment set up:
   	- Application layer uses ASPNETCORE_ENVIRONMENT environment variable, and will default to Production if not found.
 	- Add the ASPNETCORE_ENVIRONMENT entry in your Enviornment Variables
 
-	To accopmlish this on Windows:
+	On Windows:
 	```
 	Set-Item -Path Env:ASPNETCORE_ENVIRONMENT -Value "Development"
 	Get-Childitem env:
@@ -36,7 +36,6 @@ Follow these steps to get your development environment set up:
 	You will need to restart Visual Studio, VS Code and Terminals to see the changes
 
   ### 2. Setup your SQL Server connection string in appsettings.*.json
-     ```
 	- Application layer requires the following application configuration: ConnectionStrings.SqlConnection
 	- Both JSON configuration (appsettings.*.json) and Azure App Configuration service are supported
 	
@@ -45,11 +44,10 @@ Follow these steps to get your development environment set up:
 	2. Copy your SQL Server Connection String from the Azure Portal, or your on-premise SQL Server
 	3. Paste your connection string over the following setting:
 			"ConnectionStrings": {
-				"SqlConnection": "YOUR_CONNECTION_STRING_HERE"
+				"Default": "YOUR_CONNECTION_STRING_HERE"
 			}
 	 4. Repeat for both Development and Production
 	 5. Save all instances of appsettings.Development.json and appsettings.Production.json
-     ```
 
   ### 3. Launch the backend, within the `Microservice.Api' directory
      ```
@@ -61,9 +59,7 @@ Follow these steps to get your development environment set up:
   ### 5. Open http://localhost:9023/specs in your browser to view all CORE Specifications
 
   ### 6. Run any test scenerios within Microservice.Tests 
-     ```
-	 these specifications scenerios validate the infrastructure and presentation layer
-     ```
+	 > these specifications scenerios validate the infrastructure and presentation layer
 
 ## dotnet new steps
 1. Start Windows Terminal
@@ -81,7 +77,7 @@ mkdir /repos/dotnet-microservice
 cd /repos/dotnet-microservice
 ```
 5. Create microservice solution
-dotnet new aca -o "MyNewCoolApp"
+dotnet new gtc-msv3 -o "MyOrg.DomainMicroservice"
 
 ## Contact
 * [GitHub Repo](https://www.github.com/goodtocode/templates)
@@ -106,5 +102,6 @@ dotnet new aca -o "MyNewCoolApp"
 * Microsoft.AspNetCore.Cors
 * Swashbuckle.AspNetCore.SwaggerGen
 * Swashbuckle.AspNetCore.SwaggerUI
+
 
 This project is licensed with the [MIT license](LICENSE).
