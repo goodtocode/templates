@@ -61,6 +61,23 @@ Follow these steps to get your development environment set up:
   ### 6. Run any test scenerios within Microservice.Tests 
 	 > these specifications scenerios validate the infrastructure and presentation layer
 
+## dotnet ef migrate steps
+1. Open Windows Terminal in Powershell or Cmd mode
+2. cd to /src folder
+3. (Optional) If you have an existing database, scaffold current entities into your project
+```
+dotnet ef dbcontext scaffold "Data Source=localhost;Initial Catalog=weather.test;Min Pool Size=3;MultipleActiveResultSets=True;Trusted_Connection=Yes;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -t WeatherForecastView -c WeatherChannelContext -f -o WebApi
+```
+4. Create an initial migration
+```
+dotnet ef migrations add InitialCreate
+```
+5. Develop new entities and configurations
+6. When ready to deploy new entities and configurations
+```
+dotnet ef database update
+```
+
 ## dotnet new steps
 1. Start Windows Terminal
 2. Navigate to template.json folder

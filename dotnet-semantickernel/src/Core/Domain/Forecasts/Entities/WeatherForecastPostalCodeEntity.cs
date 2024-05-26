@@ -1,10 +1,10 @@
 ﻿namespace SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
-public class WeatherForecastZipcode : Common.Entity
+public class WeatherForecastPostalCodeEntity : Common.Entity
 {
-    protected WeatherForecastZipcode() { }
+    protected WeatherForecastPostalCodeEntity() { }
 
-    public WeatherForecastZipcode(int zipCode, Forecast weatherForecast)
+    public WeatherForecastPostalCodeEntity(int zipCode, Forecast weatherForecast)
     {
         ZipCode = zipCode;
         WeatherForecast = weatherForecast;

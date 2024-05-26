@@ -11,4 +11,7 @@
 		<PackageReference Include="MediatR" Version="12.2.0" />
 		<PackageReference Include="CSharpFunctionalExtensions" Version="2.42.0" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="ChatCompletion\" />
+	</ItemGroup>
 </Project>
