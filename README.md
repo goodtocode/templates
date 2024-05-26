@@ -10,13 +10,19 @@ Microservice template that contains a simple microservice solution and pre-setup
 [![Build Status](https://dev.azure.com/GoodToCode/GoodToCode.com/_apis/build/status/gtc-rg-templates-durabletasks?branchName=main)](https://dev.azure.com/GoodToCode/GoodToCode.com/_build/latest?definitionId=83&branchName=main)
 Durable Task Framework (DTFx) template contains a simple Event Sourcing solution and pre-setup projects.
 
+## Semantic Kernel Framework Quick-Start 
+[![Build Status](https://dev.azure.com/GoodToCode/GoodToCode.com/_apis/build/status/gtc-rg-templates-durabletasks?branchName=main)](https://dev.azure.com/GoodToCode/GoodToCode.com/_build/latest?definitionId=83&branchName=main)
+Semantic Kernmel template contains a simple AI (Open AI, Azure Open AI, etc.) solution and pre-setup projects.
+
 ## Repo Contents
 Path | Contents | Description
 --- | --- | ---
 dotnet-durabletasks | src, vsix | Simple Microservice source and VSIX packaging
 dotnet-microservices | src, vsix | Simple Durable Task Framework source and VSIX packaging
-infrastructure | Azure ARM json | Azure Infrastructure required to host the items in this repo.
-pipelines | Azure Devops yml | Azure DevOps Pipelines that build, test and deploy /infrastructure and **/src folders
+dotnet-semantickernel | src, vsix | Simple Semantic Kernel source and VSIX packaging
+.azure | Azure ARM json | Azure Infrastructure required to host the items in this repo.
+.azure-devops | Azure Devops yml | Azure DevOps Pipelines that build, test and deploy /.azure IaC and **/src folders
+.github | GitHub Actions yml | GitHub workflows that build, test and deploy /.azure IaC and **/src folders
 
 ## Prerequisites
 You will need the following tools:
