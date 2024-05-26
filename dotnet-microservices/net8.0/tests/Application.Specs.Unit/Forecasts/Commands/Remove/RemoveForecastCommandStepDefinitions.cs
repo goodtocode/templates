@@ -38,7 +38,7 @@ public class RemoveForecastCommandStepDefinitions : TestBase
             var zipcode = 99999;
             var weatherForecastAddValue =
                 ForecastValue.Create(_forecastKey, DateTime.Now, 75, new List<int> { zipcode });
-            var weatherForecast = new Forecast(weatherForecastAddValue.Value);
+            var weatherForecast = new ForecastEntity(weatherForecastAddValue.Value);
             WeatherForecastsContext.Forecasts.Add(weatherForecast);
             await WeatherForecastsContext.SaveChangesAsync(CancellationToken.None);
         }

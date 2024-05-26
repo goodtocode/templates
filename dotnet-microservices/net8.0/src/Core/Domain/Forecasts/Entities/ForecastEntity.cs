@@ -1,18 +1,18 @@
 ﻿namespace WeatherForecasts.Core.Domain.Forecasts.Entities;
 
-public class Forecast : Common.Entity
+public class ForecastEntity : Common.Entity
 {
-    protected Forecast() { }
+    protected ForecastEntity() { }
 
-    public Forecast(ForecastValue weatherForecastAddValue) : base(weatherForecastAddValue.Key)
+    public ForecastEntity(ForecastValue weatherForecastAddValue) : base(weatherForecastAddValue.Key)
     {
         ForecastDate = weatherForecastAddValue.Date.ToUniversalTime();
         TemperatureF = weatherForecastAddValue.TemperatureF;
         Summary = SummaryFValue().ToString();
-        ZipCodes = new List<WeatherForecastZipcode>();
-        foreach (var zipcode in weatherForecastAddValue.ZipCodes)
-            ZipCodes.Add(new WeatherForecastZipcode(zipcode, this));
-        PopulateZipcodeSearch();
+        PostalCodes = new List<ForecastPostalCodeEntity>();
+        foreach (var code in weatherForecastAddValue.PostalCodes)
+            PostalCodes.Add(new ForecastPostalCodeEntity(code, this));
+        PopulatePostalCodeSearch();
         DateAdded = DateTime.UtcNow;
     }
 
@@ -22,9 +22,9 @@ public class Forecast : Common.Entity
 
     public string Summary { get; private set; }
 
-    public string ZipCodesSearch { get; private set; }
+    public string PostalCodesSearch { get; private set; }
 
-    public virtual List<WeatherForecastZipcode> ZipCodes { get; } = new();
+    public virtual List<ForecastPostalCodeEntity> PostalCodes { get; } = new();
 
     public DateTime ForecastDate { get; private set; }
 
@@ -32,20 +32,20 @@ public class Forecast : Common.Entity
 
     public DateTime? DateUpdated { get; private set; }
 
-    public void AddZipcode(int zipcode)
+    public void AddPostalCode(int postalCode)
     {
-        if (ZipCodes.Any(x => x.ZipCode == zipcode)) return;
-        ZipCodes.Add(new WeatherForecastZipcode(zipcode, this));
-        PopulateZipcodeSearch();
+        if (PostalCodes.Any(x => x.PostalCode == postalCode)) return;
+        PostalCodes.Add(new ForecastPostalCodeEntity(postalCode, this));
+        PopulatePostalCodeSearch();
         DateUpdated = DateTime.Now;
     }
 
-    public void RemoveZipcode(int zipcode)
+    public void RemovePostalCode(int postalCode)
     {
-        var existingZip = ZipCodes.FirstOrDefault(x => x.ZipCode == zipcode);
-        if (existingZip == null) return;
-        ZipCodes.Remove(existingZip);
-        PopulateZipcodeSearch();
+        var existing = PostalCodes.FirstOrDefault(x => x.PostalCode == postalCode);
+        if (existing == null) return;
+        PostalCodes.Remove(existing);
+        PopulatePostalCodeSearch();
         DateUpdated = DateTime.Now;
     }
 
@@ -81,18 +81,18 @@ public class Forecast : Common.Entity
         };
     }
 
-    private void PopulateZipcodeSearch()
+    private void PopulatePostalCodeSearch()
     {
-        ZipCodesSearch = string.Join(", ", ZipCodes.Select(x => x.ZipCode));
+        PostalCodesSearch = string.Join(", ", PostalCodes.Select(x => x.PostalCode));
     }
 
-    public void UpdateZipcodes(List<int> requestZipcodes)
+    public void UpdatePostalCodes(List<int> requestCodes)
     {
-        ZipCodes.Clear();
-        foreach (var zipcode in requestZipcodes)
-            ZipCodes.Add(new WeatherForecastZipcode(zipcode, this));
+        PostalCodes.Clear();
+        foreach (var code in requestCodes)
+            PostalCodes.Add(new ForecastPostalCodeEntity(code, this));
         DateUpdated = DateTime.Now;
-        PopulateZipcodeSearch();
+        PopulatePostalCodeSearch();
     }
 
     public enum SummaryType

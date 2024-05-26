@@ -63,7 +63,7 @@ namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Queries.Get
                     Key = _forecastKey,
                     Summary = _expectedSummaryResponse,
                     TemperatureF = _expectedTemperatureF,
-                    ZipCodesSearch = "92673, 92674"
+                    PostalCodesSearch = "92673, 92674"
                 };
 
                 WeatherForecastsContext.ForecastViews.Add(weatherForecastView);
@@ -124,7 +124,7 @@ namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Queries.Get
         public void ThenIfTheResponseIsSuccessfulTheResponseHasASummary()
         {
             if (_responseType != CommandResponseType.Successful) return;
-            var validSummary = (Forecast.SummaryType) Enum.Parse(typeof(Forecast.SummaryType), _response.Summary);
+            var validSummary = (ForecastEntity.SummaryType) Enum.Parse(typeof(ForecastEntity.SummaryType), _response.Summary);
             validSummary.ToString().Should().Be(_response.Summary);
         }
 
@@ -132,7 +132,7 @@ namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Queries.Get
         public void ThenIfTheResponseIsSuccessfulTheResponseHasAZipcodes()
         {
             if (_responseType != CommandResponseType.Successful) return;
-            _response.Zipcodes.Should().NotBeNull();
+            _response.PostalCodes.Should().NotBeNull();
         }
 
 
@@ -148,7 +148,7 @@ namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Queries.Get
         public void ThenIfTheResponseIsSuccessfulTheResponseHasAValidSummaryOf(string expectedSummaryResponse)
         {
             if (_responseType != CommandResponseType.Successful) return;
-            var validSummary = (Forecast.SummaryType)Enum.Parse(typeof(Forecast.SummaryType), _response.Summary);
+            var validSummary = (ForecastEntity.SummaryType)Enum.Parse(typeof(ForecastEntity.SummaryType), _response.Summary);
             _expectedSummaryResponse.ToString().Should().Be(_response.Summary);
         }
         

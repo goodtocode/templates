@@ -45,11 +45,11 @@ public class ForecastsListsController : ApiControllerBase
     [ProducesResponseType(typeof(ForecastsVm), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ForecastsVm> GetAll(string zipcodeFilter)
+    public async Task<ForecastsVm> GetAll(string codeFilter)
     {
         return await Mediator.Send(new GetAllForecastsQuery()
         {
-            ZipcodeFilter = zipcodeFilter
+            PostalCodeFilter = codeFilter
         });
     }
 

@@ -7,6 +7,6 @@ public class UpdateForecastCommandValidator : AbstractValidator<UpdateForecastCo
         RuleFor(x => x.Key).NotEmpty();
         RuleFor(x => x.Date).NotEmpty();
         RuleFor(x => x.TemperatureF).NotEmpty();
-        RuleFor(x => x.Zipcodes).NotNull();
+        RuleFor(x => x.PostalCodes).NotNull();
     }
 }

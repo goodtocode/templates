@@ -44,7 +44,7 @@ public class AddForecastCommandStepDefinitions : TestBase
     }
 
     [Given(@"I have a collection of Zipcodes ""([^""]*)""")]
-    public void GivenIHaveACollectionOfZipCodes(string zipCodes)
+    public void GivenIHaveACollectionOfPostalCodes(string zipCodes)
     {
         if (string.IsNullOrWhiteSpace(zipCodes)) return;
 
@@ -63,7 +63,7 @@ public class AddForecastCommandStepDefinitions : TestBase
         {
             var weatherForecastAddValue = ForecastValue.Create(_forecastkey, DateTime.Now, 75, _zipcodes);
 
-            var weatherForecast = new Forecast(weatherForecastAddValue.Value);
+            var weatherForecast = new ForecastEntity(weatherForecastAddValue.Value);
 
             WeatherForecastsContext.Forecasts.Add(weatherForecast);
             await WeatherForecastsContext.SaveChangesAsync(CancellationToken.None);
@@ -74,7 +74,7 @@ public class AddForecastCommandStepDefinitions : TestBase
             Key = _forecastkey,
             Date = _forecastDate,
             TemperatureF = _tempF,
-            Zipcodes = _zipcodes
+            PostalCodes = _zipcodes
         };
 
         var validator = new AddForecastCommandValidator();

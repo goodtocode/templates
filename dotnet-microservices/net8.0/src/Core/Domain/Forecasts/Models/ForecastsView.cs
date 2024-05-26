@@ -6,7 +6,7 @@ public class ForecastsView
 
     public int TemperatureF { get; set; }
 
-    public string ZipCodesSearch { get; set; } = null!;
+    public string PostalCodesSearch { get; set; } = null!;
 
     public string Summary { get; set; } = null!;
 

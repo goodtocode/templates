@@ -5,7 +5,7 @@ namespace WeatherForecasts.Core.Application.ForecastLists.Queries.GetAll;
 
 public class GetAllForecastsQuery : IRequest<ForecastsVm>
 {
-    public string ZipcodeFilter { get; init; }
+    public string PostalCodeFilter { get; init; }
 }
 
 public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecastsQuery, ForecastsVm>
@@ -22,7 +22,7 @@ public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecasts
     public async Task<ForecastsVm> Handle(GetAllForecastsQuery request,
         CancellationToken cancellationToken)
     {
-        if (!string.IsNullOrWhiteSpace(request.ZipcodeFilter))
+        if (!string.IsNullOrWhiteSpace(request.PostalCodeFilter))
             return await GetFilteredWeatherForecasts(request, cancellationToken);
 
         var vm = await GetAllWeatherForecasts(cancellationToken);
@@ -57,7 +57,7 @@ public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecasts
         vm = new ForecastsVm
         {
             Forecasts = await _context.ForecastViews
-                .Where(x => x.ZipCodesSearch.Contains(request.ZipcodeFilter))
+                .Where(x => x.PostalCodesSearch.Contains(request.PostalCodeFilter))
                 .OrderByDescending(x => x.ForecastDate)
                 .ProjectTo<ForecastDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken)

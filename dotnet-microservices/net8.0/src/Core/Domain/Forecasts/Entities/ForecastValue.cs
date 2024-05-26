@@ -4,11 +4,11 @@ public class ForecastValue : ValueObject
 {
 
 
-    private ForecastValue(Guid key, DateTime date, int temperatureF, List<int> zipCodes)
+    private ForecastValue(Guid key, DateTime date, int temperatureF, List<int> postalCodes)
     {
         Key = key;
         Date = date;
-        ZipCodes = zipCodes;
+        PostalCodes = postalCodes;
         TemperatureF = temperatureF;
         
     }
@@ -19,9 +19,9 @@ public class ForecastValue : ValueObject
 
     public int TemperatureF { get; }
     
-    public List<int> ZipCodes { get; }
+    public List<int> PostalCodes { get; }
     
-    public static Result<ForecastValue> Create(Guid key, DateTime date, int temperatureF, List<int> zipCodes)
+    public static Result<ForecastValue> Create(Guid key, DateTime date, int temperatureF, List<int> postalCodes)
     {
         if (key == Guid.Empty)
             return Result.Failure<ForecastValue>("key cannot be empty");
@@ -29,7 +29,7 @@ public class ForecastValue : ValueObject
         if (date == DateTime.MinValue)
             Result.Failure<ForecastValue>("Date cannot be minimum value");
 
-        return Result.Success(new ForecastValue(key, date, temperatureF, zipCodes));
+        return Result.Success(new ForecastValue(key, date, temperatureF, postalCodes));
     }
 
     protected override IEnumerable<IComparable> GetEqualityComponents()
@@ -37,6 +37,6 @@ public class ForecastValue : ValueObject
         yield return Key;
         yield return Date;
         yield return TemperatureF;
-        yield return (IComparable)ZipCodes;
+        yield return (IComparable)PostalCodes;
     }
 }

@@ -15,7 +15,7 @@ public class ForecastPaginatedDto : IMapFrom<ForecastsView>
 
     public string Summary { get; set; }
 
-    public string ZipCodes { get; set; }
+    public string PostalCodes { get; set; }
 
     public void Mapping(Profile profile)
     {
@@ -24,7 +24,7 @@ public class ForecastPaginatedDto : IMapFrom<ForecastsView>
             .ForMember(d => d.Date, opt => opt.MapFrom(s => s.ForecastDate))
             .ForMember(d => d.TemperatureC, opt => opt.MapFrom(s => s.TemperatureF))
             .ForMember(d => d.Summary, opt => opt.MapFrom(s => s.Summary))
-            .ForMember(d => d.ZipCodes, opt => opt.MapFrom(s => s.ZipCodesSearch))
-            .ForMember(d => d.ZipCodes, opt => opt.NullSubstitute(""));
+            .ForMember(d => d.PostalCodes, opt => opt.MapFrom(s => s.PostalCodesSearch))
+            .ForMember(d => d.PostalCodes, opt => opt.NullSubstitute(""));
     }
 }

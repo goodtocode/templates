@@ -41,7 +41,7 @@ public class PatchForecastCommandStepDefinitions : TestBase
     }
 
     [Given(@"I have a collection of Zipcodes ""([^""]*)""")]
-    public void GivenIHaveACollectionOfZipCodes(string zipCodes)
+    public void GivenIHaveACollectionOfPostalCodes(string zipCodes)
     {
         if (zipCodes == string.Empty)
             return;
@@ -64,7 +64,7 @@ public class PatchForecastCommandStepDefinitions : TestBase
             Key = _forecastKey,
             Date = _forecastDate,
             TemperatureC = _temperatureF,
-            Zipcodes = _zipcodes
+            PostalCodes = _zipcodes
         };
 
         if (_forecastExists)
@@ -72,7 +72,7 @@ public class PatchForecastCommandStepDefinitions : TestBase
             var weatherForecastValue =
                 ForecastValue.Create(_forecastKey, DateTime.Now.AddDays(-1), 75, new List<int>(){ 90000, 90002});
 
-            WeatherForecastsContext.Forecasts.Add(new Forecast(weatherForecastValue.Value));
+            WeatherForecastsContext.Forecasts.Add(new ForecastEntity(weatherForecastValue.Value));
             await WeatherForecastsContext.SaveChangesAsync(CancellationToken.None);
         }
 

@@ -6,6 +6,6 @@ namespace WeatherForecasts.Core.Application.Common.Interfaces;
 public interface IWeatherForecastsContext
 {
     DbSet<ForecastsView> ForecastViews { get; }
-    DbSet<Forecast> Forecasts { get; }
+    DbSet<ForecastEntity> Forecasts { get; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

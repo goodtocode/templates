@@ -6,7 +6,7 @@ public class AddForecastCommandValidator : AbstractValidator<AddForecastCommand>
     {
         RuleFor(x => x.Key).NotEmpty();
         RuleFor(x => x.TemperatureF).NotEmpty();
-        RuleFor(x => x.Zipcodes).NotEmpty();
+        RuleFor(x => x.PostalCodes).NotEmpty();
         RuleFor(x => x.Date).NotEmpty().GreaterThan(DateTime.MinValue);
     }
 }

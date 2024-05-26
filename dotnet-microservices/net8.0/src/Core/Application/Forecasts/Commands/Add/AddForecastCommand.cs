@@ -13,7 +13,7 @@ public class AddForecastCommand : IRequest
 
     public int? TemperatureF { get; set; }
 
-    public List<int> Zipcodes { get; set; }
+    public List<int> PostalCodes { get; set; }
 }
 
 public class AddForecastCommandHandler : IRequestHandler<AddForecastCommand>
@@ -30,17 +30,17 @@ public class AddForecastCommandHandler : IRequestHandler<AddForecastCommand>
         var weatherForecast = _context.Forecasts.Find(request.Key);
         GuardAgainstWeatherForecastNotFound(weatherForecast);
 
-        var weatherForecastValue = ForecastValue.Create(request.Key, request.Date, (int) request.TemperatureF, request.Zipcodes);
+        var weatherForecastValue = ForecastValue.Create(request.Key, request.Date, (int) request.TemperatureF, request.PostalCodes);
 
         if (weatherForecastValue.IsFailure) 
             throw new Exception(weatherForecastValue.Error);
 
-        _context.Forecasts.Add(new Forecast(weatherForecastValue.Value));
+        _context.Forecasts.Add(new ForecastEntity(weatherForecastValue.Value));
 
         await _context.SaveChangesAsync(CancellationToken.None);
     }
 
-    private static void GuardAgainstWeatherForecastNotFound(Forecast? weatherForecast)
+    private static void GuardAgainstWeatherForecastNotFound(ForecastEntity? weatherForecast)
     {
         if (weatherForecast != null)
             throw new ValidationException(new List<ValidationFailure>
