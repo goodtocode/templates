@@ -12,8 +12,15 @@ using SemanticKernelMicroservice.Presentation.WebApi;
 var builder = WebApplication.CreateBuilder(args);
 
 // When environment is set to Local, secrets arent added to the configuration
-if (builder.Environment.IsDevelopment() || builder.Environment.EnvironmentName == "Local") 
+if (builder.Environment.IsDevelopment() || builder.Environment.EnvironmentName == "Local")
     builder.Configuration.AddUserSecrets(Assembly.GetExecutingAssembly());
+//{
+//    builder.Configuration
+//        .AddUserSecrets(Assembly.GetExecutingAssembly())
+//        .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development"}.json", true, true)
+//        .AddEnvironmentVariables()
+//        .AddCommandLine(args);
+//}
 
 // ToDo: Setup Authentication with Bearer Token
 // Use for B2C
@@ -27,6 +34,7 @@ builder.Services.AddApplicationServices();
 builder.Services.AddDbContextServices(builder.Configuration);
 builder.Services.AddSemanticKernelServices(builder.Configuration);
 builder.Services.AddWebUIServices(builder.Configuration);
+builder.Services.AddHealthChecks();
 //AddKeyVaultConfigurationSettings(builder);
 BuildApiVerAndApiExplorer(builder);
 
@@ -49,7 +57,7 @@ app.UseHttpsRedirection();
 // ToDo: Setup Authentication with Bearer Token
 //app.UseAuthorization();
 //app.UseAuthentication();
-app.MapControllers(); 
+app.MapControllers();
 app.UseCors("AllowOrigin");
 app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 app.Run();

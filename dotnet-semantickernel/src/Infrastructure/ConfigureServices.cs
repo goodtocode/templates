@@ -6,6 +6,7 @@ using Microsoft.SemanticKernel.AudioToText;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
 using Microsoft.SemanticKernel.Embeddings;
+using Microsoft.SemanticKernel.Memory;
 using Microsoft.SemanticKernel.TextGeneration;
 using Microsoft.SemanticKernel.TextToAudio;
 using Microsoft.SemanticKernel.TextToImage;
@@ -102,6 +103,8 @@ public static class ConfigureServices
         });
 #pragma warning restore SKEXP0001
 #pragma warning restore SKEXP0010
+
+        // ToDo: Implement MemoryBuilder.WithMemoryStore(VolatileMemoryStore or SQLMemoryStore)
 
         return services;
     }

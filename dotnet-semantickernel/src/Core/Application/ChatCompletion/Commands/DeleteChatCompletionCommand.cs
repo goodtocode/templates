@@ -3,21 +3,21 @@
 
 //namespace SemanticKernelMicroservice.Core.Application.ChatCompletions.Commands.Remove;
 
-//public class RemoveChatCompletionCommand : IRequest
+//public class DeleteChatCompletionCommand : IRequest
 //{
 //    public Guid Key { get; set; }
 //}
 
-//public class RemoveChatCompletionCommandHandler : IRequestHandler<RemoveChatCompletionCommand>
+//public class DeleteChatCompletionCommandHandler : IRequestHandler<DeleteChatCompletionCommand>
 //{
 //    private readonly ISemanticKernelMicroserviceContext _context;
 
-//    public RemoveChatCompletionCommandHandler(ISemanticKernelMicroserviceContext context)
+//    public DeleteChatCompletionCommandHandler(ISemanticKernelMicroserviceContext context)
 //    {
 //        _context = context;
 //    }
 
-//    public async Task Handle(RemoveChatCompletionCommand request, CancellationToken cancellationToken)
+//    public async Task Handle(DeleteChatCompletionCommand request, CancellationToken cancellationToken)
 //    {
 //        var weatherChatCompletion = _context.ChatCompletions.Find(request.Key);
 
