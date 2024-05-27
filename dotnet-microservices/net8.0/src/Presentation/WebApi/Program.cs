@@ -31,6 +31,7 @@ if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Local
 {
     app.UseSwagger();
     UseSwaggerUiConfigs();
+    // ToDo: Enable if want to create database automatically
     //using var scope = app.Services.CreateScope();
     //var initializer = scope.ServiceProvider.GetRequiredService<WeatherForecastsDbContextInitializer>();
     //await initializer.InitialiseAsync();
