@@ -21,6 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApplicationServices();
 builder.Services.AddDbContextServices(builder.Configuration);
+builder.Services.AddSemanticKernelServices(builder.Configuration);
 builder.Services.AddWebUIServices(builder.Configuration);
 //AddKeyVaultConfigurationSettings(builder);
 BuildApiVerAndApiExplorer(builder);

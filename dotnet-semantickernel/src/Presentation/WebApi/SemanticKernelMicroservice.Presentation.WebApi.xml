@@ -4,6 +4,26 @@
         <name>SemanticKernelMicroservice.Presentation.WebApi</name>
     </assembly>
     <members>
+        <member name="M:SemanticKernelMicroservice.Presentation.WebApi.ChatCompletion.ChatCompletionController.AddChatCompletionCommand">
+             <summary>
+             Add Forecast Command
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 HttpPost Body
+                 {
+                    "Key": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "Date": "2023-06-08T23:32:05.256Z",
+                    "TemperatureC": 0,
+                    "Zipcodes": [ 92602, 92673 ]
+                 }
+            
+                 "version":  1.0
+             </remarks>
+             <param name="command"></param>
+             <returns></returns>
+        </member>
         <member name="T:SemanticKernelMicroservice.Presentation.WebApi.Common.ApiExceptionFilterAttribute">
             <summary>
                 Filter to handle ApiExceptionFilterAttribute
