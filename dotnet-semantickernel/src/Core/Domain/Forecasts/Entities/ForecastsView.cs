@@ -1,4 +1,4 @@
-﻿namespace SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
+﻿namespace SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
 public class ForecastsView
 {
@@ -15,4 +15,4 @@ public class ForecastsView
     public DateTime DateAdded { get; set; }
 
     public DateTime? DateUpdated { get; set; }
-}    
+}

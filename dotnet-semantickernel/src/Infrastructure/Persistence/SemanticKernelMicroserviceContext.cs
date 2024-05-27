@@ -1,7 +1,6 @@
 ﻿using System.Reflection;
 using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
 using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
-using SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
 
 namespace SemanticKernelMicroservice.Infrastructure.Persistence;
 

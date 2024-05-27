@@ -1,51 +1,44 @@
-﻿using FluentValidation.Results;
-using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
-using SemanticKernelMicroservice.Core.Domain.ChatCompletions.Entities;
-using ValidationException = SemanticKernelMicroservice.Core.Application.Common.Exceptions.CustomValidationException;
+﻿//using FluentValidation.Results;
+//using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+//using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
 
-namespace SemanticKernelMicroservice.Core.Application.ChatCompletions.Commands.Add;
+//namespace SemanticKernelMicroservice.Core.Application.ChatCompletions.Commands.Add;
 
-public class AddChatCompletionCommand : IRequest
-{
-    public Guid Key { get; set; }
+//public class AddChatCompletionCommand : IRequest
+//{
+//    public string? Message { get; set; }
+//}
 
-    public DateTime Date { get; set; }
+//public class AddChatCompletionCommandHandler : IRequestHandler<AddChatCompletionCommand>
+//{
+//    private readonly ISemanticKernelMicroserviceContext _context;
 
-    public int? TemperatureF { get; set; }
+//    public AddChatCompletionCommandHandler(ISemanticKernelMicroserviceContext context)
+//    {
+//        _context = context;
+//    }
 
-    public List<int> Zipcodes { get; set; }
-}
+//    public async Task Handle(AddChatCompletionCommand request, CancellationToken cancellationToken)
+//    {
+//        var weatherChatCompletion = _context.ChatCompletions.Find(request.Key);
+//        GuardAgainstWeatherChatCompletionNotFound(weatherChatCompletion);
 
-public class AddChatCompletionCommandHandler : IRequestHandler<AddChatCompletionCommand>
-{
-    private readonly ISemanticKernelMicroserviceContext _context;
+//        var weatherChatCompletionValue = ChatCompletionValue.Create(request.Key, request.Date, (int) request.TemperatureF, request.Zipcodes);
 
-    public AddChatCompletionCommandHandler(ISemanticKernelMicroserviceContext context)
-    {
-        _context = context;
-    }
+//        if (weatherChatCompletionValue.IsFailure) 
+//            throw new Exception(weatherChatCompletionValue.Error);
 
-    public async Task Handle(AddChatCompletionCommand request, CancellationToken cancellationToken)
-    {
-        var weatherChatCompletion = _context.ChatCompletions.Find(request.Key);
-        GuardAgainstWeatherChatCompletionNotFound(weatherChatCompletion);
+//        _context.ChatCompletions.Add(new ChatCompletion(weatherChatCompletionValue.Value));
 
-        var weatherChatCompletionValue = ChatCompletionValue.Create(request.Key, request.Date, (int) request.TemperatureF, request.Zipcodes);
+//        await _context.SaveChangesAsync(CancellationToken.None);
+//    }
 
-        if (weatherChatCompletionValue.IsFailure) 
-            throw new Exception(weatherChatCompletionValue.Error);
-
-        _context.ChatCompletions.Add(new ChatCompletion(weatherChatCompletionValue.Value));
-
-        await _context.SaveChangesAsync(CancellationToken.None);
-    }
-
-    private static void GuardAgainstWeatherChatCompletionNotFound(ChatCompletion? weatherChatCompletion)
-    {
-        if (weatherChatCompletion != null)
-            throw new ValidationException(new List<ValidationFailure>
-            {
-                new("Key", "A Weather ChatCompletion with this Key already exists")
-            });
-    }
-}
+//    private static void GuardAgainstWeatherChatCompletionNotFound(ChatCompletion? weatherChatCompletion)
+//    {
+//        if (weatherChatCompletion != null)
+//            throw new CustomValidationException(new List<ValidationFailure>
+//            {
+//                new("Key", "A Weather ChatCompletion with this Key already exists")
+//            });
+//    }
+//}

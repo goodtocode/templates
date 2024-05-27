@@ -21,6 +21,5 @@
 	  <Folder Include="AudioToText\" />
 	  <Folder Include="TextEmbeddingGeneration\" />
 	  <Folder Include="TextGeneration\" />
-	  <Folder Include="NewFolder\" />
 	</ItemGroup>
 </Project>

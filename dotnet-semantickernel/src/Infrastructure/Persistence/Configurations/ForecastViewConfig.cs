@@ -1,4 +1,4 @@
-﻿using SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
+﻿using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
 namespace SemanticKernelMicroservice.Infrastructure.Persistence.Configurations;
 

@@ -1,9 +1,9 @@
-﻿namespace SemanticKernelMicroservice.Core.Application.ChatCompletions.Commands.Remove;
+﻿//namespace SemanticKernelMicroservice.Core.Application.ChatCompletions.Commands.Remove;
 
-public class RemoveChatCompletionCommandValidator : AbstractValidator<RemoveChatCompletionCommand>
-{
-    public RemoveChatCompletionCommandValidator()
-    {
-        RuleFor(x => x.Key).NotEmpty();
-    }
-}
+//public class RemoveChatCompletionCommandValidator : AbstractValidator<RemoveChatCompletionCommand>
+//{
+//    public RemoveChatCompletionCommandValidator()
+//    {
+//        RuleFor(x => x.Key).NotEmpty();
+//    }
+//}

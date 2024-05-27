@@ -11,6 +11,10 @@ using SemanticKernelMicroservice.Presentation.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// When environment is set to Local, secrets arent added to the configuration
+if (builder.Environment.IsDevelopment() || builder.Environment.EnvironmentName == "Local") 
+    builder.Configuration.AddUserSecrets(Assembly.GetExecutingAssembly());
+
 // ToDo: Setup Authentication with Bearer Token
 // Use for B2C
 //builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -40,6 +44,7 @@ if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Local
 
 app.UseRouting();
 app.UseStaticFiles();
+app.UseHealthChecks("/health");
 app.UseHttpsRedirection();
 // ToDo: Setup Authentication with Bearer Token
 //app.UseAuthorization();

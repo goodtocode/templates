@@ -1,7 +1,7 @@
 using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
 using SemanticKernelMicroservice.Core.Application.Common.Models;
 using SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetPaginated;
-using SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 using SemanticKernelMicroservice.Infrastructure.Persistence;
 
 namespace SemanticKernelMicroservice.Specs.Application.Unit.ForecastLists.Queries.GetPaginated;

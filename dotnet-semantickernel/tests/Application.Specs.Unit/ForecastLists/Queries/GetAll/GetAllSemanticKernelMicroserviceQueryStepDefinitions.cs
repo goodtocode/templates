@@ -1,6 +1,6 @@
 using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
 using SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetAll;
-using SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 using SemanticKernelMicroservice.Infrastructure.Persistence;
 
 namespace SemanticKernelMicroservice.Specs.Application.Unit.ForecastLists.Queries.GetAll;

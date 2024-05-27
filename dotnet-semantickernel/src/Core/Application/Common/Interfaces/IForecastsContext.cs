@@ -1,5 +1,4 @@
 ﻿using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
-using SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
 
 namespace SemanticKernelMicroservice.Core.Application.Common.Interfaces;
 

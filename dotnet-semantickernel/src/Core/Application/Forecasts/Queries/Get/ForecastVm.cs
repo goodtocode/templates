@@ -1,5 +1,5 @@
 ﻿using SemanticKernelMicroservice.Core.Application.Common.Mappings;
-using SemanticKernelMicroservice.Core.Domain.Forecasts.Models;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
 namespace SemanticKernelMicroservice.Core.Application.Forecasts.Queries.Get;
 
