@@ -17,7 +17,7 @@ public class CustomLoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest> w
     {
         var requestName = typeof(TRequest).Name;
 
-        _logger.LogInformation("Weather Forecasts Request: {Name} {@Request}",
+        _logger.LogInformation("Request: {Name} {@Request}",
             requestName, request);
     }
 }

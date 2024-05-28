@@ -21,7 +21,7 @@ public class CustomUnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineB
         {
             var requestName = typeof(TRequest).Name;
 
-            _logger.LogError(ex, "Weather Forecasts Request: Unhandled Exception for Request {Name} {@Request}", requestName, request);
+            _logger.LogError(ex, "Request: Unhandled Exception for Request {Name} {@Request}", requestName, request);
 
             throw;
         }

@@ -59,11 +59,12 @@ public static class ConfigureServices
         })
         // Completing words or sentences, code completion
         // Alternative: services.AddOpenAITextGeneration(configuration.GetValue<string>("OpenAI:ChatModelId"), configuration.GetValue<string>("OpenAI:ApiKey"))
-        .AddSingleton<ITextGenerationService>(sp =>
-        {
-            OpenAI options = sp.GetRequiredService<IOptions<OpenAI>>().Value;
-            return new OpenAITextGenerationService(options.ChatModelId, options.ApiKey);
-        });
+        .AddOpenAITextGeneration(configuration.GetValue<string>("OpenAI:ChatModelId"), configuration.GetValue<string>("OpenAI:ApiKey"));
+        //.AddSingleton<ITextGenerationService>(sp =>
+        //{
+        //    OpenAI options = sp.GetRequiredService<IOptions<OpenAI>>().Value;
+        //    return new OpenAITextGenerationService(options.ChatModelId, options.ApiKey);
+        //});
 #pragma warning disable SKEXP0001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 #pragma warning disable SKEXP0010 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
         // Translate audio to text
