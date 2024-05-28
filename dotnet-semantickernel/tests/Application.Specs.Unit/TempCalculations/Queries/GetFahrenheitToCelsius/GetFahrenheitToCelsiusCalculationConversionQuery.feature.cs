@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace WeatherForecasts.Specs.Application.Unit.TempCalculations.Queries.GetFahrenheitToCelsius
+namespace SemanticKernelMicroservice.Specs.Application.Unit.TempCalculations.Queries.GetFahrenheitToCelsius
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,13 +19,13 @@ namespace WeatherForecasts.Specs.Application.Unit.TempCalculations.Queries.GetFa
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Get Fahrenheit To Celsius Calculation Conversion Query")]
-    [NUnit.Framework.CategoryAttribute("getFahrenheitToCelsiusCalculationConversionQuery")]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
     public partial class GetFahrenheitToCelsiusCalculationConversionQueryFeature
     {
         
-        private TechTalk.SpecFlow.ITestRunner testRunner;
+        private static TechTalk.SpecFlow.ITestRunner testRunner;
+        
+        private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
         private static string[] featureTags = new string[] {
                 "getFahrenheitToCelsiusCalculationConversionQuery"};
@@ -33,8 +33,20 @@ namespace WeatherForecasts.Specs.Application.Unit.TempCalculations.Queries.GetFa
 #line 1 "GetFahrenheitToCelsiusCalculationConversionQuery.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
-        public virtual void FeatureSetup()
+        public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
+        {
+            get
+            {
+                return this._testContext;
+            }
+            set
+            {
+                this._testContext = value;
+            }
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
+        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "TempCalculations/Queries/GetFahrenheitToCelsius", "Get Fahrenheit To Celsius Calculation Conversion Query", "As a weather forecasts user\r\nI am able to get a Fahrenheit To Celsius Calculation" +
@@ -42,19 +54,24 @@ namespace WeatherForecasts.Specs.Application.Unit.TempCalculations.Queries.GetFa
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
-        public virtual void FeatureTearDown()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
+        public static void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
         public void TestInitialize()
         {
+            if (((testRunner.FeatureContext != null) 
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "Get Fahrenheit To Celsius Calculation Conversion Query")))
+            {
+                global::SemanticKernelMicroservice.Specs.Application.Unit.TempCalculations.Queries.GetFahrenheitToCelsius.GetFahrenheitToCelsiusCalculationConversionQueryFeature.FeatureSetup(null);
+            }
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
         public void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -63,7 +80,7 @@ namespace WeatherForecasts.Specs.Application.Unit.TempCalculations.Queries.GetFa
         public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
+            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Microsoft.VisualStudio.TestTools.UnitTesting.TestContext>(_testContext);
         }
         
         public void ScenarioStart()
@@ -76,8 +93,10 @@ namespace WeatherForecasts.Specs.Application.Unit.TempCalculations.Queries.GetFa
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Get Fahrenheit To Celsius Calculation Conversion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get Fahrenheit To Celsius Calculation Conversion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Fahrenheit To Celsius Calculation Conversion Query")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getFahrenheitToCelsiusCalculationConversionQuery")]
         public void GetFahrenheitToCelsiusCalculationConversion()
         {
             string[] tagsOfScenario = ((string[])(null));

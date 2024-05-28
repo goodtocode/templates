@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Core.Application.Common.Mappings;
+﻿namespace SemanticKernelMicroservice.Core.Application.Common.Mappings;
 
 public interface IMapFrom<T>
 {

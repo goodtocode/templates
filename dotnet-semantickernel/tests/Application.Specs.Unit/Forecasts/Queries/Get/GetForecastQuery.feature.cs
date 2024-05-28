@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Queries.Get
+namespace SemanticKernelMicroservice.Specs.Application.Unit.Forecasts.Queries.Get
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,13 +19,13 @@ namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Queries.Get
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Get Forecast Query")]
-    [NUnit.Framework.CategoryAttribute("getForecastQuery1")]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
     public partial class GetForecastQueryFeature
     {
         
-        private TechTalk.SpecFlow.ITestRunner testRunner;
+        private static TechTalk.SpecFlow.ITestRunner testRunner;
+        
+        private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
         private static string[] featureTags = new string[] {
                 "getForecastQuery1"};
@@ -33,27 +33,44 @@ namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Queries.Get
 #line 1 "GetForecastQuery.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
-        public virtual void FeatureSetup()
+        public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
+        {
+            get
+            {
+                return this._testContext;
+            }
+            set
+            {
+                this._testContext = value;
+            }
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
+        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Forecasts/Queries/Get", "Get Forecast Query", "As a weather forecasts user\r\nI can get a weather forecast", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
-        public virtual void FeatureTearDown()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
+        public static void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
         public void TestInitialize()
         {
+            if (((testRunner.FeatureContext != null) 
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "Get Forecast Query")))
+            {
+                global::SemanticKernelMicroservice.Specs.Application.Unit.Forecasts.Queries.Get.GetForecastQueryFeature.FeatureSetup(null);
+            }
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
         public void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -62,7 +79,7 @@ namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Queries.Get
         public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
+            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Microsoft.VisualStudio.TestTools.UnitTesting.TestContext>(_testContext);
         }
         
         public void ScenarioStart()
@@ -75,21 +92,7 @@ namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Queries.Get
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Get forecast")]
-        [NUnit.Framework.TestCaseAttribute("success Freezing", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "32", "Freezing", null)]
-        [NUnit.Framework.TestCaseAttribute("success Bracing", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "33", "Bracing", null)]
-        [NUnit.Framework.TestCaseAttribute("success Chilly", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "41", "Chilly", null)]
-        [NUnit.Framework.TestCaseAttribute("success Cool", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "51", "Cool", null)]
-        [NUnit.Framework.TestCaseAttribute("success Mild", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "61", "Mild", null)]
-        [NUnit.Framework.TestCaseAttribute("success Warm", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "71", "Warm", null)]
-        [NUnit.Framework.TestCaseAttribute("success Balmy", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "81", "Balmy", null)]
-        [NUnit.Framework.TestCaseAttribute("success Hot", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "91", "Hot", null)]
-        [NUnit.Framework.TestCaseAttribute("success Sweltering", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "101", "Sweltering", null)]
-        [NUnit.Framework.TestCaseAttribute("success Scorching", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "111", "Scorching", null)]
-        [NUnit.Framework.TestCaseAttribute("not found", "NotFound", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "false", "0", "Cool", null)]
-        [NUnit.Framework.TestCaseAttribute("bad request: empty key", "BadRequest", "Key", "", "false", "0", "Cool", null)]
-        public void GetForecast(string def, string response, string responseErrors, string key, string forecastExists, string expectedTemperatureF, string expectedSummaryResponse, string[] exampleTags)
+        public virtual void GetForecast(string def, string response, string responseErrors, string key, string forecastExists, string expectedTemperatureF, string expectedSummaryResponse, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -152,6 +155,234 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get forecast: success Freezing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Forecast Query")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getForecastQuery1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success Freezing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success Freezing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseErrors", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:key", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastExists", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedTemperatureF", "32")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedSummaryResponse", "Freezing")]
+        public void GetForecast_SuccessFreezing()
+        {
+#line 6
+this.GetForecast("success Freezing", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "32", "Freezing", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get forecast: success Bracing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Forecast Query")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getForecastQuery1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success Bracing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success Bracing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseErrors", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:key", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastExists", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedTemperatureF", "33")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedSummaryResponse", "Bracing")]
+        public void GetForecast_SuccessBracing()
+        {
+#line 6
+this.GetForecast("success Bracing", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "33", "Bracing", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get forecast: success Chilly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Forecast Query")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getForecastQuery1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success Chilly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success Chilly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseErrors", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:key", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastExists", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedTemperatureF", "41")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedSummaryResponse", "Chilly")]
+        public void GetForecast_SuccessChilly()
+        {
+#line 6
+this.GetForecast("success Chilly", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "41", "Chilly", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get forecast: success Cool")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Forecast Query")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getForecastQuery1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success Cool")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success Cool")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseErrors", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:key", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastExists", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedTemperatureF", "51")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedSummaryResponse", "Cool")]
+        public void GetForecast_SuccessCool()
+        {
+#line 6
+this.GetForecast("success Cool", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "51", "Cool", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get forecast: success Mild")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Forecast Query")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getForecastQuery1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success Mild")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success Mild")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseErrors", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:key", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastExists", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedTemperatureF", "61")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedSummaryResponse", "Mild")]
+        public void GetForecast_SuccessMild()
+        {
+#line 6
+this.GetForecast("success Mild", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "61", "Mild", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get forecast: success Warm")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Forecast Query")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getForecastQuery1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success Warm")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success Warm")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseErrors", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:key", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastExists", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedTemperatureF", "71")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedSummaryResponse", "Warm")]
+        public void GetForecast_SuccessWarm()
+        {
+#line 6
+this.GetForecast("success Warm", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "71", "Warm", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get forecast: success Balmy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Forecast Query")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getForecastQuery1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success Balmy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success Balmy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseErrors", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:key", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastExists", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedTemperatureF", "81")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedSummaryResponse", "Balmy")]
+        public void GetForecast_SuccessBalmy()
+        {
+#line 6
+this.GetForecast("success Balmy", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "81", "Balmy", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get forecast: success Hot")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Forecast Query")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getForecastQuery1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success Hot")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success Hot")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseErrors", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:key", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastExists", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedTemperatureF", "91")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedSummaryResponse", "Hot")]
+        public void GetForecast_SuccessHot()
+        {
+#line 6
+this.GetForecast("success Hot", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "91", "Hot", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get forecast: success Sweltering")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Forecast Query")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getForecastQuery1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success Sweltering")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success Sweltering")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseErrors", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:key", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastExists", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedTemperatureF", "101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedSummaryResponse", "Sweltering")]
+        public void GetForecast_SuccessSweltering()
+        {
+#line 6
+this.GetForecast("success Sweltering", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "101", "Sweltering", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get forecast: success Scorching")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Forecast Query")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getForecastQuery1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success Scorching")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success Scorching")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseErrors", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:key", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastExists", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedTemperatureF", "111")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedSummaryResponse", "Scorching")]
+        public void GetForecast_SuccessScorching()
+        {
+#line 6
+this.GetForecast("success Scorching", "Success", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "true", "111", "Scorching", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get forecast: not found")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Forecast Query")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getForecastQuery1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "not found")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "not found")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "NotFound")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseErrors", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:key", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastExists", "false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedTemperatureF", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedSummaryResponse", "Cool")]
+        public void GetForecast_NotFound()
+        {
+#line 6
+this.GetForecast("not found", "NotFound", "", "038d8e7f-f18f-4a8e-8b3c-3b6a6889fed9", "false", "0", "Cool", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get forecast: bad request: empty key")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Get Forecast Query")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("getForecastQuery1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "bad request: empty key")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "bad request: empty key")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "BadRequest")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseErrors", "Key")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:key", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastExists", "false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedTemperatureF", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedSummaryResponse", "Cool")]
+        public void GetForecast_BadRequestEmptyKey()
+        {
+#line 6
+this.GetForecast("bad request: empty key", "BadRequest", "Key", "", "false", "0", "Cool", ((string[])(null)));
+#line hidden
         }
     }
 }

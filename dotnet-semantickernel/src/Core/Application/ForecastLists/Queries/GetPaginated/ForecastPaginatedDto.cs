@@ -1,7 +1,7 @@
-﻿using WeatherForecasts.Core.Application.Common.Mappings;
-using WeatherForecasts.Core.Domain.Forecasts.Models;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Mappings;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
-namespace WeatherForecasts.Core.Application.ForecastLists.Queries.GetPaginated;
+namespace SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetPaginated;
 
 public class ForecastPaginatedDto : IMapFrom<ForecastsView>
 {

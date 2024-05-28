@@ -13,7 +13,7 @@ public partial class WeatherForecastsContext : DbContext, IWeatherForecastsConte
 
     public DbSet<ForecastsView> ForecastViews => Set<ForecastsView>();
 
-    public DbSet<Forecast> Forecasts => Set<Forecast>();
+    public DbSet<ForecastEntity> Forecasts => Set<ForecastEntity>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

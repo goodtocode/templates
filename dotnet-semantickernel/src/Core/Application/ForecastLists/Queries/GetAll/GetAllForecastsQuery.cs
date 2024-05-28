@@ -1,7 +1,7 @@
 ﻿using AutoMapper.QueryableExtensions;
-using WeatherForecasts.Core.Application.Common.Interfaces;
+using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
 
-namespace WeatherForecasts.Core.Application.ForecastLists.Queries.GetAll;
+namespace SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetAll;
 
 public class GetAllForecastsQuery : IRequest<ForecastsVm>
 {
@@ -10,10 +10,10 @@ public class GetAllForecastsQuery : IRequest<ForecastsVm>
 
 public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecastsQuery, ForecastsVm>
 {
-    private readonly IWeatherForecastsContext _context;
+    private readonly ISemanticKernelMicroserviceContext _context;
     private readonly IMapper _mapper;
 
-    public GetAllWeatherForecastQueryHandler(IWeatherForecastsContext context, IMapper mapper)
+    public GetAllWeatherForecastQueryHandler(ISemanticKernelMicroserviceContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;
@@ -23,9 +23,9 @@ public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecasts
         CancellationToken cancellationToken)
     {
         if (!string.IsNullOrWhiteSpace(request.ZipcodeFilter))
-            return await GetFilteredWeatherForecasts(request, cancellationToken);
+            return await GetFilteredSemanticKernelMicroservice(request, cancellationToken);
 
-        var vm = await GetAllWeatherForecasts(cancellationToken);
+        var vm = await GetAllSemanticKernelMicroservice(cancellationToken);
         PopulateCalculationsF(vm);
         return vm;
     }
@@ -36,7 +36,7 @@ public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecasts
             weatherForecast.TemperatureF = 32 + (int) (weatherForecast.TemperatureC / 0.5556);
     }
 
-    private async Task<ForecastsVm> GetAllWeatherForecasts(CancellationToken cancellationToken)
+    private async Task<ForecastsVm> GetAllSemanticKernelMicroservice(CancellationToken cancellationToken)
     {
         ForecastsVm vm;
 
@@ -50,7 +50,7 @@ public class GetAllWeatherForecastQueryHandler : IRequestHandler<GetAllForecasts
         return vm;
     }
 
-    private async Task<ForecastsVm> GetFilteredWeatherForecasts(GetAllForecastsQuery request,
+    private async Task<ForecastsVm> GetFilteredSemanticKernelMicroservice(GetAllForecastsQuery request,
         CancellationToken cancellationToken)
     {
         ForecastsVm vm;

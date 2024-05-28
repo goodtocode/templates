@@ -1,7 +1,7 @@
-﻿using WeatherForecasts.Core.Application.Common.Mappings;
-using WeatherForecasts.Core.Domain.Forecasts.Models;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Mappings;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
-namespace WeatherForecasts.Core.Application.Forecasts.Queries.Get;
+namespace SemanticKernelMicroservice.Core.Application.Forecasts.Queries.Get;
 
 public class ForecastVm : IMapFrom<ForecastsView>
 {

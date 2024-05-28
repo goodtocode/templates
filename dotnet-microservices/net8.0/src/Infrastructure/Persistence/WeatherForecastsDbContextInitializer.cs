@@ -49,15 +49,15 @@ public class WeatherForecastsDbContextInitializer
             {
                 var forecastKey = Guid.NewGuid();
                 var dateToday = DateTime.Now;
-                var randomZipcode = GenerateRandomZipcode();
+                var randomCode = GenerateRandomPostalCode();
 
                 var weatherForecastAddValue =
                     ForecastValue.Create(forecastKey, dateToday.AddDays(-i).ToUniversalTime(),
                         Random.Shared.Next(-20, 55), new List<int>
                         {
-                            randomZipcode, randomZipcode + 1
+                            randomCode, randomCode + 1
                         });
-                var weatherForecast = new Forecast(weatherForecastAddValue.Value);
+                var weatherForecast = new ForecastEntity(weatherForecastAddValue.Value);
                 _context.Forecasts.Add(weatherForecast);
             }
 
@@ -65,7 +65,7 @@ public class WeatherForecastsDbContextInitializer
         }
     }
 
-    public int GenerateRandomZipcode()
+    public int GenerateRandomPostalCode()
     {
         var rnd = new Random();
         return rnd.Next(11111, 99999);

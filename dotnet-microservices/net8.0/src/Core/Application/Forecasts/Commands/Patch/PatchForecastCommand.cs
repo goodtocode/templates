@@ -8,7 +8,7 @@ public class PatchForecastCommand : IRequest
     public Guid Key { get; set; }
     public DateTime? Date { get; set; }
     public int? TemperatureC { get; set; }
-    public List<int>? Zipcodes { get; set; }
+    public List<int>? PostalCodes { get; set; }
 }
 
 public class PatchWeatherForecastCommandHandler : IRequestHandler<PatchForecastCommand>
@@ -33,8 +33,8 @@ public class PatchWeatherForecastCommandHandler : IRequestHandler<PatchForecastC
         if (request.TemperatureC != null)
             weatherForecast.UpdateTemperatureF((int) request.TemperatureC);
 
-        if (request.Zipcodes != null)
-            weatherForecast.UpdateZipcodes(request.Zipcodes);
+        if (request.PostalCodes != null)
+            weatherForecast.UpdatePostalCodes(request.PostalCodes);
 
         _context.Forecasts.Update(weatherForecast);
         await _context.SaveChangesAsync(CancellationToken.None);

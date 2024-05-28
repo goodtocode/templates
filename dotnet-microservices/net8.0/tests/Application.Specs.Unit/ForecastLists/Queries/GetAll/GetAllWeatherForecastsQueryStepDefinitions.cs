@@ -11,7 +11,7 @@ public class GetAllForecastsQueryStepDefinitions : TestBase
 {
     private string _def;
     private bool _foreacastExists;
-    private bool _forecastWithZipcodeFilterExists;
+    private bool _forecastWithPostalCodeFilterExists;
     private ForecastsVm _response;
     private string _zipcodeFilter;
 
@@ -38,7 +38,7 @@ public class GetAllForecastsQueryStepDefinitions : TestBase
     [Given(@"A forecast with zipcodeFilter exists ""([^""]*)""")]
     public void GivenAForecastWithZipcodeFilterExists(bool forecastWithZipcodeFilterExists)
     {
-        _forecastWithZipcodeFilterExists = forecastWithZipcodeFilterExists;
+        _forecastWithPostalCodeFilterExists = forecastWithZipcodeFilterExists;
     }
 
     [Given(@"I have a forecast exists ""([^""]*)""")]
@@ -55,9 +55,9 @@ public class GetAllForecastsQueryStepDefinitions : TestBase
 
         if (_foreacastExists)
         {
-            var zipCodes = _forecastWithZipcodeFilterExists ? _zipcodeFilter : "";
+            var zipCodes = _forecastWithPostalCodeFilterExists ? _zipcodeFilter : "";
 
-            if (_forecastWithZipcodeFilterExists)
+            if (_forecastWithPostalCodeFilterExists)
             {
                 var weatherForecastView = CreateForecastWithExistingZipcode();
                 context.ForecastViews.Add(weatherForecastView);
@@ -72,7 +72,7 @@ public class GetAllForecastsQueryStepDefinitions : TestBase
             await context.SaveChangesAsync();
         }
 
-        var request = new GetAllForecastsQuery() { ZipcodeFilter = _zipcodeFilter };
+        var request = new GetAllForecastsQuery() { PostalCodeFilter = _zipcodeFilter };
 
         var validator = new GetAllForecastsQueryValidator();
 
@@ -114,7 +114,7 @@ public class GetAllForecastsQueryStepDefinitions : TestBase
             DateAdded = DateTime.Now,
             TemperatureF = 75,
             Summary = "summary",
-            ZipCodesSearch = $"9260{i}"
+            PostalCodesSearch = $"9260{i}"
         };
         return weatherForecastView;
     }
@@ -127,7 +127,7 @@ public class GetAllForecastsQueryStepDefinitions : TestBase
             DateAdded = DateTime.Now,
             TemperatureF = 75,
             Summary = "summary",
-            ZipCodesSearch = _zipcodeFilter
+            PostalCodesSearch = _zipcodeFilter
         };
         return weatherForecastView;
     }
@@ -191,7 +191,7 @@ public class GetAllForecastsQueryStepDefinitions : TestBase
     [Then(@"Each forecast has a collection of Zipcodes")]
     public void ThenEachWeatherForecastHasAZipcodes()
     {
-        foreach (var forecast in _response.Forecasts) forecast.ZipCodes.Should();
+        foreach (var forecast in _response.Forecasts) forecast.PostalCodes.Should();
     }
 
 }

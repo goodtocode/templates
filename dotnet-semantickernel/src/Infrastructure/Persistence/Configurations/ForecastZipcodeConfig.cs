@@ -1,10 +1,10 @@
-﻿using WeatherForecasts.Core.Domain.Forecasts.Entities;
+﻿using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
-namespace WeatherForecasts.Infrastructure.Persistence.Configurations;
+namespace SemanticKernelMicroservice.Infrastructure.Persistence.Configurations;
 
-public class ForecastZipcodeConfig : IEntityTypeConfiguration<WeatherForecastZipcode>
+public class ForecastZipcodeConfig : IEntityTypeConfiguration<WeatherForecastPostalCodeEntity>
 {
-    public void Configure(EntityTypeBuilder<WeatherForecastZipcode> builder)
+    public void Configure(EntityTypeBuilder<WeatherForecastPostalCodeEntity> builder)
     {
         builder.ToTable("ForecastZipCodes");
         builder.HasKey(x => x.Key);

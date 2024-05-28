@@ -6,11 +6,14 @@ using Microsoft.Identity.Web;
 using WeatherForecasts.Core.Application;
 using WeatherForecasts.Infrastructure;
 using WeatherForecasts.Presentation.WebApi;
-using WeatherForecasts.Presentation.WebApi.Configuration;
 
 [assembly: ApiConventionType(typeof(DefaultApiConventions))]
 
 var builder = WebApplication.CreateBuilder(args);
+
+// When environment is set to Local, secrets arent added to the configuration
+if (builder.Environment.IsDevelopment() || builder.Environment.EnvironmentName == "Local")
+    builder.Configuration.AddUserSecrets(Assembly.GetExecutingAssembly());
 
 // ToDo: Setup Authentication with Bearer Token
 // Use for B2C
@@ -21,7 +24,7 @@ var builder = WebApplication.CreateBuilder(args);
 //    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection(AppConfigurationKeys.AzureAdSectionKey));
 
 builder.Services.AddApplicationServices();
-builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.AddDbContextServices(builder.Configuration);
 builder.Services.AddWebUIServices(builder.Configuration);
 //AddKeyVaultConfigurationSettings(builder);
 BuildApiVerAndApiExplorer(builder);
@@ -32,6 +35,7 @@ if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Local
 {
     app.UseSwagger();
     UseSwaggerUiConfigs();
+    // ToDo: Enable if want to create database automatically
     //using var scope = app.Services.CreateScope();
     //var initializer = scope.ServiceProvider.GetRequiredService<WeatherForecastsDbContextInitializer>();
     //await initializer.InitialiseAsync();
@@ -40,6 +44,7 @@ if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Local
 
 app.UseRouting();
 app.UseStaticFiles();
+app.UseHealthChecks("/health");
 app.UseHttpsRedirection();
 // ToDo: Setup Authentication with Bearer Token
 //app.UseAuthorization();

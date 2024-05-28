@@ -1,20 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
-		<RootNamespace>WeatherForecasts.Presentation.WebApi</RootNamespace>
-		<AssemblyName>WeatherForecasts.Presentation.WebApi</AssemblyName>
+		<RootNamespace>SemanticKernelMicroservice.Presentation.WebApi</RootNamespace>
+		<AssemblyName>SemanticKernelMicroservice.Presentation.WebApi</AssemblyName>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<DocumentationFile>WeatherForecasts.Presentation.WebApi.xml</DocumentationFile>
+		<DocumentationFile>SemanticKernelMicroservice.Presentation.WebApi.xml</DocumentationFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<UserSecretsId>4b5d16a8-f42f-48f5-acdf-8b135a1f21f1</UserSecretsId>
+		<UserSecretsId>bf5b92ab-f3fe-4af6-b299-583240397247</UserSecretsId>
 	</PropertyGroup>
 	<ItemGroup>
-	  <Compile Remove="Logs\**" />
-	  <Content Remove="Logs\**" />
-	  <EmbeddedResource Remove="Logs\**" />
-	  <None Remove="Logs\**" />
+		<None Remove="SemanticKernelMicroservice.Presentation.WebApi.xml" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />

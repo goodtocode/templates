@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Core.Domain.Forecasts.Entities;
+﻿namespace SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
 public class ForecastValue : ValueObject
 {

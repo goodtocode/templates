@@ -110,7 +110,7 @@ public class GetPaginatedWeatherForecastsQueryStepDefinitions : TestBase
             DateAdded = DateTime.Now,
             TemperatureF = 75,
             Summary = "summary",
-            ZipCodesSearch = $"9260{i}"
+            PostalCodesSearch = $"9260{i}"
         };
         return weatherForecastView;
     }
@@ -123,7 +123,7 @@ public class GetPaginatedWeatherForecastsQueryStepDefinitions : TestBase
             DateAdded = DateTime.Now,
             TemperatureF = 75,
             Summary = "summary",
-            ZipCodesSearch = _zipcodeFilter
+            PostalCodesSearch = _zipcodeFilter
         };
         return weatherForecastView;
     }
@@ -223,7 +223,7 @@ public class GetPaginatedWeatherForecastsQueryStepDefinitions : TestBase
     public void ThenEachWeatherForecastHasAZipcodes()
     {
         if (_responseType != CommandResponseType.Successful) return;
-        foreach (var forecast in _response.Items) forecast.ZipCodes.Should();
+        foreach (var forecast in _response.Items) forecast.PostalCodes.Should();
     }
 
 

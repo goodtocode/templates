@@ -1,7 +1,7 @@
-﻿using WeatherForecasts.Core.Application.Common.Exceptions;
-using WeatherForecasts.Core.Application.Common.Interfaces;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
 
-namespace WeatherForecasts.Core.Application.Forecasts.Commands.Remove;
+namespace SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Remove;
 
 public class RemoveForecastCommand : IRequest
 {
@@ -10,9 +10,9 @@ public class RemoveForecastCommand : IRequest
 
 public class RemoveForecastCommandHandler : IRequestHandler<RemoveForecastCommand>
 {
-    private readonly IWeatherForecastsContext _context;
+    private readonly ISemanticKernelMicroserviceContext _context;
 
-    public RemoveForecastCommandHandler(IWeatherForecastsContext context)
+    public RemoveForecastCommandHandler(ISemanticKernelMicroserviceContext context)
     {
         _context = context;
     }
@@ -21,7 +21,7 @@ public class RemoveForecastCommandHandler : IRequestHandler<RemoveForecastComman
     {
         var weatherForecast = _context.Forecasts.Find(request.Key);
 
-        if (weatherForecast == null) throw new NotFoundException();
+        if (weatherForecast == null) throw new CustomNotFoundException();
         _context.Forecasts.Remove(weatherForecast);
         await _context.SaveChangesAsync(cancellationToken);
     }

@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Core.Application.Forecasts.Commands.Add;
+﻿namespace SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Add;
 
 public class AddForecastCommandValidator : AbstractValidator<AddForecastCommand>
 {

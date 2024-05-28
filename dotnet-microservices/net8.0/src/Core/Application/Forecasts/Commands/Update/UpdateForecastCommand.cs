@@ -8,7 +8,7 @@ public class UpdateForecastCommand : IRequest
     public Guid Key { get; set; }
     public DateTime Date { get; set; }
     public int? TemperatureF { get; set; }
-    public List<int> Zipcodes { get; set; }
+    public List<int> PostalCodes { get; set; }
 }
 
 public class UpdateWeatherForecastCommandHandler : IRequestHandler<UpdateForecastCommand>
@@ -27,7 +27,7 @@ public class UpdateWeatherForecastCommandHandler : IRequestHandler<UpdateForecas
 
         weatherForecast.UpdateDate(request.Date);
         weatherForecast.UpdateTemperatureF((int) request.TemperatureF);
-        weatherForecast.UpdateZipcodes(request.Zipcodes);
+        weatherForecast.UpdatePostalCodes(request.PostalCodes);
         _context.Forecasts.Update(weatherForecast);
         await _context.SaveChangesAsync(CancellationToken.None);
     }

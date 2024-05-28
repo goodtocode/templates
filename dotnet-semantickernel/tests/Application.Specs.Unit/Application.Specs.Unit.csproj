@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
-		<RootNamespace>WeatherForecasts.Specs.Application.Unit</RootNamespace>
-		<AssemblyName>WeatherForecasts.Specs.Application.Unit</AssemblyName>
+		<RootNamespace>SemanticKernelMicroservice.Specs.Application.Unit</RootNamespace>
+		<AssemblyName>SemanticKernelMicroservice.Specs.Application.Unit</AssemblyName>
 		<IsPackable>false</IsPackable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
@@ -23,22 +23,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <SpecFlowObsoleteCodeBehindFiles Remove="ForecastLists\Queries\GetPaginated\GetAllWeatherForecastsQuery.feature.cs" />
+	  <SpecFlowObsoleteCodeBehindFiles Remove="ForecastLists\Queries\GetPaginated\GetAllSemanticKernelMicroserviceQuery.feature.cs" />
 	</ItemGroup>
 
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.5" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
-		<PackageReference Include="nunit" Version="4.1.0" />
-		<PackageReference Include="NUnit3TestAdapter" Version="4.5.0">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
 		<PackageReference Include="FluentAssertions" Version="6.12.0" />
 		<PackageReference Include="Moq" Version="4.20.70" />
+		<PackageReference Include="MSTest.TestAdapter" Version="3.4.1" />
+		<PackageReference Include="MSTest.TestFramework" Version="3.4.1" />
+		<PackageReference Include="SpecFlow.MsTest" Version="3.9.74" />
 		<PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
-		<PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
 	</ItemGroup>
 
 
@@ -47,13 +44,12 @@
 	  <ProjectReference Include="..\..\src\Infrastructure\Infrastucture.csproj" />
 	</ItemGroup>
 
-
 	<ItemGroup>
 		<SpecFlowFeatureFiles Update="Forecasts\Commands\Patch\PatchForecastCommand.feature">
 			<Visible>$(UsingMicrosoftNETSdk)</Visible>
 			<CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
 		</SpecFlowFeatureFiles>
-		<SpecFlowFeatureFiles Update="ForecastLists\Queries\GetPaginated\GetPaginatedWeatherForecastsQuery.feature">
+		<SpecFlowFeatureFiles Update="ForecastLists\Queries\GetPaginated\GetPaginatedSemanticKernelMicroserviceQuery.feature">
 		  <Visible>$(UsingMicrosoftNETSdk)</Visible>
 		  <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
 		</SpecFlowFeatureFiles>
@@ -61,8 +57,8 @@
 
 
 	<ItemGroup>
-	  <Compile Update="ForecastLists\Queries\GetPaginated\GetPaginatedWeatherForecastsQuery.feature.cs">
-	    <DependentUpon>GetPaginatedWeatherForecastsQuery.feature</DependentUpon>
+	  <Compile Update="ForecastLists\Queries\GetPaginated\GetPaginatedSemanticKernelMicroserviceQuery.feature.cs">
+	    <DependentUpon>GetPaginatedSemanticKernelMicroserviceQuery.feature</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 

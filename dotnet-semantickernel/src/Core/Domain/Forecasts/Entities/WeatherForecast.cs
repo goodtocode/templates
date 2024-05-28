@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Core.Domain.Forecasts.Entities;
+﻿namespace SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
 public class Forecast : Common.Entity
 {
@@ -9,9 +9,9 @@ public class Forecast : Common.Entity
         ForecastDate = weatherForecastAddValue.Date.ToUniversalTime();
         TemperatureF = weatherForecastAddValue.TemperatureF;
         Summary = SummaryFValue().ToString();
-        ZipCodes = new List<WeatherForecastZipcode>();
+        ZipCodes = new List<WeatherForecastPostalCodeEntity>();
         foreach (var zipcode in weatherForecastAddValue.ZipCodes)
-            ZipCodes.Add(new WeatherForecastZipcode(zipcode, this));
+            ZipCodes.Add(new WeatherForecastPostalCodeEntity(zipcode, this));
         PopulateZipcodeSearch();
         DateAdded = DateTime.UtcNow;
     }
@@ -24,7 +24,7 @@ public class Forecast : Common.Entity
 
     public string ZipCodesSearch { get; private set; }
 
-    public virtual List<WeatherForecastZipcode> ZipCodes { get; } = new();
+    public virtual List<WeatherForecastPostalCodeEntity> ZipCodes { get; } = [];
 
     public DateTime ForecastDate { get; private set; }
 
@@ -35,7 +35,7 @@ public class Forecast : Common.Entity
     public void AddZipcode(int zipcode)
     {
         if (ZipCodes.Any(x => x.ZipCode == zipcode)) return;
-        ZipCodes.Add(new WeatherForecastZipcode(zipcode, this));
+        ZipCodes.Add(new WeatherForecastPostalCodeEntity(zipcode, this));
         PopulateZipcodeSearch();
         DateUpdated = DateTime.Now;
     }
@@ -90,7 +90,7 @@ public class Forecast : Common.Entity
     {
         ZipCodes.Clear();
         foreach (var zipcode in requestZipcodes)
-            ZipCodes.Add(new WeatherForecastZipcode(zipcode, this));
+            ZipCodes.Add(new WeatherForecastPostalCodeEntity(zipcode, this));
         DateUpdated = DateTime.Now;
         PopulateZipcodeSearch();
     }

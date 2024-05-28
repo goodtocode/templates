@@ -92,15 +92,15 @@ namespace WeatherForecasts.Specs.Application.Unit.ForecastLists.Queries.GetAll
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void GetAllForecasts(string def, string response, string zipcodeFilter, string forecastsExist, string forecastsWithZipcodeFilterExist, string[] exampleTags)
+        public virtual void GetAllForecasts(string def, string response, string postalCodeFilter, string forecastsExist, string forecastsWithpostalCodeFilterExist, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("def", def);
             argumentsOfScenario.Add("response", response);
-            argumentsOfScenario.Add("zipcodeFilter", zipcodeFilter);
+            argumentsOfScenario.Add("postalCodeFilter", postalCodeFilter);
             argumentsOfScenario.Add("forecastsExist", forecastsExist);
-            argumentsOfScenario.Add("forecastsWithZipcodeFilterExist", forecastsWithZipcodeFilterExist);
+            argumentsOfScenario.Add("forecastsWithpostalCodeFilterExist", forecastsWithpostalCodeFilterExist);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get all forecasts", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -119,10 +119,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And(string.Format("Forecasts Exist \"{0}\"", forecastsExist), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
- testRunner.And(string.Format("I have a zipcode filter \"{0}\"", zipcodeFilter), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have a postalCode filter \"{0}\"", postalCodeFilter), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
- testRunner.And(string.Format("A forecast with zipcodeFilter exists \"{0}\"", forecastsWithZipcodeFilterExist), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("A forecast with postalCodeFilter exists \"{0}\"", forecastsWithpostalCodeFilterExist), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
  testRunner.When("I get all forecasts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -149,7 +149,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("Each forecast has a Summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 19
- testRunner.And("Each forecast has a collection of Zipcodes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Each forecast has a collection of postalCodes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -162,9 +162,9 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:zipcodeFilter", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:postalCodeFilter", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastsExist", "true")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastsWithZipcodeFilterExist", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastsWithpostalCodeFilterExist", "true")]
         public void GetAllForecasts_Success()
         {
 #line 6
@@ -179,9 +179,9 @@ this.GetAllForecasts("success", "Success", "", "true", "true", ((string[])(null)
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success filtered results")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success filtered results")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:zipcodeFilter", "92602")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:postalCodeFilter", "92602")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastsExist", "true")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastsWithZipcodeFilterExist", "false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastsWithpostalCodeFilterExist", "false")]
         public void GetAllForecasts_SuccessFilteredResults()
         {
 #line 6
@@ -196,9 +196,9 @@ this.GetAllForecasts("success filtered results", "Success", "92602", "true", "fa
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "success empty results")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:def", "success empty results")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:response", "Success")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:zipcodeFilter", "92602")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:postalCodeFilter", "92602")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastsExist", "false")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastsWithZipcodeFilterExist", "false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:forecastsWithpostalCodeFilterExist", "false")]
         public void GetAllForecasts_SuccessEmptyResults()
         {
 #line 6

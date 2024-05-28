@@ -1,7 +1,7 @@
 ﻿using AutoMapper.QueryableExtensions;
-using WeatherForecasts.Core.Application.Common.Models;
+using SemanticKernelMicroservice.Core.Application.Common.Models;
 
-namespace WeatherForecasts.Core.Application.Common.Mappings;
+namespace SemanticKernelMicroservice.Core.Application.Common.Mappings;
 
 public static class MappingExtensions
 {

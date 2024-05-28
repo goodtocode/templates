@@ -1,8 +1,8 @@
-﻿using WeatherForecasts.Core.Application.ForecastCalculations.Queries.GetCelsiusToFahrenheit;
-using WeatherForecasts.Core.Application.ForecastCalculations.Queries.GetFahrenheitToCelsius;
-using WeatherForecasts.Presentation.WebApi.Common;
+﻿using SemanticKernelMicroservice.Core.Application.ForecastCalculations.Queries.GetCelsiusToFahrenheit;
+using SemanticKernelMicroservice.Core.Application.ForecastCalculations.Queries.GetFahrenheitToCelsius;
+using SemanticKernelMicroservice.Presentation.WebApi.Common;
 
-namespace WeatherForecasts.Presentation.WebApi.ForecastCalculations;
+namespace SemanticKernelMicroservice.Presentation.WebApi.ForecastCalculations;
 
 /// <summary>
 /// Controller for Calculations

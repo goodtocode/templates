@@ -1,6 +1,6 @@
-﻿using WeatherForecasts.Core.Application.Common.Exceptions;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
 
-namespace WeatherForecasts.Presentation.WebApi.Common;
+namespace SemanticKernelMicroservice.Presentation.WebApi.Common;
 
 /// <summary>
 ///     Filter to handle ApiExceptionFilterAttribute
@@ -19,10 +19,10 @@ public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
         // Register known exception types and handlers.
         _exceptionHandlers = new Dictionary<Type, Action<ExceptionContext>>
         {
-            {typeof(ValidationException), HandleValidationException},
-            {typeof(NotFoundException), HandleNotFoundException},
+            {typeof(CustomValidationException), HandleValidationException},
+            {typeof(CustomNotFoundException), HandleNotFoundException},
             {typeof(UnauthorizedAccessException), HandleUnauthorizedAccessException},
-            {typeof(ForbiddenAccessException), HandleForbiddenAccessException}
+            {typeof(CustomForbiddenAccessException), HandleForbiddenAccessException}
         };
     }
 
@@ -57,7 +57,7 @@ public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
 
     private void HandleValidationException(ExceptionContext context)
     {
-        var exception = context.Exception as ValidationException;
+        var exception = context.Exception as CustomValidationException;
 
         var details = new ValidationProblemDetails(exception.Errors)
         {
@@ -83,7 +83,7 @@ public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
 
     private void HandleNotFoundException(ExceptionContext context)
     {
-        var exception = context.Exception as NotFoundException;
+        var exception = context.Exception as CustomNotFoundException;
 
         var details = new ProblemDetails
         {

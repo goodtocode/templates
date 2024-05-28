@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Presentation.WebApi.Common;
+﻿namespace SemanticKernelMicroservice.Presentation.WebApi.Common;
 
 [ApiController]
 [ApiExceptionFilter]

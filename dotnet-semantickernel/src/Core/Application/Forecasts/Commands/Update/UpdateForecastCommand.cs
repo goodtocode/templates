@@ -1,7 +1,7 @@
-﻿using WeatherForecasts.Core.Application.Common.Exceptions;
-using WeatherForecasts.Core.Application.Common.Interfaces;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
 
-namespace WeatherForecasts.Core.Application.Forecasts.Commands.Update;
+namespace SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Update;
 
 public class UpdateForecastCommand : IRequest
 {
@@ -13,9 +13,9 @@ public class UpdateForecastCommand : IRequest
 
 public class UpdateWeatherForecastCommandHandler : IRequestHandler<UpdateForecastCommand>
 {
-    private readonly IWeatherForecastsContext _context;
+    private readonly ISemanticKernelMicroserviceContext _context;
 
-    public UpdateWeatherForecastCommandHandler(IWeatherForecastsContext context)
+    public UpdateWeatherForecastCommandHandler(ISemanticKernelMicroserviceContext context)
     {
         _context = context;
     }
@@ -23,7 +23,7 @@ public class UpdateWeatherForecastCommandHandler : IRequestHandler<UpdateForecas
     public async Task Handle(UpdateForecastCommand request, CancellationToken cancellationToken)
     {
         var weatherForecast = _context.Forecasts.Find(request.Key);
-        if (weatherForecast == null) throw new NotFoundException();
+        if (weatherForecast == null) throw new CustomNotFoundException();
 
         weatherForecast.UpdateDate(request.Date);
         weatherForecast.UpdateTemperatureF((int) request.TemperatureF);

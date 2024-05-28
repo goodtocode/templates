@@ -1,4 +1,4 @@
-﻿namespace WeatherForecasts.Core.Application.ForecastLists.Queries.GetPaginated;
+﻿namespace SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetPaginated;
 
 public class GetForecastsPaginatedQueryValidator : AbstractValidator<GetForecastsPaginatedQuery>
 {

@@ -47,7 +47,7 @@ public class ForecastsController : ApiControllerBase
     ///        "Key": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     ///        "Date": "2023-06-08T23:32:05.256Z",
     ///        "TemperatureC": 0,
-    ///        "Zipcodes": [ 92602, 92673 ]
+    ///        "PostalCodes": [ 92602, 92673 ]
     ///     }
     ///
     ///     "version":  1.0

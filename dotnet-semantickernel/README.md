@@ -17,71 +17,101 @@ winget install Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runc
 ```
 winget install Microsoft.DotNet.SDK.8 --silent
 ```
+### SQL Server
+[Optional: SQL Server 2022 or above](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
-3.* [Optional: SQL Server 2022 or above](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
-
-## Setup
+## Configurations
 Follow these steps to get your development environment set up:
 
-  ### 1. Setup your local ASPNETCORE_ENVIRONMENT setting
-  	- Application layer uses ASPNETCORE_ENVIRONMENT environment variable, and will default to Production if not found.
-	- Add the ASPNETCORE_ENVIRONMENT entry in your Enviornment Variables
-
-	To accopmlish this on Windows:
+  ### ASPNETCORE_ENVIRONMENT set to "Local" in launchsettings.json
+	1. This project uses the following ASPNETCORE_ENVIRONMENT to set configuration profile
+	- Debugging uses Properties/launchSettings.json
+	- launchSettings.json is set to Local, which relies on appsettings.Local.json
+	2. As a standard practice, set ASPNETCORE_ENVIRONMENT entry in your Enviornment Variables and restart Visual Studio
 	```
 	Set-Item -Path Env:ASPNETCORE_ENVIRONMENT -Value "Development"
 	Get-Childitem env:
+	```	
+  
+  ### Setup Azure Open AI or Open AI configuration
+  #### Azure Open AI
+	```
+	cd src/Presentation/WebAPI
+	dotnet user-secrets init
+	dotnet user-secrets set "AzureOpenAI:ChatDeploymentName" "gpt-4"
+	dotnet user-secrets set "AzureOpenAI:Endpoint" "https://YOUR_ENDPOINT.openai.azure.com/"
+	dotnet user-secrets set "AzureOpenAI:ApiKey" "YOUR_API_KEY"
+	```
+	Alternately you can set in Environment variables
+	```
+	AzureOpenAI__ChatDeploymentName
+	AzureOpenAI__Endpoint
+	AzureOpenAI__ApiKey
 	```
 
-	You will need to restart Visual Studio, VS Code and Terminals to see the changes
+  #### Open AI
+	```
+	cd src/Presentation/WebAPI
+	dotnet user-secrets init
+	dotnet user-secrets set "OpenAI:ChatModelId" "gpt-3.5-turbo"
+	dotnet user-secrets set "OpenAI:ApiKey" "YOUR_API_KEY"
+	```
+	Alternately you can set in Environment variables
+	```
+	OpenAI__ChatModelId	
+	OpenAI__ApiKey
+	```
+  
+  ### Setup your SQL Server connection string
+	```
+	dotnet user-secrets init
+	dotnet user-secrets set "ConnectionStrings:DefaultConnection" "YOUR_SQL_CONNECTION_STRING"
+	```
 
-  ### 2. Setup your SQL Server connection string in appsettings.*.json
+  ### Launch the backend
+	Right-click Presentation.WebApi and select Set as Default Project
      ```
-	- Application layer requires the following application configuration: ConnectionStrings.SqlConnection
-	- Both JSON configuration (appsettings.*.json) and Azure App Configuration service are supported
-	
-	To accopmlish this in appsettings.*.json
-        1. Open all instances of appsettings.Development.json and appsettings.Production.json
-	2. Copy your SQL Server Connection String from the Azure Portal, or your on-premise SQL Server
-	3. Paste your connection string over the following setting:
-			"ConnectionStrings": {
-				"SqlConnection": "YOUR_CONNECTION_STRING_HERE"
-			}
-	 4. Repeat for both Development and Production
-	 5. Save all instances of appsettings.Development.json and appsettings.Production.json
-     ```
-
-  ### 3. Launch the backend, within the `Microservice.Api' directory
-     ```
-	 dotnet run Presentation.Api.csproj project (>Start)
+	 dotnet run WebApi.csproj
 	 ```
 
-  ### 4. Open http://localhost:9023/index.html in your browser to the Swagger API Interface
+  ### Open http://localhost:7777/swagger/index.html in your browser to the Swagger API Interface
+	Open Microsoft Edge or modern browser
+	Navigate to: http://localhost:7777/swagger/index.html
   
-  ### 5. Open http://localhost:9023/specs in your browser to view all CORE Specifications
-
-  ### 6. Run any test scenerios within Microservice.Tests 
-     ```
-	 these specifications scenerios validate the infrastructure and presentation layer
-     ```
+## dotnet ef migrate steps
+	1. Open Windows Terminal in Powershell or Cmd mode
+	2. cd to /src folder
+	3. (Optional) If you have an existing database, scaffold current entities into your project
+	```
+	dotnet ef dbcontext scaffold "Data Source=localhost;Initial Catalog=weather.test;Min Pool Size=3;MultipleActiveResultSets=True;Trusted_Connection=Yes;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -t WeatherForecastView -c WeatherChannelContext -f -o WebApi
+	```
+	4. Create an initial migration
+	```
+	dotnet ef migrations add InitialCreate
+	```
+	5. Develop new entities and configurations
+	6. When ready to deploy new entities and configurations
+	```
+	dotnet ef database update
+	```
 
 ## dotnet new steps
-1. Start Windows Terminal
-2. Navigate to template.json folder
-```
-cd ./dotnet-microservices/v3-webapi/.template/dotnet-new
-```
-3. Install Template command: 
-```
-dotnet new --install .
-```
-4. Create a folder where you're creating your new solution
-```
-mkdir /repos/dotnet-microservice
-cd /repos/dotnet-microservice
-```
-5. Create microservice solution
-dotnet new aca -o "MyNewCoolApp"
+	1. Start Windows Terminal
+	2. Navigate to template.json folder
+	```
+	cd ./dotnet-microservices/v3-webapi/.template/dotnet-new
+	```
+	3. Install Template command: 
+	```
+	dotnet new --install .
+	```
+	4. Create a folder where you're creating your new solution
+	```
+	mkdir /repos/dotnet-microservice
+	cd /repos/dotnet-microservice
+	```
+	5. Create microservice solution
+	dotnet new gtc-msv3 -o "MyOrg.DomainMicroservice"
 
 ## Contact
 * [GitHub Repo](https://www.github.com/goodtocode/templates)
@@ -106,5 +136,6 @@ dotnet new aca -o "MyNewCoolApp"
 * Microsoft.AspNetCore.Cors
 * Swashbuckle.AspNetCore.SwaggerGen
 * Swashbuckle.AspNetCore.SwaggerUI
+
 
 This project is licensed with the [MIT license](LICENSE).

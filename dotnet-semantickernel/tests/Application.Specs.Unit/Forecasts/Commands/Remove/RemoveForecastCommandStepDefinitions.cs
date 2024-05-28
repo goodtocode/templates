@@ -1,7 +1,7 @@
-using WeatherForecasts.Core.Application.Forecasts.Commands.Remove;
-using WeatherForecasts.Core.Domain.Forecasts.Entities;
+using SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Remove;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
-namespace WeatherForecasts.Specs.Application.Unit.Forecasts.Commands.Remove;
+namespace SemanticKernelMicroservice.Specs.Application.Unit.Forecasts.Commands.Remove;
 
 [Binding]
 [Scope(Tag= "removeForecastCommand")]
@@ -39,8 +39,8 @@ public class RemoveForecastCommandStepDefinitions : TestBase
             var weatherForecastAddValue =
                 ForecastValue.Create(_forecastKey, DateTime.Now, 75, new List<int> { zipcode });
             var weatherForecast = new Forecast(weatherForecastAddValue.Value);
-            WeatherForecastsContext.Forecasts.Add(weatherForecast);
-            await WeatherForecastsContext.SaveChangesAsync(CancellationToken.None);
+            SemanticKernelMicroserviceContext.Forecasts.Add(weatherForecast);
+            await SemanticKernelMicroserviceContext.SaveChangesAsync(CancellationToken.None);
         }
 
         var request = new RemoveForecastCommand
@@ -55,7 +55,7 @@ public class RemoveForecastCommandStepDefinitions : TestBase
         if (_validationResponse.IsValid)
             try
             {
-                var handler = new RemoveForecastCommandHandler(WeatherForecastsContext);
+                var handler = new RemoveForecastCommandHandler(SemanticKernelMicroserviceContext);
                 await handler.Handle(request, CancellationToken.None);
                 _responseType = CommandResponseType.Successful;
             }

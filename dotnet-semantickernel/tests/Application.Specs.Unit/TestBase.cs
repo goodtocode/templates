@@ -1,9 +1,9 @@
-﻿using WeatherForecasts.Core.Application.Common.Exceptions;
-using WeatherForecasts.Core.Application.Common.Interfaces;
-using WeatherForecasts.Core.Application.Common.Mappings;
-using WeatherForecasts.Infrastructure.Persistence;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
+using SemanticKernelMicroservice.Core.Application.Common.Mappings;
+using SemanticKernelMicroservice.Infrastructure.Persistence;
 
-namespace WeatherForecasts.Specs.Application.Unit;
+namespace SemanticKernelMicroservice.Specs.Application.Unit;
 
 public class TestBase
 {
@@ -25,11 +25,11 @@ public class TestBase
         Mapper = new MapperConfiguration(cfg => { cfg.AddProfile<MappingProfile>(); })
             .CreateMapper();
 
-        WeatherForecastsContext = new WeatherForecastsContext(new DbContextOptionsBuilder<WeatherForecastsContext>()
+        SemanticKernelMicroserviceContext = new SemanticKernelMicroserviceContext(new DbContextOptionsBuilder<SemanticKernelMicroserviceContext>()
             .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options);
     }
 
-    public IWeatherForecastsContext WeatherForecastsContext { get; set; }
+    public ISemanticKernelMicroserviceContext SemanticKernelMicroserviceContext { get; set; }
 
     public IMapper Mapper { get; }
 
@@ -38,11 +38,11 @@ public class TestBase
     {
         switch (e)
         {
-            case ValidationException validationException:
+            case CustomValidationException validationException:
                 _commandErrors = validationException.Errors;
                 _responseType = CommandResponseType.BadRequest;
                 break;
-            case NotFoundException notFoundException:
+            case CustomNotFoundException notFoundException:
                 _responseType = CommandResponseType.NotFound;
                 break;
             default:

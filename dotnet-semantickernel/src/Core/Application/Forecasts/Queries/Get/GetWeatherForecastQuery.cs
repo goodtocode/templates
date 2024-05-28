@@ -1,8 +1,8 @@
-﻿using WeatherForecasts.Core.Application.Common.Exceptions;
-using WeatherForecasts.Core.Application.Common.Interfaces;
-using WeatherForecasts.Core.Domain.Forecasts.Models;
+﻿using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
+using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
-namespace WeatherForecasts.Core.Application.Forecasts.Queries.Get;
+namespace SemanticKernelMicroservice.Core.Application.Forecasts.Queries.Get;
 
 public class GetWeatherForecastQuery : IRequest<ForecastVm>
 {
@@ -11,10 +11,10 @@ public class GetWeatherForecastQuery : IRequest<ForecastVm>
 
 public class GetForecastQueryHandler : IRequestHandler<GetWeatherForecastQuery, ForecastVm>
 {
-    private readonly IWeatherForecastsContext _context;
+    private readonly ISemanticKernelMicroserviceContext _context;
     private readonly IMapper _mapper;
 
-    public GetForecastQueryHandler(IWeatherForecastsContext context, IMapper mapper)
+    public GetForecastQueryHandler(ISemanticKernelMicroserviceContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;
@@ -34,6 +34,6 @@ public class GetForecastQueryHandler : IRequestHandler<GetWeatherForecastQuery, 
     private static void GuardAgainstForecastNotFound(ForecastsView? forecast)
     {
         if (forecast == null)
-            throw new NotFoundException("Forecast Not Found");
+            throw new CustomNotFoundException("Forecast Not Found");
     }
 }

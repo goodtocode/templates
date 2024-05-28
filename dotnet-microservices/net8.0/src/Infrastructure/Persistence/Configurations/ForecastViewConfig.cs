@@ -14,6 +14,6 @@ public class ForecastViewConfig : IEntityTypeConfiguration<ForecastsView>
         builder.Property(e => e.DateUpdated);
         builder.Property(e => e.ForecastDate);
         builder.Property(e => e.Summary).HasMaxLength(40);
-        builder.Property(e => e.ZipCodesSearch).HasMaxLength(50);
+        builder.Property(e => e.PostalCodesSearch).HasMaxLength(50);
     }
 }

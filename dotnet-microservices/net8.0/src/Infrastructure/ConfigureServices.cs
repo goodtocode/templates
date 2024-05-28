@@ -7,7 +7,7 @@ namespace WeatherForecasts.Infrastructure;
 
 public static class ConfigureServices
 {
-    public static IServiceCollection AddInfrastructureServices(this IServiceCollection services,
+    public static IServiceCollection AddDbContextServices(this IServiceCollection services,
         IConfiguration configuration)
     {
         if (configuration.GetValue<bool>("UseInMemoryDatabase"))
