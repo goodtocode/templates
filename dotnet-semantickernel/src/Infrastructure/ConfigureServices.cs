@@ -40,6 +40,16 @@ public static class ConfigureServices
         return services;
     }
 
+    public static IServiceCollection AddSemanticKernelMemoryServices(this IServiceCollection services)
+    {
+        //var memory = new KernelMemoryBuilder()
+        //    .WithOpenAIDefaults(Env.Var("OPENAI_API_KEY"))
+        //    .WithSqlServerMemoryDb("YourSqlConnectionString")
+        //    .Build<MemoryServerless>();
+
+        return services;
+    }
+
     public static IServiceCollection AddSemanticKernelServices(this IServiceCollection services,
     IConfiguration configuration)
     {

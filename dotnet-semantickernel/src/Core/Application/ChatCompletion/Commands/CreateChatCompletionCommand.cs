@@ -24,8 +24,17 @@ public class CreateChatCompletionCommandHandler : IRequestHandler<CreateChatComp
     {
 
         GuardAgainstEmptyMessage(request?.Message);
-        var response = await _chatService.GetChatMessageContentAsync(request.Message);
+        
+        // Retrieve chat history
+        ChatHistory chatHistory = new();
+        
+        chatHistory.AddUserMessage(request.Message);
+        var responseWithHistory = await _chatService.GetChatMessageContentAsync(chatHistory);
 
+        // Persist chat history
+
+
+        
         //Id, chatcmpl-9Te5QEaE2fBhxt1mtHamj7U25NIRz
         //{ [Created, { 5/27/2024 11:30:32 PM +00:00}]}
         //ModelId "gpt-3.5-turbo" string
@@ -33,7 +42,8 @@ public class CreateChatCompletionCommandHandler : IRequestHandler<CreateChatComp
         //Microsoft.SemanticKernel.ChatCompletion.AuthorRole
         //Content "There are 25 letters in the sentence \"hi, how many letters in this sentence?\""
 
-        return response.Content;
+        return responseWithHistory.ToString();
+
 
         //var weatherChatCompletion = _context.ChatCompletions.Find(request.Key);
         //GuardAgainstWeatherChatCompletionNotFound(weatherChatCompletion);
