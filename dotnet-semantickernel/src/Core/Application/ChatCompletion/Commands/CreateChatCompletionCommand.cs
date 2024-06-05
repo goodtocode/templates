@@ -1,4 +1,5 @@
 ﻿using FluentValidation.Results;
+using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
 
@@ -24,17 +25,20 @@ public class CreateChatCompletionCommandHandler : IRequestHandler<CreateChatComp
     {
 
         GuardAgainstEmptyMessage(request?.Message);
-        
-        // Retrieve chat history
+
+        ChatMessageContent response;
         ChatHistory chatHistory = new();
-        
+
+        // Retrieve chat history
+
+
         chatHistory.AddUserMessage(request.Message);
-        var responseWithHistory = await _chatService.GetChatMessageContentAsync(chatHistory);
+        response = await _chatService.GetChatMessageContentAsync(chatHistory, null, null, cancellationToken);
 
         // Persist chat history
 
 
-        
+
         //Id, chatcmpl-9Te5QEaE2fBhxt1mtHamj7U25NIRz
         //{ [Created, { 5/27/2024 11:30:32 PM +00:00}]}
         //ModelId "gpt-3.5-turbo" string
@@ -42,7 +46,7 @@ public class CreateChatCompletionCommandHandler : IRequestHandler<CreateChatComp
         //Microsoft.SemanticKernel.ChatCompletion.AuthorRole
         //Content "There are 25 letters in the sentence \"hi, how many letters in this sentence?\""
 
-        return responseWithHistory.ToString();
+        return response.ToString();
 
 
         //var weatherChatCompletion = _context.ChatCompletions.Find(request.Key);

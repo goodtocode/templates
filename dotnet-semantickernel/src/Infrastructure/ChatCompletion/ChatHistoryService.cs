@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Service Layer pattern
+// Can convert to Repository Pattern by abstracting away the Dictionary into an external concern
 namespace SemanticKernelMicroservice.Infrastructure.ChatHistoryService
 {
     // Register
