@@ -116,22 +116,24 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 	```
 
 ## dotnet new steps
-	1. Start Windows Terminal
-	2. Navigate to template.json folder
+1. Start Windows Terminal
+2. Navigate to template.json folder
 	```
 	cd ./dotnet-microservices/v3-webapi/.template/dotnet-new
 	```
-	3. Install Template command: 
+3. Install Template command: 
 	```
 	dotnet new --install .
 	```
-	4. Create a folder where you're creating your new solution
+4. Create a folder where you're creating your new solution
 	```
 	mkdir /repos/dotnet-microservice
 	cd /repos/dotnet-microservice
 	```
-	5. Create microservice solution
+5. Create microservice solution
+	```
 	dotnet new gtc-msv3 -o "MyOrg.DomainMicroservice"
+	```
 
 ## Contact
 * [GitHub Repo](https://www.github.com/goodtocode/templates)
