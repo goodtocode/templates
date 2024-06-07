@@ -1,4 +1,4 @@
-﻿using SemanticKernelMicroservice.Core.Application.TextGenerations.Commands.Add;
+﻿using SemanticKernelMicroservice.Core.Application.TextGeneration.Commands;
 using SemanticKernelMicroservice.Presentation.WebApi.Common;
 
 namespace SemanticKernelMicroservice.Presentation.WebApi.TextGeneration;

@@ -2,7 +2,7 @@
 using Microsoft.SemanticKernel.TextGeneration;
 using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
 
-namespace SemanticKernelMicroservice.Core.Application.TextGenerations.Commands.Add;
+namespace SemanticKernelMicroservice.Core.Application.TextGeneration.Commands;
 
 public class CreateTextGenerationCommand : IRequest<string>
 {

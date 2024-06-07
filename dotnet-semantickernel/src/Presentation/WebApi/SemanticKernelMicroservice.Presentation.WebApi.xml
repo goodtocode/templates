@@ -9,7 +9,7 @@
             Chat completion endpoints to create a chat, continue a chat, delete a chat and retrieve chat history
             </summary>
         </member>
-        <member name="M:SemanticKernelMicroservice.Presentation.WebApi.ChatCompletion.ChatCompletionController.Post(SemanticKernelMicroservice.Core.Application.ChatCompletions.Commands.Add.CreateChatCompletionCommand)">
+        <member name="M:SemanticKernelMicroservice.Presentation.WebApi.ChatCompletion.ChatCompletionController.Post(SemanticKernelMicroservice.Core.Application.ChatCompletion.Commands.CreateChatCompletionCommand)">
              <summary>
              Creates new Chat Completion session with empty history
              </summary>
@@ -223,7 +223,7 @@
             Chat completion endpoints to create a chat, continue a chat, delete a chat and retrieve chat history
             </summary>
         </member>
-        <member name="M:SemanticKernelMicroservice.Presentation.WebApi.TextGeneration.TextGenerationController.Post(SemanticKernelMicroservice.Core.Application.TextGenerations.Commands.Add.CreateTextGenerationCommand)">
+        <member name="M:SemanticKernelMicroservice.Presentation.WebApi.TextGeneration.TextGenerationController.Post(SemanticKernelMicroservice.Core.Application.TextGeneration.Commands.CreateTextGenerationCommand)">
              <summary>
              Creates new Chat Completion session with empty history
              </summary>

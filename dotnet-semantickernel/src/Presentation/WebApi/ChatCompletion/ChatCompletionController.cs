@@ -1,5 +1,4 @@
-﻿using SemanticKernelMicroservice.Core.Application.ChatCompletion.Queries;
-using SemanticKernelMicroservice.Core.Application.ChatCompletions.Commands.Add;
+﻿using SemanticKernelMicroservice.Core.Application.ChatCompletion.Commands;
 using SemanticKernelMicroservice.Presentation.WebApi.Common;
 
 namespace SemanticKernelMicroservice.Presentation.WebApi.ChatCompletion;

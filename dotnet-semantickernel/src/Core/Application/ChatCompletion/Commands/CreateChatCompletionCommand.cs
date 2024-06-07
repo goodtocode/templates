@@ -3,7 +3,7 @@ using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
 
-namespace SemanticKernelMicroservice.Core.Application.ChatCompletions.Commands.Add;
+namespace SemanticKernelMicroservice.Core.Application.ChatCompletion.Commands;
 
 public class CreateChatCompletionCommand : IRequest<string>
 {

@@ -31,7 +31,8 @@
 		<PackageReference Include="Microsoft.Identity.Web.UI" Version="2.18.2" />
 	</ItemGroup>
 	<ItemGroup>
+		<ProjectReference Include="..\..\Common\SemanticKernel.Services\SemanticKernel.Services\SemanticKernel.Services.csproj" />
 		<ProjectReference Include="..\..\Core\Application\Application.csproj" />
-		<ProjectReference Include="..\..\Infrastructure\Infrastucture.csproj" />
+		<ProjectReference Include="..\..\Infrastructure\SqlServer\Infrastucture.SqlServer.csproj" />
 	</ItemGroup>
 </Project>

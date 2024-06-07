@@ -1,4 +1,4 @@
-﻿namespace SemanticKernelMicroservice.Core.Application.TextGenerations.Commands.Add;
+﻿namespace SemanticKernelMicroservice.Core.Application.TextGeneration.Commands;
 
 public class AddTextGenerationCommandValidator : AbstractValidator<CreateTextGenerationCommand>
 {

@@ -1,17 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-	  <RootNamespace>SemanticKernelMicroservice.Core.Domain</RootNamespace>
-	  <AssemblyName>SemanticKernelMicroservice.Core.Domain</AssemblyName>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<RootNamespace>SemanticKernelMicroservice.Core.Domain</RootNamespace>
+		<AssemblyName>SemanticKernelMicroservice.Core.Domain</AssemblyName>
+		<IsPackable>false</IsPackable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Version>1.0.0</Version>
+	</PropertyGroup>
+	
 	<ItemGroup>
 		<PackageReference Include="MediatR" Version="12.2.0" />
 		<PackageReference Include="CSharpFunctionalExtensions" Version="2.42.0" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="ChatCompletion\" />
 	</ItemGroup>
 </Project>

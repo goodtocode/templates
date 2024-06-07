@@ -1,4 +1,4 @@
-﻿namespace SemanticKernelMicroservice.Core.Application.ChatCompletions.Commands.Add;
+﻿namespace SemanticKernelMicroservice.Core.Application.ChatCompletion.Commands;
 
 public class AddChatCompletionCommandValidator : AbstractValidator<CreateChatCompletionCommand>
 {
