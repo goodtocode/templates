@@ -1,5 +1,5 @@
-# Microservice Quick-Start
-A simple Microservice solution including Domain Models, Aggregates, Persistence Repositories and an API presentation layer. This Microservice API is built using .NET 6 and Entity Framework Core.
+# Semantic Kernel Microservice Quick-Start
+A simple Semantic Kernel CRUD Microservice solution including Domain Models, Aggregates, Persistence Repositories and an API presentation layer. This demonstrates the most basic use cases of Semantic Kernel in an Clean Architecture Microservice.
 
 ## Prerequisites
 You will need the following tools:
@@ -24,60 +24,61 @@ winget install Microsoft.DotNet.SDK.8 --silent
 ## Configurations
 Follow these steps to get your development environment set up:
 
-  ### ASPNETCORE_ENVIRONMENT set to "Local" in launchsettings.json
-	1. This project uses the following ASPNETCORE_ENVIRONMENT to set configuration profile
-	- Debugging uses Properties/launchSettings.json
-	- launchSettings.json is set to Local, which relies on appsettings.Local.json
-	2. As a standard practice, set ASPNETCORE_ENVIRONMENT entry in your Enviornment Variables and restart Visual Studio
-	```
-	Set-Item -Path Env:ASPNETCORE_ENVIRONMENT -Value "Development"
-	Get-Childitem env:
-	```	
+### ASPNETCORE_ENVIRONMENT set to "Local" in launchsettings.json
+1. This project uses the following ASPNETCORE_ENVIRONMENT to set configuration profile
+- Debugging uses Properties/launchSettings.json
+- launchSettings.json is set to Local, which relies on appsettings.Local.json
+2. As a standard practice, set ASPNETCORE_ENVIRONMENT entry in your Enviornment Variables and restart Visual Studio
+```
+Set-Item -Path Env:ASPNETCORE_ENVIRONMENT -Value "Development"
+Get-Childitem env:
+```	
   
   ### Setup Azure Open AI or Open AI configuration
   #### Azure Open AI
-	```
-	cd src/Presentation/WebAPI
-	dotnet user-secrets init
-	dotnet user-secrets set "AzureOpenAI:ChatDeploymentName" "gpt-4"
-	dotnet user-secrets set "AzureOpenAI:Endpoint" "https://YOUR_ENDPOINT.openai.azure.com/"
-	dotnet user-secrets set "AzureOpenAI:ApiKey" "YOUR_API_KEY"
-	```
-	Alternately you can set in Environment variables
-	```
-	AzureOpenAI__ChatDeploymentName
-	AzureOpenAI__Endpoint
-	AzureOpenAI__ApiKey
-	```
+```
+cd src/Presentation/WebAPI
+dotnet user-secrets init
+dotnet user-secrets set "AzureOpenAI:ChatDeploymentName" "gpt-4"
+dotnet user-secrets set "AzureOpenAI:Endpoint" "https://YOUR_ENDPOINT.openai.azure.com/"
+dotnet user-secrets set "AzureOpenAI:ApiKey" "YOUR_API_KEY"
+```
 
-  #### Open AI
-	```
-	cd src/Presentation/WebAPI
-	dotnet user-secrets init
-	dotnet user-secrets set "OpenAI:ChatModelId" "gpt-3.5-turbo"
-	dotnet user-secrets set "OpenAI:ApiKey" "YOUR_API_KEY"
-	```
-	Alternately you can set in Environment variables
-	```
-	OpenAI__ChatModelId	
-	OpenAI__ApiKey
-	```
-  
-  ### Setup your SQL Server connection string
-	```
-	dotnet user-secrets init
-	dotnet user-secrets set "ConnectionStrings:DefaultConnection" "YOUR_SQL_CONNECTION_STRING"
-	```
+Alternately you can set in Environment variables
+```
+AzureOpenAI__ChatDeploymentName
+AzureOpenAI__Endpoint
+AzureOpenAI__ApiKey
+```
 
-  ### Launch the backend
-	Right-click Presentation.WebApi and select Set as Default Project
-     ```
-	 dotnet run WebApi.csproj
-	 ```
+#### Open AI
+```
+cd src/Presentation/WebAPI
+dotnet user-secrets init
+dotnet user-secrets set "OpenAI:ChatModelId" "gpt-3.5-turbo"
+dotnet user-secrets set "OpenAI:ApiKey" "YOUR_API_KEY"
+```
+Alternately you can set in Environment variables
+```
+OpenAI__ChatModelId	
+OpenAI__ApiKey
+```
 
-  ### Open http://localhost:7777/swagger/index.html in your browser to the Swagger API Interface
-	Open Microsoft Edge or modern browser
-	Navigate to: http://localhost:7777/swagger/index.html
+### Setup your SQL Server connection string
+```
+dotnet user-secrets init
+dotnet user-secrets set "ConnectionStrings:DefaultConnection" "YOUR_SQL_CONNECTION_STRING"
+```
+
+### Launch the backend
+Right-click Presentation.WebApi and select Set as Default Project
+```
+dotnet run WebApi.csproj
+```
+
+### Open http://localhost:7777/swagger/index.html in your browser to the Swagger API Interface
+Open Microsoft Edge or modern browser
+Navigate to: http://localhost:7777/swagger/index.html
   
 ## dotnet ef migrate steps
 ### dotnet ef cli
@@ -134,13 +135,41 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 	```
 	dotnet new gtc-msv3 -o "MyOrg.DomainMicroservice"
 	```
+# Entity Framework vs. Semantic Kernel Memory
+This example uses Entity Framework (EF) to store messages and responses for Semantic Kernel, and does not rely on SK Memory (SM). EF and SM serve different purposes. If you need natural language querying and efficient indexing, Semantic Kernel Memory is a great fit. If you’re building a standard application with a relational database, Entity Framework is more appropriate.
 
-## Contact
+The key differences between Entity Framework (EF) and Semantic Kernel memory:
+
+## Purpose and Functionality
+- Entity Framework (EF): EF is an Object-Relational Mapping (ORM) framework for .NET applications. It allows you to map database tables to C# classes and provides an abstraction layer for database operations. EF focuses on CRUD (Create, Read, Update, Delete) operations and data modeling.
+- Semantic Kernel Memory: Semantic Kernel Memory (SM) is part of the Semantic Kernel project. It’s a library for C#, Python, and Java that wraps direct calls to databases and supports vector search. SM is designed for long-term memory and efficient indexing of datasets. It’s particularly useful for natural language querying and retrieval augmented generation (RAG).
+
+## Data Storage and Retrieval
+- EF: EF stores data in relational databases (e.g., SQL Server, MySQL, PostgreSQL). It uses SQL queries to retrieve data.
+- SM: SM can use various storage mechanisms, including vector databases. It supports vector search, which allows efficient similarity-based retrieval. SM is well-suited for handling large volumes of data and complex queries.
+
+## Querying
+- EF: EF queries are typically written in LINQ (Language Integrated Query) or SQL. You express queries in terms of C# objects and properties.
+- SM: SM supports natural language querying. You can search for information using text-based queries, making it more user-friendly for applications like chatbots.
+
+## Integration with Chat Systems
+- EF: EF doesn’t directly integrate with chat systems. It’s primarily used for data persistence.
+- SM: SM integrates seamlessly with chat systems like ChatGPT, Copilot, and Semantic Kernel. It enhances data-driven features in AI applications.
+
+## Scalability and Performance
+- EF: EF is suitable for small to medium-sized applications. It may not perform optimally with very large datasets.
+- SM: SM is designed for scalability. It can handle large volumes of data efficiently, making it suitable for memory-intensive applications.
+
+## Use Cases
+- EF: Use EF for traditional CRUD operations, business logic, and data modeling.
+- SM: Use SM for long-term memory, chatbots, question-answering systems, and information retrieval.
+
+# Contact
 * [GitHub Repo](https://www.github.com/goodtocode/templates)
 * [@goodtocode](https://www.twitter.com/goodtocode)
 * [github.com/goodtocode](https://www.github.com/goodtocode)
 
-## Technologies
+# Technologies
 * [ASP.NET .Net](https://docs.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core)
 * [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/)
 * [MediatR](https://github.com/jbogard/MediatR)
