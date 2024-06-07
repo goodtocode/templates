@@ -1,14 +1,15 @@
-﻿using System.Net.Http;
+﻿using GoodToCode.HttpClient.ClientCredentialFlow.Options;
+using Microsoft.Extensions.Options;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace GoodToCode.HttpClient.ClientCredentialFlow;
+namespace GoodToCode.HttpClient.ClientCredentialFlow.Middleware;
 
 public class BearerToken
 {
-    private readonly ClientSetting _accessTokenSetting;
+    private IOptions<ClientCredential> _accessTokenSetting;
 
-    public BearerToken(ClientSetting accessTokenSetting)
+    public BearerToken(IOptions<ClientCredential> accessTokenSetting)
     {
         _accessTokenSetting = accessTokenSetting;
     }
@@ -43,13 +44,13 @@ public class BearerToken
         var httpClient = new System.Net.Http.HttpClient();
         var content = new FormUrlEncodedContent(new Dictionary<string, string>
         {
-            { "scope", _accessTokenSetting.Scope },
-            { "client_id", _accessTokenSetting.ClientId },
-            { "client_secret", _accessTokenSetting.ClientSecret },
+            { "scope", _accessTokenSetting.Value.Scope },
+            { "client_id", _accessTokenSetting.Value.ClientId },
+            { "client_secret", _accessTokenSetting.Value.ClientSecret },
             { "grant_type", "client_credentials" }
         });
 
-        var response = await httpClient.PostAsync(_accessTokenSetting.TokenUrl, content);
+        var response = await httpClient.PostAsync(_accessTokenSetting.Value.TokenUrl, content);
         if (!response.IsSuccessStatusCode) return string.Empty;
         var tokenResponse = JsonSerializer.Deserialize<BearerTokenDto>(await response.Content.ReadAsStringAsync());
         ExpirationDateUtc = DateTime.UtcNow.AddSeconds(tokenResponse?.ExpiresIn ?? 3600);

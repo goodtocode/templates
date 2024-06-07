@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Headers;
 
-namespace GoodToCode.HttpClient.ClientCredentialFlow;
+namespace GoodToCode.HttpClient.ClientCredentialFlow.Middleware;
 
 public class TokenHandler : DelegatingHandler
 {

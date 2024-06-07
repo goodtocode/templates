@@ -1,8 +1,8 @@
-﻿namespace GoodToCode.HttpClient.ClientCredentialFlow;
+﻿namespace GoodToCode.HttpClient.ClientCredentialFlow.Options;
 
-public class ClientSetting
+public class ClientCredential
 {
-    public ClientSetting(string clientId, string clientSecret, string tokenUrl, string scope)
+    public ClientCredential(string clientId, string clientSecret, string tokenUrl, string scope)
     {
         ClientId = clientId;
         ClientSecret = clientSecret;
