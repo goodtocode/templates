@@ -17,6 +17,7 @@ winget install Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runc
 ```
 winget install Microsoft.DotNet.SDK.8 --silent
 ```
+
 ### SQL Server
 [Optional: SQL Server 2022 or above](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
@@ -79,20 +80,39 @@ Follow these steps to get your development environment set up:
 	Navigate to: http://localhost:7777/swagger/index.html
   
 ## dotnet ef migrate steps
-	1. Open Windows Terminal in Powershell or Cmd mode
-	2. cd to /src folder
-	3. (Optional) If you have an existing database, scaffold current entities into your project
+### dotnet ef cli
+Install
+```
+dotnet tool install --global dotnet-ef
+```
+Update
+```
+dotnet tool update --global dotnet-ef
+```
+Remember to add the following package to appropriate project
+```
+dotnet add package Microsoft.EntityFrameworkCore.Design
+```
+### Steps
+
+1. Open Windows Terminal in Powershell or Cmd mode
+2. cd to /src folder
+3. (Optional) If you have an existing database, scaffold current entities into your project
+	
 	```
-	dotnet ef dbcontext scaffold "Data Source=localhost;Initial Catalog=weather.test;Min Pool Size=3;MultipleActiveResultSets=True;Trusted_Connection=Yes;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -t WeatherForecastView -c WeatherChannelContext -f -o WebApi
+	dotnet ef dbcontext scaffold "Data Source=localhost;Initial Catalog=semantickernelmicroservice;Min Pool Size=3;MultipleActiveResultSets=True;Trusted_Connection=Yes;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -t WeatherForecastView -c WeatherChannelContext -f -o WebApi
 	```
-	4. Create an initial migration
+
+4. Create an initial migration
 	```
 	dotnet ef migrations add InitialCreate
 	```
-	5. Develop new entities and configurations
-	6. When ready to deploy new entities and configurations
-	```
-	dotnet ef database update
+
+5. Develop new entities and configurations
+6. When ready to deploy new entities and configurations
+   
+	```	
+	dotnet ef database update --project .\Infrastructure\Infrastucture.csproj --startup-project .\Presentation\WebApi\Presentation.WebApi.csproj --context SemanticKernelMicroserviceContext --connection "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SemanticKernelMicroservice;Min Pool Size=3;MultipleActiveResultSets=True;Trusted_Connection=Yes;TrustServerCertificate=True;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30"
 	```
 
 ## dotnet new steps
