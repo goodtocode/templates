@@ -1,11 +1,11 @@
-﻿namespace SemanticKernelMicroservice.Core.Application.ForecastCalculations.Queries.GetFahrenheitToCelsius;
+﻿//namespace SemanticKernelMicroservice.Core.Application.ForecastCalculations.Queries.GetFahrenheitToCelsius;
 
-public class
-    GetFahrenheitToCelsiusCalculationConversionQueryValidator : AbstractValidator<
-        GetFahrenheitToCelsiusCalculationConversionQuery>
-{
-    public GetFahrenheitToCelsiusCalculationConversionQueryValidator()
-    {
-        RuleFor(x => x.FahrenheitValue).NotNull();
-    }
-}
+//public class
+//    GetFahrenheitToCelsiusCalculationConversionQueryValidator : AbstractValidator<
+//        GetFahrenheitToCelsiusCalculationConversionQuery>
+//{
+//    public GetFahrenheitToCelsiusCalculationConversionQueryValidator()
+//    {
+//        RuleFor(x => x.FahrenheitValue).NotNull();
+//    }
+//}

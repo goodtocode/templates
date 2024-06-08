@@ -1,5 +1,5 @@
-﻿namespace SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetAll;
+﻿//namespace SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetAll;
 
-public class GetAllForecastsQueryValidator : AbstractValidator<GetAllForecastsQuery>
-{
-}
+//public class GetAllForecastsQueryValidator : AbstractValidator<GetAllForecastsQuery>
+//{
+//}

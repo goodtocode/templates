@@ -9,6 +9,6 @@ namespace SemanticKernelMicroservice.Core.Domain.ChatCompletion
         public string Response { get; set; } = null!;
         public DateTime Timestamp { get; set; }
 
-        public ChatSessionEntity ChatSession { get; set; } = new();
+        public virtual ChatSessionEntity ChatSession { get; set; } = new();
     }
 }

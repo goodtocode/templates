@@ -29,10 +29,10 @@ Follow these steps to get your development environment set up:
 - Debugging uses Properties/launchSettings.json
 - launchSettings.json is set to Local, which relies on appsettings.Local.json
 2. As a standard practice, set ASPNETCORE_ENVIRONMENT entry in your Enviornment Variables and restart Visual Studio
-```
-Set-Item -Path Env:ASPNETCORE_ENVIRONMENT -Value "Development"
-Get-Childitem env:
-```	
+	```
+	Set-Item -Path Env:ASPNETCORE_ENVIRONMENT -Value "Development"
+	Get-Childitem env:
+	```	
   
   ### Setup Azure Open AI or Open AI configuration
   #### Azure Open AI
@@ -106,15 +106,15 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 
 4. Create an initial migration
 	```
-	dotnet ef migrations add InitialCreate
+	dotnet ef migrations add InitialCreate --project .\Infrastructure\SqlServer\Infrastucture.SqlServer.csproj --startup-project .\Presentation\WebApi\Presentation.WebApi.csproj --context ChatCompletionContext
 	```
 
 5. Develop new entities and configurations
 6. When ready to deploy new entities and configurations
    
-```	
-dotnet ef database update --project .\Infrastructure\SqlServer\Infrastucture.SqlServer.csproj --startup-project .\Presentation\WebApi\Presentation.WebApi.csproj --context ChatCompletionContext --connection "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SemanticKernelMicroservice;Min Pool Size=3;MultipleActiveResultSets=True;Trusted_Connection=Yes;TrustServerCertificate=True;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30"
-```
+	```	
+	dotnet ef database update --project .\Infrastructure\SqlServer\Infrastucture.SqlServer.csproj --startup-project .\Presentation\WebApi\Presentation.WebApi.csproj --context ChatCompletionContext --connection "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SemanticKernelMicroservice;Min Pool Size=3;MultipleActiveResultSets=True;Trusted_Connection=Yes;TrustServerCertificate=True;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30"
+	```
 
 ## dotnet new steps
 1. Start Windows Terminal
