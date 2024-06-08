@@ -1,5 +1,5 @@
-﻿using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
-using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
+﻿using SemanticKernelMicroservice.Core.Application.Abstractions;
+using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
 
 namespace SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Remove;
 

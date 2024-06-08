@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
+using SemanticKernelMicroservice.Core.Application.Abstractions;
 using SemanticKernelMicroservice.Infrastructure.SqlServer.Persistence;
 
 namespace SemanticKernelMicroservice.Infrastructure.SqlServer;
@@ -12,19 +12,19 @@ public static class ConfigureServices
     {
         if (configuration.GetValue<bool>("UseInMemoryDatabase"))
         {
-            services.AddDbContext<SemanticKernelMicroserviceContext>(options =>
+            services.AddDbContext<ChatCompletionContext>(options =>
                 options.UseInMemoryDatabase("DefaultConnection").UseLazyLoadingProxies());
         }
         else
         {
-            services.AddDbContext<SemanticKernelMicroserviceContext>(options =>
+            services.AddDbContext<ChatCompletionContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-                        builder => builder.MigrationsAssembly(typeof(SemanticKernelMicroserviceContext).Assembly.FullName))
+                        builder => builder.MigrationsAssembly(typeof(ChatCompletionContext).Assembly.FullName))
                     .UseLazyLoadingProxies());
         }
 
-        services.AddScoped<ISemanticKernelMicroserviceContext, SemanticKernelMicroserviceContext>();
-        services.AddScoped<SemanticKernelMicroserviceDbContextInitializer>();
+        services.AddScoped<IChatCompletionContext, ChatCompletionContext>();
+        services.AddScoped<ChatCompletionContextInitializer>();
 
         return services;
     }

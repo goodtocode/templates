@@ -112,9 +112,9 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 5. Develop new entities and configurations
 6. When ready to deploy new entities and configurations
    
-	```	
-	dotnet ef database update --project .\Infrastructure\Infrastucture.csproj --startup-project .\Presentation\WebApi\Presentation.WebApi.csproj --context SemanticKernelMicroserviceContext --connection "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SemanticKernelMicroservice;Min Pool Size=3;MultipleActiveResultSets=True;Trusted_Connection=Yes;TrustServerCertificate=True;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30"
-	```
+```	
+dotnet ef database update --project .\Infrastructure\SqlServer\Infrastucture.SqlServer.csproj --startup-project .\Presentation\WebApi\Presentation.WebApi.csproj --context ChatCompletionContext --connection "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SemanticKernelMicroservice;Min Pool Size=3;MultipleActiveResultSets=True;Trusted_Connection=Yes;TrustServerCertificate=True;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30"
+```
 
 ## dotnet new steps
 1. Start Windows Terminal

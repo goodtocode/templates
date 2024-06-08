@@ -20,7 +20,7 @@ public class CreateChatCompletionCommandHandler : IRequestHandler<CreateChatComp
         //_context = context;
         _chatService = chatService;
     }
-
+        
     public async Task<string> Handle(CreateChatCompletionCommand request, CancellationToken cancellationToken)
     {
 
@@ -67,3 +67,39 @@ public class CreateChatCompletionCommandHandler : IRequestHandler<CreateChatComp
             });
     }
 }
+
+//// Example usage
+//public class ChatService
+//{
+//    private readonly ChatCompletionContext _dbContext;
+
+//    public ChatService(ChatCompletionContext dbContext)
+//    {
+//        _dbContext = dbContext;
+//    }
+
+//    public ChatHistory LoadChatHistory(Guid sessionKey)
+//    {
+//        var chatHistory = new ChatHistory();
+//        var messages = _dbContext.ChatMessages
+//            .Where(m => m.Key == sessionKey)
+//            .OrderBy(m => m.Timestamp)
+//            .ToList();
+
+//        foreach (var message in messages)
+//        {
+//            chatHistory.AddUserMessage(message.Content);
+//            // Add other relevant info (e.g., system messages, assistant replies)
+//        }
+
+//        return chatHistory;
+//    }
+
+//    public void AddUserMessage(string sessionId, string content)
+//    {
+//        // Save the user message to the database
+//        var message = new ChatMessage { ChatSessionId = sessionId, Content = content };
+//        _dbContext.ChatMessages.Add(message);
+//        _dbContext.SaveChanges();
+//    }
+//}

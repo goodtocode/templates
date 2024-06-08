@@ -4,10 +4,10 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<RootNamespace>SemanticKernelMicroservice.Core.Application</RootNamespace>
 		<AssemblyName>SemanticKernelMicroservice.Core.Application</AssemblyName>
+		<Version>1.0.0</Version>
 		<IsPackable>false</IsPackable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-		<Version>1.0.0</Version>
+		<Nullable>enable</Nullable>		
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="13.0.1" />

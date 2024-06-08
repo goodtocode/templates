@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
+using SemanticKernelMicroservice.Core.Application.Abstractions;
 using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
 namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Persistence;
@@ -18,9 +18,5 @@ public partial class SemanticKernelMicroserviceContext : DbContext, ISemanticKer
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly(),
             x => x.Namespace == $"{GetType().Namespace}.Configurations");
-
-        OnModelCreatingPartial(modelBuilder);
     }
-
-    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

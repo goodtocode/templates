@@ -1,5 +1,5 @@
 ﻿using FluentValidation.Results;
-using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
+using SemanticKernelMicroservice.Core.Application.Abstractions;
 using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 using ValidationException = SemanticKernelMicroservice.Core.Application.Common.Exceptions.CustomValidationException;
 

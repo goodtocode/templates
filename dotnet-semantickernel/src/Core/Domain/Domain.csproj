@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
@@ -13,5 +13,9 @@
 	<ItemGroup>
 		<PackageReference Include="MediatR" Version="12.2.0" />
 		<PackageReference Include="CSharpFunctionalExtensions" Version="2.42.0" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Common\Domain.Types\Domain.Types.csproj" />
 	</ItemGroup>
 </Project>

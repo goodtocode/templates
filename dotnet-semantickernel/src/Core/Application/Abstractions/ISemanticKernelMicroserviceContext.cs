@@ -1,6 +1,6 @@
 ﻿using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
 
-namespace SemanticKernelMicroservice.Core.Application.Common.Interfaces;
+namespace SemanticKernelMicroservice.Core.Application.Abstractions;
 
 public interface ISemanticKernelMicroserviceContext
 {

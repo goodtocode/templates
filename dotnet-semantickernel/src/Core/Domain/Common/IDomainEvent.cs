@@ -1,5 +1,5 @@
-﻿namespace SemanticKernelMicroservice.Core.Domain.Common;
+﻿//namespace SemanticKernelMicroservice.Core.Domain.Common;
 
-public interface IDomainEvent
-{
-}
+//public interface IDomainEvent
+//{
+//}

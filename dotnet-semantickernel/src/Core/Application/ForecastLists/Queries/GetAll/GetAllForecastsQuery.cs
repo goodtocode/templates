@@ -1,5 +1,5 @@
 ﻿using AutoMapper.QueryableExtensions;
-using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
+using SemanticKernelMicroservice.Core.Application.Abstractions;
 
 namespace SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetAll;
 
