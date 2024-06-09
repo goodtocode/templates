@@ -179,6 +179,12 @@ The key differences between Entity Framework (EF) and Semantic Kernel memory:
 * [FluentAssertions](https://fluentassertions.com/)
 * [Moq](https://github.com/moq)
 
+# Semantic Kernel
+* [GitHub](https://github.com/microsoft/semantic-kernel.git)
+* [Getting Started Blog](https://devblogs.microsoft.com/semantic-kernel/how-to-get-started-using-semantic-kernel-net/)
+* [Understanding the Kernel](https://learn.microsoft.com/en-us/semantic-kernel/agents/kernel/?tabs=Csharp)
+* [Creating Plugins](https://devblogs.microsoft.com/semantic-kernel/using-semantic-kernel-to-create-a-time-plugin-with-net/)
+
 ## Additional Technologies References
 * AspNetCore.HealthChecks.UI
 * Entity Framework Core
