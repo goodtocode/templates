@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SemanticKernelMicroservice.Infrastructure.SemanticKernel.Options;
+namespace Goodtocode.SemanticKernel.Infrastructure.SemanticKernel.Options;
 
 /// <summary>
 /// OpenAI settings.

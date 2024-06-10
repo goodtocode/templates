@@ -1,6 +1,6 @@
-﻿using ValidationException = SemanticKernelMicroservice.Core.Application.Common.Exceptions.CustomValidationException;
+﻿using ValidationException = Goodtocode.SemanticKernel.Core.Application.Common.Exceptions.CustomValidationException;
 
-namespace SemanticKernelMicroservice.Core.Application.Common.Behaviours;
+namespace Goodtocode.SemanticKernel.Core.Application.Common.Behaviours;
 
 public class CustomValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
      where TRequest : notnull

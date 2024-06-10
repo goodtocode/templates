@@ -1,9 +1,9 @@
-﻿//using SemanticKernelMicroservice.Core.Application.Common.Models;
-//using SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetAll;
-//using SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetPaginated;
-//using SemanticKernelMicroservice.Presentation.WebApi.Common;
+﻿//using Goodtocode.SemanticKernel.Core.Application.Common.Models;
+//using Goodtocode.SemanticKernel.Core.Application.ForecastLists.Queries.GetAll;
+//using Goodtocode.SemanticKernel.Core.Application.ForecastLists.Queries.GetPaginated;
+//using Goodtocode.SemanticKernel.Presentation.WebApi.Common;
 
-//namespace SemanticKernelMicroservice.Presentation.WebApi.ForecastsLists;
+//namespace Goodtocode.SemanticKernel.Presentation.WebApi.ForecastsLists;
 
 ///// <summary>
 ///// Controller for Forecasts

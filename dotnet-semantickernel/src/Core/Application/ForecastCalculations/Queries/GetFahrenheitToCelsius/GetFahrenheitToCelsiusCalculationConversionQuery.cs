@@ -1,4 +1,4 @@
-﻿//namespace SemanticKernelMicroservice.Core.Application.ForecastCalculations.Queries.GetFahrenheitToCelsius;
+﻿//namespace Goodtocode.SemanticKernel.Core.Application.ForecastCalculations.Queries.GetFahrenheitToCelsius;
 
 //public class GetFahrenheitToCelsiusCalculationConversionQuery : IRequest<int>
 //{

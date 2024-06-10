@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SemanticKernelMicroservice.Core.Application.Abstractions;
-using SemanticKernelMicroservice.Infrastructure.SqlServer.Persistence;
+using Goodtocode.SemanticKernel.Core.Application.Abstractions;
+using Goodtocode.SemanticKernel.Infrastructure.SqlServer.Persistence;
 
-namespace SemanticKernelMicroservice.Infrastructure.SqlServer;
+namespace Goodtocode.SemanticKernel.Infrastructure.SqlServer;
 
 public static class ConfigureServices
 {

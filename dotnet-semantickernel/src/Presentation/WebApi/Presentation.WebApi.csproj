@@ -1,17 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
-		<RootNamespace>SemanticKernelMicroservice.Presentation.WebApi</RootNamespace>
-		<AssemblyName>SemanticKernelMicroservice.Presentation.WebApi</AssemblyName>
+		<RootNamespace>Goodtocode.SemanticKernel.Presentation.WebApi</RootNamespace>
+		<AssemblyName>Goodtocode.SemanticKernel.Presentation.WebApi</AssemblyName>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<DocumentationFile>SemanticKernelMicroservice.Presentation.WebApi.xml</DocumentationFile>
+		<DocumentationFile>Goodtocode.SemanticKernel.Presentation.WebApi.xml</DocumentationFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<UserSecretsId>bf5b92ab-f3fe-4af6-b299-583240397247</UserSecretsId>
 	</PropertyGroup>
 	<ItemGroup>
-		<None Remove="SemanticKernelMicroservice.Presentation.WebApi.xml" />
+		<None Remove="Goodtocode.SemanticKernel.Presentation.WebApi.xml" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />

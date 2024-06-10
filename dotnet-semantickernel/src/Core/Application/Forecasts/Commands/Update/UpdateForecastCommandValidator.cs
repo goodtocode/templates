@@ -1,4 +1,4 @@
-﻿//namespace SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Update;
+﻿//namespace Goodtocode.SemanticKernel.Core.Application.Forecasts.Commands.Update;
 
 //public class UpdateForecastCommandValidator : AbstractValidator<UpdateForecastCommand>
 //{

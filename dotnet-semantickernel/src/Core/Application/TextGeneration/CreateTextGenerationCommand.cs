@@ -1,8 +1,8 @@
 ﻿using FluentValidation.Results;
 using Microsoft.SemanticKernel.TextGeneration;
-using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+using Goodtocode.SemanticKernel.Core.Application.Common.Exceptions;
 
-namespace SemanticKernelMicroservice.Core.Application.TextGeneration.Commands;
+namespace Goodtocode.SemanticKernel.Core.Application.TextGeneration;
 
 public class CreateTextGenerationCommand : IRequest<string>
 {

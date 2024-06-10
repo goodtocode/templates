@@ -1,9 +1,9 @@
 ﻿//using FluentValidation.Results;
-//using SemanticKernelMicroservice.Core.Application.Abstractions;
-//using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
-//using ValidationException = SemanticKernelMicroservice.Core.Application.Common.Exceptions.CustomValidationException;
+//using Goodtocode.SemanticKernel.Core.Application.Abstractions;
+//using Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities;
+//using ValidationException = Goodtocode.SemanticKernel.Core.Application.Common.Exceptions.CustomValidationException;
 
-//namespace SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Add;
+//namespace Goodtocode.SemanticKernel.Core.Application.Forecasts.Commands.Add;
 
 //public class AddForecastCommand : IRequest
 //{

@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
-		<RootNamespace>SemanticKernelMicroservice.Infrastructure.SemanticKernel</RootNamespace>
-		<AssemblyName>SemanticKernelMicroservice.Infrastructure.SemanticKernel</AssemblyName>
+		<RootNamespace>Goodtocode.SemanticKernel.Infrastructure.SemanticKernel</RootNamespace>
+		<AssemblyName>Goodtocode.SemanticKernel.Infrastructure.SemanticKernel</AssemblyName>
 		<Version>1.0.0</Version>
 		<IsPackable>false</IsPackable>
 		<ImplicitUsings>enable</ImplicitUsings>

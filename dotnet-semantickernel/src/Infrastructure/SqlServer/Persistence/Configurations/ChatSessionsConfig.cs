@@ -1,6 +1,6 @@
-﻿using SemanticKernelMicroservice.Core.Domain.ChatCompletion;
+﻿using Goodtocode.SemanticKernel.Core.Domain.ChatCompletion;
 
-namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Persistence.Configurations;
+namespace Goodtocode.SemanticKernel.Infrastructure.SqlServer.Persistence.Configurations;
 
 public class ChatSessionsConfig : IEntityTypeConfiguration<ChatSessionEntity>
 {

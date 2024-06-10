@@ -1,43 +1,52 @@
 ﻿using FluentValidation.Results;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
-using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+using Goodtocode.SemanticKernel.Core.Application.Abstractions;
+using Goodtocode.SemanticKernel.Core.Application.Common.Exceptions;
+using Goodtocode.SemanticKernel.Core.Domain.ChatCompletion;
+using AutoMapper.QueryableExtensions;
+using Goodtocode.DotNet.Extensions;
 
-namespace SemanticKernelMicroservice.Core.Application.ChatCompletion.Commands;
+namespace Goodtocode.SemanticKernel.Core.Application.ChatCompletion;
 
-public class CreateChatCompletionCommand : IRequest<string>
+public class CreateChatSessionCommand : IRequest<ChatSessionDto>
 {
     public string? Message { get; set; }
 }
 
-public class CreateChatCompletionCommandHandler : IRequestHandler<CreateChatCompletionCommand, string>
+public class CreateChatSessionCommandHandler : IRequestHandler<CreateChatSessionCommand, ChatSessionDto>
 {
     private IChatCompletionService _chatService;
-    //private readonly ISemanticKernelMicroserviceContext _context;
+    private IMapper _mapper;
+    private readonly IChatCompletionContext _context;
 
-    public CreateChatCompletionCommandHandler(IChatCompletionService chatService)//, ISemanticKernelMicroserviceContext context)
+    public CreateChatSessionCommandHandler(IChatCompletionService chatService, IChatCompletionContext context, IMapper mapper)
     {
-        //_context = context;
+        _context = context;
         _chatService = chatService;
+        _mapper = mapper;
     }
-        
-    public async Task<string> Handle(CreateChatCompletionCommand request, CancellationToken cancellationToken)
+
+    public async Task<ChatSessionDto> Handle(CreateChatSessionCommand request, CancellationToken cancellationToken)
     {
 
         GuardAgainstEmptyMessage(request?.Message);
-
-        ChatMessageContent response;
+        
         ChatHistory chatHistory = new();
-
-        // Retrieve chat history
-
-
         chatHistory.AddUserMessage(request.Message);
-        response = await _chatService.GetChatMessageContentAsync(chatHistory, null, null, cancellationToken);
+        var response = await _chatService.GetChatMessageContentAsync(chatHistory, null, null, cancellationToken);
+        // Persist chat session
+        var chatSession = new ChatSessionEntity();
+        chatSession.Messages.Add(new ChatMessageEntity()
+        { 
+            Content = request.Message, 
+            Role = ChatMessageRole.User, 
+            Timestamp = DateTime.UtcNow
+        });
+        _context.ChatSessions.Add(chatSession);
+        _context.SaveChangesAsync(cancellationToken);
 
-        // Persist chat history
-
-
+        // Return session
 
         //Id, chatcmpl-9Te5QEaE2fBhxt1mtHamj7U25NIRz
         //{ [Created, { 5/27/2024 11:30:32 PM +00:00}]}
@@ -46,7 +55,7 @@ public class CreateChatCompletionCommandHandler : IRequestHandler<CreateChatComp
         //Microsoft.SemanticKernel.ChatCompletion.AuthorRole
         //Content "There are 25 letters in the sentence \"hi, how many letters in this sentence?\""
 
-        return response.ToString();
+        return chatSession.CopyPropertiesSafe<ChatSessionDto>();
 
 
         //var weatherChatCompletion = _context.ChatCompletions.Find(request.Key);

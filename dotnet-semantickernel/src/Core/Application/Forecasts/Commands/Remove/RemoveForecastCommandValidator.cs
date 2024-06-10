@@ -1,4 +1,4 @@
-﻿//namespace SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Remove;
+﻿//namespace Goodtocode.SemanticKernel.Core.Application.Forecasts.Commands.Remove;
 
 //public class RemoveForecastCommandValidator : AbstractValidator<RemoveForecastCommand>
 //{

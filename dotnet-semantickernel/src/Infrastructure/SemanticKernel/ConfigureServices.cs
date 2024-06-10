@@ -10,9 +10,10 @@ using Microsoft.SemanticKernel.Memory;
 using Microsoft.SemanticKernel.TextGeneration;
 using Microsoft.SemanticKernel.TextToAudio;
 using Microsoft.SemanticKernel.TextToImage;
-using SemanticKernelMicroservice.Infrastructure.SemanticKernel.Options;
+using Goodtocode.SemanticKernel.Infrastructure.SemanticKernel.Options;
+using Goodtocode.SemanticKernel.Core.Domain.ChatCompletion.Enums;
 
-namespace SemanticKernelMicroservice.Infrastructure.SemanticKernel;
+namespace Goodtocode.SemanticKernel.Infrastructure.SemanticKernel;
 
 public static class ConfigureServices
 {
@@ -45,7 +46,7 @@ public static class ConfigureServices
         })
         // Completing words or sentences, code completion
          .AddOpenAITextGeneration(
-            configuration["OpenAI:ChatModelId"] ?? throw new InvalidOperationException("The 'OpenAI:ChatModelId' configuration value is missing."),
+            configuration["OpenAI:ChatModelId"] ?? OpenAiModels.ChatGpt35Turbo,
             configuration["OpenAI:ApiKey"] ?? throw new InvalidOperationException("The 'OpenAI:ChatModelId' configuration value is missing."));
         // Alternative:
         //.AddSingleton<ITextGenerationService>(sp =>

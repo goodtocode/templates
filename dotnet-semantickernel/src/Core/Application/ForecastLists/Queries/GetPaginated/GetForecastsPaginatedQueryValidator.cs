@@ -1,4 +1,4 @@
-﻿//namespace SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetPaginated;
+﻿//namespace Goodtocode.SemanticKernel.Core.Application.ForecastLists.Queries.GetPaginated;
 
 //public class GetForecastsPaginatedQueryValidator : AbstractValidator<GetForecastsPaginatedQuery>
 //{

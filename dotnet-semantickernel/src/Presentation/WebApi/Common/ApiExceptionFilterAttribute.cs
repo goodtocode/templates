@@ -1,6 +1,6 @@
-﻿using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+﻿using Goodtocode.SemanticKernel.Core.Application.Common.Exceptions;
 
-namespace SemanticKernelMicroservice.Presentation.WebApi.Common;
+namespace Goodtocode.SemanticKernel.Presentation.WebApi.Common;
 
 /// <summary>
 ///     Filter to handle ApiExceptionFilterAttribute

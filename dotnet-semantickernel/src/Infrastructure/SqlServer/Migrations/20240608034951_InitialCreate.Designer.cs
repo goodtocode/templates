@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SemanticKernelMicroservice.Infrastructure.SqlServer.Persistence;
+using Goodtocode.SemanticKernel.Infrastructure.SqlServer.Persistence;
 
 #nullable disable
 
-namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Migrations
+namespace Goodtocode.SemanticKernel.Infrastructure.SqlServer.Migrations
 {
     [DbContext(typeof(ChatCompletionContext))]
     [Migration("20240608034951_InitialCreate")]
@@ -28,7 +28,7 @@ namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.ChatCompletion.ChatMessageEntity", b =>
+            modelBuilder.Entity("Goodtocode.SemanticKernel.Core.Domain.ChatCompletion.ChatMessageEntity", b =>
                 {
                     b.Property<Guid>("Key")
                         .ValueGeneratedOnAdd()
@@ -59,7 +59,7 @@ namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Migrations
                     b.ToTable("ChatMessages", (string)null);
                 });
 
-            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.ChatCompletion.ChatSessionEntity", b =>
+            modelBuilder.Entity("Goodtocode.SemanticKernel.Core.Domain.ChatCompletion.ChatSessionEntity", b =>
                 {
                     b.Property<Guid>("Key")
                         .ValueGeneratedOnAdd()
@@ -77,7 +77,7 @@ namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Migrations
                     b.ToTable("ChatSessions", (string)null);
                 });
 
-            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.Forecasts.Entities.Forecast", b =>
+            modelBuilder.Entity("Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities.Forecast", b =>
                 {
                     b.Property<Guid>("Key")
                         .ValueGeneratedOnAdd()
@@ -114,7 +114,7 @@ namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Migrations
                     b.ToTable("Forecasts", (string)null);
                 });
 
-            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.Forecasts.Entities.ForecastsView", b =>
+            modelBuilder.Entity("Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities.ForecastsView", b =>
                 {
                     b.Property<Guid>("Key")
                         .HasColumnType("uniqueidentifier");
@@ -148,7 +148,7 @@ namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Migrations
                     b.ToView("ForecastsView", (string)null);
                 });
 
-            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.Forecasts.Entities.WeatherForecastPostalCodeEntity", b =>
+            modelBuilder.Entity("Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities.WeatherForecastPostalCodeEntity", b =>
                 {
                     b.Property<Guid>("Key")
                         .ValueGeneratedOnAdd()
@@ -171,7 +171,7 @@ namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Migrations
                     b.ToTable("ForecastZipCodes", (string)null);
                 });
 
-            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.Subject.AuthorEntity", b =>
+            modelBuilder.Entity("Goodtocode.SemanticKernel.Core.Domain.Subject.AuthorEntity", b =>
                 {
                     b.Property<Guid>("Key")
                         .ValueGeneratedOnAdd()
@@ -186,9 +186,9 @@ namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Migrations
                     b.ToTable("Authors", (string)null);
                 });
 
-            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.ChatCompletion.ChatMessageEntity", b =>
+            modelBuilder.Entity("Goodtocode.SemanticKernel.Core.Domain.ChatCompletion.ChatMessageEntity", b =>
                 {
-                    b.HasOne("SemanticKernelMicroservice.Core.Domain.ChatCompletion.ChatSessionEntity", "ChatSession")
+                    b.HasOne("Goodtocode.SemanticKernel.Core.Domain.ChatCompletion.ChatSessionEntity", "ChatSession")
                         .WithMany("Messages")
                         .HasForeignKey("ChatSessionKey")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -197,9 +197,9 @@ namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Migrations
                     b.Navigation("ChatSession");
                 });
 
-            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.Forecasts.Entities.WeatherForecastPostalCodeEntity", b =>
+            modelBuilder.Entity("Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities.WeatherForecastPostalCodeEntity", b =>
                 {
-                    b.HasOne("SemanticKernelMicroservice.Core.Domain.Forecasts.Entities.Forecast", "WeatherForecast")
+                    b.HasOne("Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities.Forecast", "WeatherForecast")
                         .WithMany("ZipCodes")
                         .HasForeignKey("WeatherForecastKey")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -208,12 +208,12 @@ namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Migrations
                     b.Navigation("WeatherForecast");
                 });
 
-            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.ChatCompletion.ChatSessionEntity", b =>
+            modelBuilder.Entity("Goodtocode.SemanticKernel.Core.Domain.ChatCompletion.ChatSessionEntity", b =>
                 {
                     b.Navigation("Messages");
                 });
 
-            modelBuilder.Entity("SemanticKernelMicroservice.Core.Domain.Forecasts.Entities.Forecast", b =>
+            modelBuilder.Entity("Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities.Forecast", b =>
                 {
                     b.Navigation("ZipCodes");
                 });

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
-using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
+using Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities;
 
-namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Persistence;
+namespace Goodtocode.SemanticKernel.Infrastructure.SqlServer.Persistence;
 
 public class SemanticKernelMicroserviceDbContextInitializer
 {

@@ -1,7 +1,7 @@
-﻿using SemanticKernelMicroservice.Core.Application.ChatCompletion.Commands;
-using SemanticKernelMicroservice.Presentation.WebApi.Common;
+﻿using Goodtocode.SemanticKernel.Core.Application.ChatCompletion;
+using Goodtocode.SemanticKernel.Presentation.WebApi.Common;
 
-namespace SemanticKernelMicroservice.Presentation.WebApi.ChatCompletion;
+namespace Goodtocode.SemanticKernel.Presentation.WebApi.ChatSession;
 
 /// <summary>
 /// Chat completion endpoints to create a chat, continue a chat, delete a chat and retrieve chat history
@@ -10,28 +10,28 @@ namespace SemanticKernelMicroservice.Presentation.WebApi.ChatCompletion;
 [ApiConventionType(typeof(DefaultApiConventions))]
 [Route("[controller]")]
 [ApiVersion("1.0")]
-public class ChatCompletionController : ApiControllerBase
+public class ChatSessionController : ApiControllerBase
 {
-    ///// <summary>Get Chat Completion session with history</summary>
-    ///// <remarks>
-    ///// Sample request:
-    /////
-    /////        "Key": 60fb5e99-3a78-43df-a512-7d8ff498499e
-    /////        "api-version":  1.0
-    ///// 
-    ///// </remarks>
-    ///// <returns>WeatherChatCompletionVm</returns>
-    //[HttpGet("{key}", Name = "GetChatCompletionQuery")]
-    //[ProducesResponseType(typeof(ChatCompletionVm), StatusCodes.Status200OK)]
-    //[ProducesResponseType(StatusCodes.Status404NotFound)]
-    //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    //public async Task<GetChatCompletionQuery> Get(Guid key)
-    //{
-    //    return await Mediator.Send(new GetChatCompletionQuery
-    //    {
-    //        Key = key
-    //    });
-    //}
+    /// <summary>Get Chat Completion session with history</summary>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///        "Key": 60fb5e99-3a78-43df-a512-7d8ff498499e
+    ///        "api-version":  1.0
+    /// 
+    /// </remarks>
+    /// <returns>ChatSessionDto</returns>
+    [HttpGet("{key}", Name = "GetChatSessionQuery")]
+    [ProducesResponseType(typeof(ChatSessionDto), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ChatSessionDto> Get(Guid key)
+    {
+        return await Mediator.Send(new GetChatSessionQuery
+        {
+            Key = key
+        });
+    }
 
     /// <summary>
     /// Creates new Chat Completion session with empty history
@@ -41,25 +41,25 @@ public class ChatCompletionController : ApiControllerBase
     ///
     ///     HttpPost Body
     ///     {
-    ///        "Message": "Hi, I'm Robert. What is the weather today?",
+    ///        "Message": "Hi, I'm Robert. I am interested in learning about Semantic Kernel.",
     ///     }
     ///
     ///     "version":  1.0
     /// </remarks>
     /// <param name="command"></param>
     /// <returns></returns>
-    [HttpPost(Name = "CreateChatCompletionCommand")]
+    [HttpPost(Name = "CreateChatSessionCommand")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult> Post(CreateChatCompletionCommand command)
+    public async Task<ActionResult> Post(CreateChatSessionCommand command)
     {
         var response = await Mediator.Send(command);
-        return CreatedAtAction(nameof(Post), new { response }, command);
+        return CreatedAtAction(nameof(Get), new { response.Key }, command);
     }
 
     ///// <summary>
-    ///// Update ChatCompletion Command
+    ///// Update ChatSession Command
     ///// </summary>
     ///// <remarks>
     ///// Sample request:
@@ -75,11 +75,11 @@ public class ChatCompletionController : ApiControllerBase
     ///// </remarks>
     ///// <param name="command"></param>
     ///// <returns>NoContent</returns>
-    //[HttpPut(Name = "UpdateChatCompletionCommand")]
+    //[HttpPut(Name = "UpdateChatSessionCommand")]
     //[ProducesResponseType(StatusCodes.Status204NoContent)]
     //[ProducesResponseType(StatusCodes.Status404NotFound)]
     //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    //public async Task<ActionResult> Put(UpdateChatCompletionCommand command)
+    //public async Task<ActionResult> Put(UpdateChatSessionCommand command)
     //{
     //    await Mediator.Send(command);
 
@@ -87,7 +87,7 @@ public class ChatCompletionController : ApiControllerBase
     //}
 
     ///// <summary>
-    ///// Patch ChatCompletion Command
+    ///// Patch ChatSession Command
     ///// </summary>
     ///// <remarks>
     ///// Sample request:
@@ -104,18 +104,18 @@ public class ChatCompletionController : ApiControllerBase
     ///// </remarks>
     ///// <param name="command"></param>
     ///// <returns>NoContent</returns>
-    //[HttpPatch(Name = "PatchChatCompletionCommand")]
+    //[HttpPatch(Name = "PatchChatSessionCommand")]
     //[ProducesResponseType(StatusCodes.Status204NoContent)]
     //[ProducesResponseType(StatusCodes.Status404NotFound)]
     //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    //public async Task<ActionResult> Patch(PatchChatCompletionCommand command)
+    //public async Task<ActionResult> Patch(PatchChatSessionCommand command)
     //{
     //    await Mediator.Send(command);
 
     //    return NoContent();
     //}
 
-    ///// <summary>Remove ChatCompletion Command</summary>
+    ///// <summary>Remove ChatSession Command</summary>
     ///// <remarks>
     ///// Sample request:
     /////
@@ -124,14 +124,14 @@ public class ChatCompletionController : ApiControllerBase
     ///// 
     ///// </remarks>
     ///// <returns>NoContent</returns>
-    //[HttpDelete("{key}", Name = "RemoveChatCompletionCommand")]
+    //[HttpDelete("{key}", Name = "RemoveChatSessionCommand")]
     //[ProducesResponseType(StatusCodes.Status204NoContent)]
     //[ProducesResponseType(StatusCodes.Status404NotFound)]
     //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
     //[ProducesDefaultResponseType]
     //public async Task<IActionResult> Delete(Guid key)
     //{
-    //    await Mediator.Send(new RemoveChatCompletionCommand() { Key = key });
+    //    await Mediator.Send(new RemoveChatSessionCommand() { Key = key });
 
     //    return NoContent();
     //}

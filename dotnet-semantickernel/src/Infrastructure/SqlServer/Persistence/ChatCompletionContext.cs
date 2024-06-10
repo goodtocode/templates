@@ -1,10 +1,10 @@
 ﻿using Microsoft.SemanticKernel.ChatCompletion;
-using SemanticKernelMicroservice.Core.Application.Abstractions;
-using SemanticKernelMicroservice.Core.Domain.ChatCompletion;
-using SemanticKernelMicroservice.Core.Domain.Subject;
+using Goodtocode.SemanticKernel.Core.Application.Abstractions;
+using Goodtocode.SemanticKernel.Core.Domain.ChatCompletion;
+using Goodtocode.SemanticKernel.Core.Domain.Subject;
 using System.Reflection;
 
-namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Persistence
+namespace Goodtocode.SemanticKernel.Infrastructure.SqlServer.Persistence
 {
     public class ChatCompletionContext : DbContext, IChatCompletionContext
     {

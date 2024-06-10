@@ -1,9 +1,9 @@
-﻿//using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
-//using SemanticKernelMicroservice.Core.Application.Common.Interfaces;
+﻿//using Goodtocode.SemanticKernel.Core.Application.Common.Exceptions;
+//using Goodtocode.SemanticKernel.Core.Application.Common.Interfaces;
 
-//namespace SemanticKernelMicroservice.Core.Application.ChatCompletions.Commands.Patch;
+//namespace Goodtocode.SemanticKernel.Core.Application.ChatCompletions.Commands.Patch;
 
-//public class PatchChatCompletionCommand : IRequest
+//public class PatchChatSessionCommand : IRequest
 //{
 //    public Guid Key { get; set; }
 //    public DateTime? Date { get; set; }
@@ -11,16 +11,16 @@
 //    public List<int>? Zipcodes { get; set; }
 //}
 
-//public class PatchWeatherChatCompletionCommandHandler : IRequestHandler<PatchChatCompletionCommand>
+//public class PatchWeatherChatSessionCommandHandler : IRequestHandler<PatchChatSessionCommand>
 //{
 //    private readonly ISemanticKernelMicroserviceContext _context;
 
-//    public PatchWeatherChatCompletionCommandHandler(ISemanticKernelMicroserviceContext context)
+//    public PatchWeatherChatSessionCommandHandler(ISemanticKernelMicroserviceContext context)
 //    {
 //        _context = context;
 //    }
 
-//    public async Task Handle(PatchChatCompletionCommand request, CancellationToken cancellationToken)
+//    public async Task Handle(PatchChatSessionCommand request, CancellationToken cancellationToken)
 //    {
 //        var weatherChatCompletion = _context.ChatCompletions.Find(request.Key);
 

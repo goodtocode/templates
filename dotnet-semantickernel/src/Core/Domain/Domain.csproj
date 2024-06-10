@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
-		<RootNamespace>SemanticKernelMicroservice.Core.Domain</RootNamespace>
-		<AssemblyName>SemanticKernelMicroservice.Core.Domain</AssemblyName>
+		<RootNamespace>Goodtocode.SemanticKernel.Core.Domain</RootNamespace>
+		<AssemblyName>Goodtocode.SemanticKernel.Core.Domain</AssemblyName>
 		<IsPackable>false</IsPackable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Migrations
+namespace Goodtocode.SemanticKernel.Infrastructure.SqlServer.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

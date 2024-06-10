@@ -1,11 +1,11 @@
-﻿//using SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Add;
-//using SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Patch;
-//using SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Remove;
-//using SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Update;
-//using SemanticKernelMicroservice.Core.Application.Forecasts.Queries.Get;
-//using SemanticKernelMicroservice.Presentation.WebApi.Common;
+﻿//using Goodtocode.SemanticKernel.Core.Application.Forecasts.Commands.Add;
+//using Goodtocode.SemanticKernel.Core.Application.Forecasts.Commands.Patch;
+//using Goodtocode.SemanticKernel.Core.Application.Forecasts.Commands.Remove;
+//using Goodtocode.SemanticKernel.Core.Application.Forecasts.Commands.Update;
+//using Goodtocode.SemanticKernel.Core.Application.Forecasts.Queries.Get;
+//using Goodtocode.SemanticKernel.Presentation.WebApi.Common;
 
-//namespace SemanticKernelMicroservice.Presentation.WebApi.Forecasts;
+//namespace Goodtocode.SemanticKernel.Presentation.WebApi.Forecasts;
 
 //[ApiController]
 //[ApiConventionType(typeof(DefaultApiConventions))]

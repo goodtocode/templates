@@ -1,8 +1,8 @@
-﻿using SemanticKernelMicroservice.Core.Domain.ChatCompletion;
-using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
-using SemanticKernelMicroservice.Core.Domain.Subject;
+﻿using Goodtocode.SemanticKernel.Core.Domain.ChatCompletion;
+using Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities;
+using Goodtocode.SemanticKernel.Core.Domain.Subject;
 
-namespace SemanticKernelMicroservice.Core.Application.Abstractions;
+namespace Goodtocode.SemanticKernel.Core.Application.Abstractions;
 
 public interface IChatCompletionContext
 {

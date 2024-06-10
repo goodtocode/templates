@@ -1,6 +1,6 @@
-﻿using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
+﻿using Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities;
 
-namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Persistence.Configurations;
+namespace Goodtocode.SemanticKernel.Infrastructure.SqlServer.Persistence.Configurations;
 
 public class ForecastViewConfig : IEntityTypeConfiguration<ForecastsView>
 {

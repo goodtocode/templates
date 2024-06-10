@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
-using SemanticKernelMicroservice.Core.Application.Abstractions;
-using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
+using Goodtocode.SemanticKernel.Core.Application.Abstractions;
+using Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities;
 
-namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Persistence;
+namespace Goodtocode.SemanticKernel.Infrastructure.SqlServer.Persistence;
 
 public partial class SemanticKernelMicroserviceContext : DbContext, ISemanticKernelMicroserviceContext
 {

@@ -1,6 +1,6 @@
 ﻿using Goodtocode.Domain.Types;
 
-namespace SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
+namespace Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities;
 
 public class Forecast : DomainEntity<Forecast>
 {

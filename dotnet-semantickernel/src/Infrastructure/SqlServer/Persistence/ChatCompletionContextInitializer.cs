@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace SemanticKernelMicroservice.Infrastructure.SqlServer.Persistence;
+namespace Goodtocode.SemanticKernel.Infrastructure.SqlServer.Persistence;
 
 public class ChatCompletionContextInitializer
 {

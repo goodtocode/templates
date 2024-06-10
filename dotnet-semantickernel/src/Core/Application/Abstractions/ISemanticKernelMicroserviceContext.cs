@@ -1,6 +1,6 @@
-﻿using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
+﻿using Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities;
 
-namespace SemanticKernelMicroservice.Core.Application.Abstractions;
+namespace Goodtocode.SemanticKernel.Core.Application.Abstractions;
 
 public interface ISemanticKernelMicroserviceContext
 {

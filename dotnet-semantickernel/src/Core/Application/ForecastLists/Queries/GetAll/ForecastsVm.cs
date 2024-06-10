@@ -1,4 +1,4 @@
-﻿namespace SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetAll;
+﻿namespace Goodtocode.SemanticKernel.Core.Application.ForecastLists.Queries.GetAll;
 
 public class ForecastsVm
 {

@@ -1,8 +1,8 @@
-﻿//using SemanticKernelMicroservice.Core.Application.Abstractions;
-//using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
-//using SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
+﻿//using Goodtocode.SemanticKernel.Core.Application.Abstractions;
+//using Goodtocode.SemanticKernel.Core.Application.Common.Exceptions;
+//using Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities;
 
-//namespace SemanticKernelMicroservice.Core.Application.Forecasts.Queries.Get;
+//namespace Goodtocode.SemanticKernel.Core.Application.Forecasts.Queries.Get;
 
 //public class GetWeatherForecastQuery : IRequest<ForecastVm>
 //{

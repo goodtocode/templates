@@ -1,7 +1,7 @@
-﻿//using SemanticKernelMicroservice.Core.Application.Abstractions;
-//using SemanticKernelMicroservice.Core.Application.Common.Exceptions;
+﻿//using Goodtocode.SemanticKernel.Core.Application.Abstractions;
+//using Goodtocode.SemanticKernel.Core.Application.Common.Exceptions;
 
-//namespace SemanticKernelMicroservice.Core.Application.Forecasts.Commands.Patch;
+//namespace Goodtocode.SemanticKernel.Core.Application.Forecasts.Commands.Patch;
 
 //public class PatchForecastCommand : IRequest
 //{

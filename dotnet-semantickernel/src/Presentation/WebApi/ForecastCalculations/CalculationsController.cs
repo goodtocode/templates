@@ -1,8 +1,8 @@
-﻿//using SemanticKernelMicroservice.Core.Application.ForecastCalculations.Queries.GetCelsiusToFahrenheit;
-//using SemanticKernelMicroservice.Core.Application.ForecastCalculations.Queries.GetFahrenheitToCelsius;
-//using SemanticKernelMicroservice.Presentation.WebApi.Common;
+﻿//using Goodtocode.SemanticKernel.Core.Application.ForecastCalculations.Queries.GetCelsiusToFahrenheit;
+//using Goodtocode.SemanticKernel.Core.Application.ForecastCalculations.Queries.GetFahrenheitToCelsius;
+//using Goodtocode.SemanticKernel.Presentation.WebApi.Common;
 
-//namespace SemanticKernelMicroservice.Presentation.WebApi.ForecastCalculations;
+//namespace Goodtocode.SemanticKernel.Presentation.WebApi.ForecastCalculations;
 
 ///// <summary>
 ///// Controller for Calculations

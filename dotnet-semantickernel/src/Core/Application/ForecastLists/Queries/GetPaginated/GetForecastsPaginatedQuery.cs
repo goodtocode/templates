@@ -1,9 +1,9 @@
 ﻿//using AutoMapper.QueryableExtensions;
-//using SemanticKernelMicroservice.Core.Application.Abstractions;
-//using SemanticKernelMicroservice.Core.Application.Common.Mappings;
-//using SemanticKernelMicroservice.Core.Application.Common.Models;
+//using Goodtocode.SemanticKernel.Core.Application.Abstractions;
+//using Goodtocode.SemanticKernel.Core.Application.Common.Mappings;
+//using Goodtocode.SemanticKernel.Core.Application.Common.Models;
 
-//namespace SemanticKernelMicroservice.Core.Application.ForecastLists.Queries.GetPaginated;
+//namespace Goodtocode.SemanticKernel.Core.Application.ForecastLists.Queries.GetPaginated;
 
 //public class GetForecastsPaginatedQuery : IRequest<PaginatedList<ForecastPaginatedDto>>
 //{
@@ -33,7 +33,7 @@
 //            .ProjectTo<ForecastPaginatedDto>(_mapper.ConfigurationProvider)
 //            .PaginatedListAsync(request.PageNumber, request.PageSize);
 
-//        foreach (var item in paginatedSemanticKernelMicroservice.Items) item.TemperatureC = (item.TemperatureF - 32) * 5 / 9;
+//        foreach (var item in paginatedGoodtocode.SemanticKernel.Items) item.TemperatureC = (item.TemperatureF - 32) * 5 / 9;
 
 //        return paginatedSemanticKernelMicroservice;
 //    }

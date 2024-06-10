@@ -1,7 +1,7 @@
-﻿using SemanticKernelMicroservice.Core.Application.TextGeneration.Commands;
-using SemanticKernelMicroservice.Presentation.WebApi.Common;
+﻿using Goodtocode.SemanticKernel.Core.Application.TextGeneration;
+using Goodtocode.SemanticKernel.Presentation.WebApi.Common;
 
-namespace SemanticKernelMicroservice.Presentation.WebApi.TextGeneration;
+namespace Goodtocode.SemanticKernel.Presentation.WebApi.TextGeneration;
 
 /// <summary>
 /// Chat completion endpoints to create a chat, continue a chat, delete a chat and retrieve chat history
