@@ -1,4 +1,4 @@
-﻿namespace SemanticKernelMicroservice.Core.Application.Common.Mappings;
+﻿namespace Goodtocode.SemanticKernel.Core.Application.Common.Mappings;
 
 public interface IMapFrom<T>
 {

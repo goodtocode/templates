@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
-using SemanticKernelMicroservice.Presentation.WebApi.Common;
+using Goodtocode.SemanticKernel.Presentation.WebApi.Common;
 
-namespace SemanticKernelMicroservice.Presentation.WebApi;
+namespace Goodtocode.SemanticKernel.Presentation.WebApi;
 
 /// <summary>
 /// Presentation Layer WebApi Configuration
@@ -27,22 +27,22 @@ public static class ConfigureServices
                 // setupAction.Filters.Add(new AuthorizeFilter(new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build()));
                 setupAction.Filters.Add<ApiExceptionFilterAttribute>();
             })
-            .AddFluentValidation()
             .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
+
         services.AddEndpointsApiExplorer();
 
         services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });
         services.AddCors(c =>
         {
             c.AddPolicy("AllowOrigin",
-                options => 
+                options =>
                     options
                         .WithOrigins("https://localhost:7000")
                         .AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader());
         });
-        
+
         services.AddSwaggerGen(setupAction =>
         {
             // ToDo: Setup Authentication with Bearer Token

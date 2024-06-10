@@ -1,14 +1,19 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using SemanticKernelMicroservice.Core.Application.Common.Behaviours;
+﻿using FluentValidation.AspNetCore;
+using Microsoft.Extensions.DependencyInjection;
+using Goodtocode.SemanticKernel.Core.Application.Common.Behaviours;
 
-namespace SemanticKernelMicroservice.Core.Application;
+namespace Goodtocode.SemanticKernel.Core.Application;
 
 public static class ConfigureServices
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        
+        services.AddFluentValidationAutoValidation();
+        services.AddFluentValidationClientsideAdapters();
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
         services.AddMediatR(cfg =>
         {
             cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());

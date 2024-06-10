@@ -1,6 +1,8 @@
-﻿namespace SemanticKernelMicroservice.Core.Domain.Forecasts.Entities;
+﻿using Goodtocode.Domain.Types;
 
-public class WeatherForecastPostalCodeEntity : Common.Entity
+namespace Goodtocode.SemanticKernel.Core.Domain.Forecasts.Entities;
+
+public class WeatherForecastPostalCodeEntity : DomainEntity<WeatherForecastPostalCodeEntity>
 {
     protected WeatherForecastPostalCodeEntity() { }
 

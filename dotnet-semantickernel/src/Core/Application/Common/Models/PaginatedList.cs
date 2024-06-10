@@ -1,4 +1,4 @@
-﻿namespace SemanticKernelMicroservice.Core.Application.Common.Models;
+﻿namespace Goodtocode.SemanticKernel.Core.Application.Common.Models;
 
 public class PaginatedList<T>
 {

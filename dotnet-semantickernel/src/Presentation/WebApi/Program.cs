@@ -1,11 +1,10 @@
 using Azure.Extensions.AspNetCore.Configuration.Secrets;
 using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Identity.Web;
-using SemanticKernelMicroservice.Core.Application;
-using SemanticKernelMicroservice.Infrastructure;
-using SemanticKernelMicroservice.Presentation.WebApi;
+using Goodtocode.SemanticKernel.Core.Application;
+using Goodtocode.SemanticKernel.Infrastructure.SemanticKernel;
+using Goodtocode.SemanticKernel.Infrastructure.SqlServer;
+using Goodtocode.SemanticKernel.Presentation.WebApi;
 
 [assembly: ApiConventionType(typeof(DefaultApiConventions))]
 
